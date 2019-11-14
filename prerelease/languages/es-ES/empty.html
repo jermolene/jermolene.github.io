@@ -143,6 +143,10 @@ Error message and password prompt
 
 
 
+<style>
+.tc-remove-when-wiki-loaded {display: none;}
+</style>
+
 </div>
 </noscript>
 <!--~~ Ordinary tiddlers ~~-->
@@ -6666,7 +6670,7 @@ Error message and password prompt
         },
         &quot;$:/core/templates/static.area&quot;: {
             &quot;title&quot;: &quot;$:/core/templates/static.area&quot;,
-            &quot;text&quot;: &quot;&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;$:/isEncrypted\&quot; text=\&quot;yes\&quot;&gt;\n{{{ [all[shadows+tiddlers]tag[$:/tags/RawStaticContent]!has[draft.of]] ||$:/core/templates/raw-static-tiddler}}}\n{{$:/core/templates/static.content||$:/core/templates/html-tiddler}}\n&lt;/$reveal&gt;\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/isEncrypted\&quot; text=\&quot;yes\&quot;&gt;\nThis file contains an encrypted ~TiddlyWiki. Enable ~JavaScript and enter the decryption password when prompted.\n&lt;/$reveal&gt;\n&quot;
+            &quot;text&quot;: &quot;&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;$:/isEncrypted\&quot; text=\&quot;yes\&quot;&gt;\n{{{ [all[shadows+tiddlers]tag[$:/tags/RawStaticContent]!has[draft.of]] ||$:/core/templates/raw-static-tiddler}}}\n{{$:/core/templates/static.content||$:/core/templates/html-tiddler}}\n&lt;/$reveal&gt;\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/isEncrypted\&quot; text=\&quot;yes\&quot;&gt;\nThis file contains an encrypted ~TiddlyWiki. Enable ~JavaScript and enter the decryption password when prompted.\n&lt;/$reveal&gt;\n&lt;!-- ensure splash screen isn't shown when JS is disabled --&gt;\n`&lt;style&gt;\n.tc-remove-when-wiki-loaded {display: none;}\n&lt;/style&gt;`\n&quot;
         },
         &quot;$:/core/templates/static.content&quot;: {
             &quot;title&quot;: &quot;$:/core/templates/static.content&quot;,
