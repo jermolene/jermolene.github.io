@@ -2224,6 +2224,10 @@ a.tc-tiddlylink:hover {
 }select {
         color: ;
         background: ;
+}/*
+** Utility classes for SVG icons
+*/.tc-fill-background {
+	fill: #ffffff;
 }
 
 li.Done {

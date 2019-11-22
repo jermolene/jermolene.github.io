@@ -2224,6 +2224,10 @@ a.tc-tiddlylink:hover {
 }select {
         color: ;
         background: ;
+}/*
+** Utility classes for SVG icons
+*/.tc-fill-background {
+	fill: #e5f8fd;
 }
 
 /* Left will inherit from right (so we don't need to duplicate code */
