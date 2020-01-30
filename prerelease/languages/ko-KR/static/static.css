@@ -2247,28 +2247,30 @@ a.tc-tiddlylink:hover {
 	fill: #ffffff;
 }
 
-/* CSS modified for TiddlyWiki */
-svg.railroad-diagram {
-	background-color: hsl(30,20%,98%);
+/* CSS modified for TiddlyWiki */svg.railroad-diagram {
+	background-color: #ffffff;
 	border-radius: 5px;
 }
+/*
 svg.railroad-diagram:hover {
 	background-color: hsl(30,20%,96%);
 }
+*/
 svg.railroad-diagram path,
 svg.railroad-diagram rect {
 	stroke-width: 2;
-	stroke: #333;
+	stroke: #cfd6e6;
 }
 svg.railroad-diagram path {
-	fill: rgba(0,0,0,0);
+	fill: #ffffff;
 }
 svg.railroad-diagram rect {
-	fill: hsl(120,100%,90%);
+	fill: #ecf2ff;
 }
 svg.railroad-diagram text {
 	font: 14px monospace;
 	text-anchor: middle;
+	fill: #547599;
 }
 svg.railroad-diagram text.label {
 	text-anchor: start;
