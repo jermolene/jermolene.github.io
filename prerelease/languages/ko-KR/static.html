@@ -2285,7 +2285,9 @@ nav.tc-menubar {
      -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 
-}nav.tc-menubar li.tc-menubar-item {
+}@media (max-width: 960px) {html nav.tc-menubar ul.tc-menubar-list {
+		padding: 0 0 0 8px;
+	}}nav.tc-menubar li.tc-menubar-item {
 	display: inline-block;
 	margin: 0;
 	padding: 0;
@@ -2366,8 +2368,6 @@ nav.tc-menubar .tc-block-dropdown {
 	margin: 0;
 }@media (max-width: 620px) {.tc-menubar-wide {
 		display: none;
-	}html nav.tc-menubar ul.tc-menubar-list {
-		padding: 0 0 0 8px;
 	}}@media (min-width: 621px) {nav.tc-menubar li.tc-menubar-item.tc-menubar-narrow,
 	.tc-menubar-narrow {
 		display: none;
