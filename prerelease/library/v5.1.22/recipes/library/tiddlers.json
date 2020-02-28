@@ -515,6 +515,18 @@
         "requires-reload": "yes"
     },
     {
+        "title": "$:/plugins/tiddlywiki/menubar",
+        "name": "Menu Bar",
+        "description": "Menu Bar",
+        "list": "readme config",
+        "version": "5.1.22-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "!! Introduction\n\nThis plugin provides a menu bar with the following features:\n\n* Menu items take the form of simple text links, dropdowns, or entirely custom content\n* Menu items can be individually enabled via the control panel\n* Responds to reduced screen width by abbreviating the menu items to a \"hamburger\" dropdown\n\n!! Menu Item Tiddlers\n\nMenu items are tagged <<tag $:/tags/MenuBar>>. The following fields are used by this plugin:\n\n|!Field Name |!Purpose |\n|title |Each menu item must have a unique title (not shown to the user) |\n|description |Description for use in listings |\n|tags |Must contain `$:/tags/MenuBar` |\n|caption |The text that is displayed for the menu item. Avoid links, using `~` to suppress CamelCase links if required |\n|target |For simple link menu items specifies a tiddler title as the target of the link |\n|is-dropdown |Set to `yes` to indicate a dropdown menu item |\n|text |For dropdown menu items, specifies the body of the dropdown |\n|custom-menu-content |Optional wikitext to be displayed in place of the caption |\n|custom-menu-styles |Optional string of styles to be applied to menu item |\n\nCustom menu items should make sure that the clickable link or button is an immediate child, and not wrapped in another element.\n\n",
+        "requires-reload": "no"
+    },
+    {
         "title": "$:/plugins/tiddlywiki/mobiledragdrop",
         "name": "Mobile Drag Drop",
         "description": "Mobile drag and drop shim",
@@ -611,7 +623,7 @@
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This plugin provides tools to share tiddlers via URLs, comprising:\n\n* The ability to load a group of tiddlers from the browser location hash at startup\n* Wizard and templates to create URLs from group of tiddlers\n",
+        "readme": "<div class=\"tc-message-box\">Do not install this plugin unless you understand exactly what it does</div>\n\nThis experimental plugin provides tools to share tiddlers via URLs, comprising:\n\n* The ability to load a group of tiddlers from the browser location hash at startup\n* Wizard and templates to create URLs from group of tiddlers\n\n",
         "requires-reload": "yes"
     },
     {
