@@ -183,8 +183,8 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
 
 &lt;&lt;list-links filter:&quot;[tag{!!title}]&quot;&gt;&gt;</pre>
 </div>
-<div commit="34181230c7e547de4417fde87b3db33e54fc8212" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 34181230c7e547de4417fde87b3db33e54fc8212 of https://github.com/Jermolene/TiddlyWiki5.git at 2020-05-09 15:11:06 UTC
+<div commit="d1441d29fde17fd382658d7b541cab513d86a936" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit d1441d29fde17fd382658d7b541cab513d86a936 of https://github.com/Jermolene/TiddlyWiki5.git at 2020-05-10 11:01:36 UTC
 </pre>
 </div>
 <div created="20140909085347212" modified="20140909085346177" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home" type="text/vnd.tiddlywiki">
@@ -5959,7 +5959,7 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
         },
         &quot;$:/core/modules/startup/favicon.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/startup/favicon.js&quot;,
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/startup/favicon.js\ntype: application/javascript\nmodule-type: startup\n\nFavicon handling\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n// Export name and synchronous status\nexports.name = \&quot;favicon\&quot;;\nexports.platforms = [\&quot;browser\&quot;];\nexports.after = [\&quot;startup\&quot;];\nexports.synchronous = true;\n\t\t\n// Favicon tiddler\nvar FAVICON_TITLE = \&quot;$:/favicon.ico\&quot;;\n\nexports.startup = function() {\n\t// Set up the favicon\n\tsetFavicon();\n\t// Reset the favicon when the tiddler changes\n\t$tw.wiki.addEventListener(\&quot;change\&quot;,function(changes) {\n\t\tif($tw.utils.hop(changes,FAVICON_TITLE)) {\n\t\t\tsetFavicon();\n\t\t}\n\t});\n};\n\nfunction setFavicon() {\n\tvar tiddler = $tw.wiki.getTiddler(FAVICON_TITLE);\n\tif(tiddler) {\n\t\tvar faviconLink = document.getElementById(\&quot;faviconLink\&quot;);\n\t\tif(tiddler.fields._canonical_uri) {\n\t\t\tfaviconLink.setAttribute(\&quot;href\&quot;,tiddler.fields._canonical_uri);\n\t\t} else {\n\t\t\tfaviconLink.setAttribute(\&quot;href\&quot;,\&quot;data:\&quot; + tiddler.fields.type + \&quot;;base64,\&quot; + tiddler.fields.text);\t\t\t\n\t\t}\n\t}\n}\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/startup/favicon.js\ntype: application/javascript\nmodule-type: startup\n\nFavicon handling\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n// Export name and synchronous status\nexports.name = \&quot;favicon\&quot;;\nexports.platforms = [\&quot;browser\&quot;];\nexports.after = [\&quot;startup\&quot;];\nexports.synchronous = true;\n\t\t\n// Favicon tiddler\nvar FAVICON_TITLE = \&quot;$:/favicon.ico\&quot;;\n\nexports.startup = function() {\n\t// Set up the favicon\n\tsetFavicon();\n\t// Reset the favicon when the tiddler changes\n\t$tw.wiki.addEventListener(\&quot;change\&quot;,function(changes) {\n\t\tif($tw.utils.hop(changes,FAVICON_TITLE)) {\n\t\t\tsetFavicon();\n\t\t}\n\t});\n};\n\nfunction setFavicon() {\n\tvar tiddler = $tw.wiki.getTiddler(FAVICON_TITLE);\n\tif(tiddler) {\n\t\tvar faviconLink = document.getElementById(\&quot;faviconLink\&quot;);\n\t\tfaviconLink.setAttribute(\&quot;href\&quot;,$tw.utils.makeDataUri(tiddler.fields.text,tiddler.fields.type,tiddler.fields._canonical_uri));\n\t}\n}\n\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;startup&quot;
         },
@@ -13570,7 +13570,7 @@ Benutzer Stylesheets in diesem Wiki:
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20200509151207554&quot;
+            &quot;text&quot;: &quot;20200510110240553&quot;
         }
     }
 }</pre>
