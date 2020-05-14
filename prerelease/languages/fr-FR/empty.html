@@ -5206,9 +5206,9 @@ Error message and password prompt
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;filteroperator&quot;
         },
-        &quot;$:/plugins/tiddlywiki/static/filters/slugify.js&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/static/filters/slugify.js&quot;,
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/tiddlywiki/static/filters/slugify.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator for slugifying a tiddler title\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nexports.slugify = function(source,operator,options) {\n\tvar results = [];\n\tsource(function(tiddler,title) {\n\t\tresults.push(options.wiki.slugify(title));\n\t});\n\treturn results;\n};\n\n})();\n&quot;,
+        &quot;$:/core/modules/filters/slugify.js&quot;: {
+            &quot;title&quot;: &quot;$:/core/modules/filters/slugify.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/slugify.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator for slugifying a tiddler title\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nexports.slugify = function(source,operator,options) {\n\tvar results = [];\n\tsource(function(tiddler,title) {\n\t\tresults.push(options.wiki.slugify(title));\n\t});\n\treturn results;\n};\n\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;filteroperator&quot;
         },
