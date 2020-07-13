@@ -696,6 +696,11 @@ input:not([type]) {
 	background: #ffffff;
 }input[type="checkbox"] {
   vertical-align: middle;
+}input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	-webkit-appearance:none;
 }.tc-muted {
 	color: #bbb;
 }svg.tc-image-button {
@@ -1039,6 +1044,10 @@ a.tc-tiddlylink:hover {
 	width: 100%;
 }button.tc-btn-invisible.tc-remove-tag-button {
 	outline: none;
+}.tc-tag-button-selected,
+.tc-list-item-selected a.tc-tiddlylink {
+	background-color: #5778d8;
+	color: #ffffff;
 }/*
 ** Page layout
 */.tc-topbar {
@@ -2334,7 +2343,17 @@ font-weight:bold;
 
 
 </span>
-</button></div></p></div><div class=" tc-reveal"><div class="tc-sidebar-lists tc-sidebar-search"><p><div class="tc-search"><input class="tc-popup-handle" type="search" value=""><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Erweiterte Suche" class="tc-btn-invisible" title="Erweiterte Suche"><svg class="tc-image-advanced-search-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M74.565 87.985A47.776 47.776 0 0148 96C21.49 96 0 74.51 0 48S21.49 0 48 0s48 21.49 48 48c0 9.854-2.97 19.015-8.062 26.636l34.347 34.347a9.443 9.443 0 010 13.36 9.446 9.446 0 01-13.36 0l-34.36-34.358zM48 80c17.673 0 32-14.327 32-32 0-17.673-14.327-32-32-32-17.673 0-32 14.327-32 32 0 17.673 14.327 32 32 32z"></path><circle cx="48" cy="48" r="8"></circle><circle cx="28" cy="48" r="8"></circle><circle cx="68" cy="48" r="8"></circle></g></svg></button></span></div><div class="tc-block-dropdown-wrapper tc-reveal" hidden="true"></div></p></div></div><div class=" tc-reveal"><div class="tc-sidebar-lists tc-sidebar-tabs"><p><div class="tc-tab-set tc-sidebar-tabs-main">
+</button></div></p></div><div class=" tc-reveal"><div class="tc-sidebar-lists tc-sidebar-search"><p><div class="tc-search"><span class=" tc-keyboard">
+<span class=" tc-keyboard">
+<span class=" tc-keyboard">
+<span class=" tc-keyboard">
+<span class=" tc-keyboard">
+<input class="tc-popup-handle" type="search" value="">
+</span>
+</span>
+</span>
+</span>
+</span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Erweiterte Suche" class="tc-btn-invisible" title="Erweiterte Suche"><svg class="tc-image-advanced-search-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M74.565 87.985A47.776 47.776 0 0148 96C21.49 96 0 74.51 0 48S21.49 0 48 0s48 21.49 48 48c0 9.854-2.97 19.015-8.062 26.636l34.347 34.347a9.443 9.443 0 010 13.36 9.446 9.446 0 01-13.36 0l-34.36-34.358zM48 80c17.673 0 32-14.327 32-32 0-17.673-14.327-32-32-32-17.673 0-32 14.327-32 32 0 17.673 14.327 32 32 32z"></path><circle cx="48" cy="48" r="8"></circle><circle cx="28" cy="48" r="8"></circle><circle cx="68" cy="48" r="8"></circle></g></svg></button></span></div><div class="tc-block-dropdown-wrapper tc-reveal" hidden="true"></div></p></div></div><div class=" tc-reveal"><div class="tc-sidebar-lists tc-sidebar-tabs"><p><div class="tc-tab-set tc-sidebar-tabs-main">
 <div class="tc-tab-buttons tc-sidebar-tabs-main">
 <button class=" tc-tab-selected">
 
