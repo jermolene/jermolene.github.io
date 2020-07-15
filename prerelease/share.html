@@ -292,8 +292,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div commit="00ff0d6fa0f54c9b2dc8e47c22d58d9f80113664" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 00ff0d6fa0f54c9b2dc8e47c22d58d9f80113664 of https://github.com/Jermolene/TiddlyWiki5.git at 2020-07-14 16:07:11 UTC
+<div commit="484c9e986fc6f323e30460a88f134da3a4e8a89e" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 484c9e986fc6f323e30460a88f134da3a4e8a89e of https://github.com/Jermolene/TiddlyWiki5.git at 2020-07-15 11:25:37 UTC
 </pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" name="Core" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.23-prerelease">
@@ -9504,7 +9504,7 @@ Error message and password prompt
         },
         &quot;$:/snippets/currpalettepreview&quot;: {
             &quot;title&quot;: &quot;$:/snippets/currpalettepreview&quot;,
-            &quot;text&quot;: &quot;\\define swatchStyle()\nbackground-color: $(swatchColour)$;\n\\end\n\\define swatch()\n&lt;$set name=\&quot;swatchColour\&quot; value={{##$(colour)$}}\n&gt;&lt;div class=\&quot;tc-swatch\&quot; style=&lt;&lt;swatchStyle&gt;&gt; title=&lt;&lt;colour&gt;&gt;/&gt;&lt;/$set&gt;\n\\end\n&lt;div class=\&quot;tc-swatches-horiz\&quot;&gt;&lt;$list filter=\&quot;\nforeground\nbackground\nmuted-foreground\nprimary\npage-background\ntab-background\ntiddler-info-background\n\&quot; variable=\&quot;colour\&quot;&gt;&lt;&lt;swatch&gt;&gt;&lt;/$list&gt;&lt;/div&gt;&quot;
+            &quot;text&quot;: &quot;\\define resolve-colour(macrocall)\n\\import $:/core/macros/utils\n\\whitespace trim\n&lt;$wikify name=\&quot;name\&quot; text=\&quot;\&quot;\&quot;$macrocall$\&quot;\&quot;\&quot;&gt;\n&lt;&lt;name&gt;&gt;\n&lt;/$wikify&gt;\n\\end\n\\define swatchStyle()\nbackground-color: $(swatchColour)$;\n\\end\n\\define swatch-inner()\n&lt;$set name=\&quot;swatchColour\&quot; value={{##$(colourResolved)$}}&gt;\n&lt;$list filter=\&quot;[&lt;swatchColour&gt;!prefix[&lt;&lt;colour ]!suffix[&gt;&gt;]]\&quot; variable=\&quot;ignore\&quot;&gt;\n&lt;div class=\&quot;tc-swatch\&quot; style=&lt;&lt;swatchStyle&gt;&gt; title=&lt;&lt;swatchTitle&gt;&gt;/&gt;\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[&lt;swatchColour&gt;prefix[&lt;&lt;colour ]suffix[&gt;&gt;]]\&quot; variable=\&quot;ignore\&quot;&gt;\n&lt;$wikify name=\&quot;colourResolved\&quot; text=\&quot;\&quot;\&quot;&lt;$macrocall $name=\&quot;resolve-colour\&quot; macrocall=&lt;&lt;swatchColour&gt;&gt;/&gt;\&quot;\&quot;\&quot;&gt;\n&lt;&lt;swatch-inner&gt;&gt;\n&lt;/$wikify&gt;\n&lt;/$list&gt;\n&lt;/$set&gt;\n\\end\n\\define swatch()\n&lt;$set name=\&quot;swatchColour\&quot; value={{##$(colour)$}}&gt;\n&lt;$set name=\&quot;swatchTitle\&quot; value=&lt;&lt;colour&gt;&gt;&gt;\n&lt;$list filter=\&quot;[&lt;swatchColour&gt;!prefix[&lt;&lt;colour ]!suffix[&gt;&gt;]]\&quot; variable=\&quot;ignore\&quot;&gt;\n&lt;div class=\&quot;tc-swatch\&quot; style=&lt;&lt;swatchStyle&gt;&gt; title=&lt;&lt;swatchTitle&gt;&gt;/&gt;\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[&lt;swatchColour&gt;prefix[&lt;&lt;colour ]suffix[&gt;&gt;]]\&quot; variable=\&quot;ignore\&quot;&gt;\n&lt;$wikify name=\&quot;colourResolved\&quot; text=\&quot;\&quot;\&quot;&lt;$macrocall $name=\&quot;resolve-colour\&quot; macrocall=&lt;&lt;swatchColour&gt;&gt;/&gt;\&quot;\&quot;\&quot;&gt;\n&lt;&lt;swatch-inner&gt;&gt;\n&lt;/$wikify&gt;\n&lt;/$list&gt;\n&lt;/$set&gt;\n&lt;/$set&gt;\n\\end\n&lt;div class=\&quot;tc-swatches-horiz\&quot;&gt;&lt;$list filter=\&quot;\nforeground\nbackground\nmuted-foreground\nprimary\npage-background\ntab-background\ntiddler-info-background\n\&quot; variable=\&quot;colour\&quot;&gt;&lt;&lt;swatch&gt;&gt;&lt;/$list&gt;&lt;/div&gt;\n&quot;
         },
         &quot;$:/snippets/download-wiki-button&quot;: {
             &quot;title&quot;: &quot;$:/snippets/download-wiki-button&quot;,
@@ -9859,7 +9859,7 @@ Error message and password prompt
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20200714160743080&quot;
+            &quot;text&quot;: &quot;20200715112607529&quot;
         }
     }
 }</pre>
