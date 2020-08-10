@@ -5816,6 +5816,12 @@ Error message and password prompt
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;saver&quot;
         },
+        &quot;$:/core/modules/savers/hyperdrive.js&quot;: {
+            &quot;title&quot;: &quot;$:/core/modules/savers/hyperdrive.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/savers/hyperdrive.js\ntype: application/javascript\nmodule-type: saver\n\nSaves files using the Hyperdrive Protocol (https://hypercore-protocol.org/#hyperdrive) Beaker browser beta-1.0 and later (https://beakerbrowser.com)\nCompatible with beaker &gt;= V1.0.0\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nSet up the saver\n*/\nvar HyperdriveSaver = function(wiki) {\n\tthis.wiki = wiki;\n};\n\nHyperdriveSaver.prototype.save = function(text,method,callback) {\n\tvar dat = beaker.hyperdrive.drive(\&quot;\&quot; + window.location),\n\t\tpathname = (\&quot;\&quot; + window.location.pathname).split(\&quot;#\&quot;)[0];\n\tdat.stat(pathname).then(function(value) {\n\t\tif(value.isDirectory()) {\n\t\t\tpathname = pathname + \&quot;/index.html\&quot;;\n\t\t}\n\t\tdat.writeFile(pathname,text,\&quot;utf8\&quot;).then(function(value) {\n\t\t\tcallback(null);\n\t\t},function(reason) {\n\t\t\tcallback(\&quot;Hyperdrive Saver Write Error: \&quot; + reason);\n\t\t});\n\t},function(reason) {\n\t\tcallback(\&quot;Hyperdrive Saver Stat Error: \&quot; + reason);\n\t});\n\treturn true;\n};\n\n/*\nInformation about this saver\n*/\nHyperdriveSaver.prototype.info = {\n\tname: \&quot;beaker-1.x\&quot;,\n\tpriority: 3000,\n\tcapabilities: [\&quot;save\&quot;, \&quot;autosave\&quot;]\n};\n\n/*\nStatic method that returns true if this saver is capable of working\n*/\nexports.canSave = function(wiki) {\n\treturn !!window.beaker &amp;&amp; !!beaker.hyperdrive &amp;&amp; location.protocol===\&quot;hyper:\&quot;;\n};\n\n/*\nCreate an instance of this saver\n*/\nexports.create = function(wiki) {\n\treturn new HyperdriveSaver(wiki);\n};\n\n})();\n&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;saver&quot;
+        },
         &quot;$:/core/modules/savers/manualdownload.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/savers/manualdownload.js&quot;,
             &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/savers/manualdownload.js\ntype: application/javascript\nmodule-type: saver\n\nHandles saving changes via HTML5's download APIs\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n// Title of the tiddler containing the download message\nvar downloadInstructionsTitle = \&quot;$:/language/Modals/Download\&quot;;\n\n/*\nSelect the appropriate saver module and set it up\n*/\nvar ManualDownloadSaver = function(wiki) {\n};\n\nManualDownloadSaver.prototype.save = function(text,method,callback) {\n\t$tw.modal.display(downloadInstructionsTitle,{\n\t\tdownloadLink: \&quot;data:text/html,\&quot; + encodeURIComponent(text)\n\t});\n\t// Callback that we succeeded\n\tcallback(null);\n\treturn true;\n};\n\n/*\nInformation about this saver\n*/\nManualDownloadSaver.prototype.info = {\n\tname: \&quot;manualdownload\&quot;,\n\tpriority: 0,\n\tcapabilities: [\&quot;save\&quot;, \&quot;download\&quot;]\n};\n\n/*\nStatic method that returns true if this saver is capable of working\n*/\nexports.canSave = function(wiki) {\n\treturn true;\n};\n\n/*\nCreate an instance of this saver\n*/\nexports.create = function(wiki) {\n\treturn new ManualDownloadSaver(wiki);\n};\n\n})();\n&quot;,
@@ -9663,7 +9669,7 @@ Error message and password prompt
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20200810135922598&quot;
+            &quot;text&quot;: &quot;20200810193519043&quot;
         }
     }
 }</pre>
