@@ -1364,7 +1364,7 @@ a.tc-tiddlylink:hover {
 	font-style: normal;
 }.tc-type-selector .tc-edit-typeeditor {
 	width: auto;
-}.tc-type-selector-wrapper {
+}.tc-type-selector-dropdown-wrapper {
 	display: inline-block;
 }.tc-edit-tags {
 	border: 1px solid #cccccc;
