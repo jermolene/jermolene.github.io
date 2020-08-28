@@ -221,8 +221,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div commit="7de8e1fc97d97838d4403be5662a77d34e2d260f" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 7de8e1fc97d97838d4403be5662a77d34e2d260f of https://github.com/Jermolene/TiddlyWiki5.git at 2020-08-28 13:53:45 UTC
+<div commit="918e52b37bbe65243a96099db24ea71eecd05558" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 918e52b37bbe65243a96099db24ea71eecd05558 of https://github.com/Jermolene/TiddlyWiki5.git at 2020-08-28 14:28:38 UTC
 </pre>
 </div>
 <div caption="Keymap" tags="$:/tags/SideBar" title="$:/codemirrordemo/sidebar/cheatsheet">
@@ -6955,7 +6955,7 @@ $:/codemirrordemo/sidebar/cheatsheet
         },
         &quot;$:/core/templates/single.tiddler.window&quot;: {
             &quot;title&quot;: &quot;$:/core/templates/single.tiddler.window&quot;,
-            &quot;text&quot;: &quot;\\whitespace trim\n\\define containerClasses()\ntc-page-container tc-page-view-$(storyviewTitle)$ tc-language-$(languageTitle)$\n\\end\n\\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]\n\n&lt;$set name=\&quot;tv-config-toolbar-icons\&quot; value={{$:/config/Toolbar/Icons}}&gt;\n\n&lt;$set name=\&quot;tv-config-toolbar-text\&quot; value={{$:/config/Toolbar/Text}}&gt;\n\n&lt;$set name=\&quot;tv-config-toolbar-class\&quot; value={{$:/config/Toolbar/ButtonClass}}&gt;\n\n&lt;$set name=\&quot;tv-show-missing-links\&quot; value={{$:/config/MissingLinks}}&gt;\n\n&lt;$set name=\&quot;storyviewTitle\&quot; value={{$:/view}}&gt;\n\n&lt;$set name=\&quot;languageTitle\&quot; value={{{ [{$:/language}get[name]] }}}&gt;\n\n&lt;div class=&lt;&lt;containerClasses&gt;&gt;&gt;\n\n&lt;$navigator story=\&quot;$:/StoryList\&quot; history=\&quot;$:/HistoryList\&quot;&gt;\n\n&lt;$transclude mode=\&quot;block\&quot;/&gt;\n\n&lt;/$navigator&gt;\n\n&lt;/div&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n&quot;
+            &quot;text&quot;: &quot;\\whitespace trim\n\\define containerClasses()\ntc-page-container tc-page-view-$(storyviewTitle)$ tc-language-$(languageTitle)$\n\\end\n\\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]\n\n&lt;$vars\n\ttv-config-toolbar-icons={{$:/config/Toolbar/Icons}}\n\ttv-config-toolbar-text={{$:/config/Toolbar/Text}}\n\ttv-config-toolbar-class={{$:/config/Toolbar/ButtonClass}}\n\ttv-show-missing-links={{$:/config/MissingLinks}}\n\tstoryviewTitle={{$:/view}}\n\tlanguageTitle={{{ [{$:/language}get[name]] }}}&gt;\n\n&lt;div class=&lt;&lt;containerClasses&gt;&gt;&gt;\n\n&lt;$navigator story=\&quot;$:/StoryList\&quot; history=\&quot;$:/HistoryList\&quot;&gt;\n\n&lt;$transclude mode=\&quot;block\&quot;/&gt;\n\n&lt;/$navigator&gt;\n\n&lt;/div&gt;\n\n&lt;/$vars&gt;\n&quot;
         },
         &quot;$:/core/templates/split-recipe&quot;: {
             &quot;title&quot;: &quot;$:/core/templates/split-recipe&quot;,
@@ -8430,7 +8430,7 @@ $:/codemirrordemo/sidebar/cheatsheet
         },
         &quot;$:/core/ui/PageTemplate&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/PageTemplate&quot;,
-            &quot;text&quot;: &quot;\\whitespace trim\n\\define containerClasses()\ntc-page-container tc-page-view-$(storyviewTitle)$ tc-language-$(languageTitle)$\n\\end\n\\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]\n\n&lt;$set name=\&quot;tv-config-toolbar-icons\&quot; value={{$:/config/Toolbar/Icons}}&gt;\n\n&lt;$set name=\&quot;tv-config-toolbar-text\&quot; value={{$:/config/Toolbar/Text}}&gt;\n\n&lt;$set name=\&quot;tv-config-toolbar-class\&quot; value={{$:/config/Toolbar/ButtonClass}}&gt;\n\n&lt;$set name=\&quot;tv-enable-drag-and-drop\&quot; value={{$:/config/DragAndDrop/Enable}}&gt;\n\n&lt;$set name=\&quot;tv-show-missing-links\&quot; value={{$:/config/MissingLinks}}&gt;\n\n&lt;$set name=\&quot;storyviewTitle\&quot; value={{$:/view}}&gt;\n\n&lt;$set name=\&quot;languageTitle\&quot; value={{{ [{$:/language}get[name]] }}}&gt;\n\n&lt;div class=&lt;&lt;containerClasses&gt;&gt;&gt;\n\n&lt;$navigator story=\&quot;$:/StoryList\&quot; history=\&quot;$:/HistoryList\&quot; openLinkFromInsideRiver={{$:/config/Navigation/openLinkFromInsideRiver}} openLinkFromOutsideRiver={{$:/config/Navigation/openLinkFromOutsideRiver}} relinkOnRename={{$:/config/RelinkOnRename}}&gt;\n\n&lt;$dropzone enable=&lt;&lt;tv-enable-drag-and-drop&gt;&gt;&gt;\n\n&lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/PageTemplate]!has[draft.of]]\&quot; variable=\&quot;listItem\&quot;&gt;\n\n&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt;/&gt;\n\n&lt;/$list&gt;\n\n&lt;/$dropzone&gt;\n\n&lt;/$navigator&gt;\n\n&lt;/div&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n&quot;
+            &quot;text&quot;: &quot;\\whitespace trim\n\\define containerClasses()\ntc-page-container tc-page-view-$(storyviewTitle)$ tc-language-$(languageTitle)$\n\\end\n\\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]\n\n&lt;$vars\n\ttv-config-toolbar-icons={{$:/config/Toolbar/Icons}}\n\ttv-config-toolbar-text={{$:/config/Toolbar/Text}}\n\ttv-config-toolbar-class={{$:/config/Toolbar/ButtonClass}}\n\ttv-enable-drag-and-drop={{$:/config/DragAndDrop/Enable}}\n\ttv-show-missing-links={{$:/config/MissingLinks}}\n\tstoryviewTitle={{$:/view}}\n\tlanguageTitle={{{ [{$:/language}get[name]] }}}&gt;\n\n&lt;div class=&lt;&lt;containerClasses&gt;&gt;&gt;\n\n&lt;$navigator story=\&quot;$:/StoryList\&quot; history=\&quot;$:/HistoryList\&quot; openLinkFromInsideRiver={{$:/config/Navigation/openLinkFromInsideRiver}} openLinkFromOutsideRiver={{$:/config/Navigation/openLinkFromOutsideRiver}} relinkOnRename={{$:/config/RelinkOnRename}}&gt;\n\n&lt;$dropzone enable=&lt;&lt;tv-enable-drag-and-drop&gt;&gt;&gt;\n\n&lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/PageTemplate]!has[draft.of]]\&quot; variable=\&quot;listItem\&quot;&gt;\n\n&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt;/&gt;\n\n&lt;/$list&gt;\n\n&lt;/$dropzone&gt;\n\n&lt;/$navigator&gt;\n\n&lt;/div&gt;\n\n&lt;/$vars&gt;\n&quot;
         },
         &quot;$:/PaletteManager&quot;: {
             &quot;title&quot;: &quot;$:/PaletteManager&quot;,
@@ -9795,7 +9795,7 @@ $:/codemirrordemo/sidebar/cheatsheet
 [[Draft of 'LoremIpsum']]
 </pre>
 </div>
-<div created="20200828135431809" current-tiddler="HelloThere" modified="20200828135431809" title="$:/HistoryList" type="application/json">
+<div created="20200828142924324" current-tiddler="HelloThere" modified="20200828142924324" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;HelloThere&quot;
@@ -10456,7 +10456,7 @@ $:/codemirrordemo/sidebar/cheatsheet
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20200828135431681&quot;
+            &quot;text&quot;: &quot;20200828142924198&quot;
         }
     }
 }</pre>
