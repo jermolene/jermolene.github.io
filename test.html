@@ -9664,8 +9664,8 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/plugins/tiddlywiki/jasmine/readme&quot;,
             &quot;text&quot;: &quot;This plugin provides a framework for running tests in the browser and under Node.js. It is based on [[Jasmine|https://jasmine.github.io/]] test framework.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/jasmine]]\n&quot;
         },
-        &quot;/home/travis/build/Jermolene/TiddlyWiki5/node_modules/tiddlywiki/plugins/tiddlywiki/jasmine/update-packages.sh&quot;: {
-            &quot;title&quot;: &quot;/home/travis/build/Jermolene/TiddlyWiki5/node_modules/tiddlywiki/plugins/tiddlywiki/jasmine/update-packages.sh&quot;,
+        &quot;/home/runner/work/TiddlyWiki5/TiddlyWiki5/node_modules/tiddlywiki/plugins/tiddlywiki/jasmine/update-packages.sh&quot;: {
+            &quot;title&quot;: &quot;/home/runner/work/TiddlyWiki5/TiddlyWiki5/node_modules/tiddlywiki/plugins/tiddlywiki/jasmine/update-packages.sh&quot;,
             &quot;text&quot;: &quot;#!/bin/bash\n# Download jasmine packages from npm and unpack relevant files\n# into files/.\n\nset -exuo pipefail\n\nJASMINE_VERSION=3.4.0\nJASMINE_CORE_VERSION=3.4.0\n\nrm -rf files/jasmine\nmkdir -p files/jasmine\nif [ ! -f \&quot;jasmine-$JASMINE_VERSION.tgz\&quot; ]; then\n    npm pack jasmine@$JASMINE_VERSION\nfi\ntar xfzv jasmine-$JASMINE_VERSION.tgz \\\n    -C files/jasmine \\\n    --strip-components=1 \\\n    --wildcards \&quot;*/lib/*.js\&quot; \&quot;*/*.LICENSE\&quot; \\\n    --exclude \&quot;example\&quot;\n\nrm -rf files/jasmine-core\nmkdir -p files/jasmine-core\nif [ ! -f \&quot;jasmine-core-$JASMINE_CORE_VERSION.tgz\&quot; ]; then\n    npm pack jasmine-core@$JASMINE_CORE_VERSION\nfi\ntar xfzv jasmine-core-$JASMINE_CORE_VERSION.tgz \\\n    -C files/jasmine-core \\\n    --strip-components=1 \\\n    --wildcards \&quot;*/lib/*.js\&quot; \&quot;*/lib/*.css\&quot; \&quot;*/*.LICENSE\&quot; \\\n    --exclude \&quot;example\&quot;\n&quot;,
             &quot;type&quot;: &quot;.sh&quot;
         }
