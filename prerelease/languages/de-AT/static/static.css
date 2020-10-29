@@ -1800,9 +1800,6 @@ a.tc-tiddlylink:hover {
 ** Import table
 */.tc-import-table {
 	width: 100%;
-}input.tc-import-rename {
-	width: 85%;
-	margin-right: 0.5em;
 }/*
 ** Alerts
 */.tc-alerts {
@@ -2286,6 +2283,19 @@ a.tc-tiddlylink:hover {
 ** Utility classes for SVG icons
 */.tc-fill-background {
 	fill: #ffffff;
+}/*
+** Flexbox utility classes
+*/.tc-flex {
+	display: -webkit-flex;
+	display: flex;
+}.tc-flex-column {
+	flex-direction: column;
+}.tc-flex-row {
+	flex-direction: row;
+}.tc-flex-grow-1 {
+	flex-grow: 1;
+}.tc-flex-grow-2 {
+	flex-grow: 2;
 }/*
 ** Other utility classes
 */.tc-small-gap {
