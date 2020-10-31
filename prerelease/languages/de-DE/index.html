@@ -183,8 +183,8 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
 
 &lt;&lt;list-links filter:&quot;[tag{!!title}]&quot;&gt;&gt;</pre>
 </div>
-<div commit="655501140b21027acc7d368ea54cb657872b6b15" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 655501140b21027acc7d368ea54cb657872b6b15 of https://github.com/Jermolene/TiddlyWiki5 at 2020-10-29 13:02:41 UTC
+<div commit="c01e9cef12c88acc9c3013c59738604a5cca00d7" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit c01e9cef12c88acc9c3013c59738604a5cca00d7 of https://github.com/Jermolene/TiddlyWiki5 at 2020-10-31 13:22:49 UTC
 </pre>
 </div>
 <div created="20140909085347212" modified="20140909085346177" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home" type="text/vnd.tiddlywiki">
@@ -6880,7 +6880,7 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
         },
         &quot;$:/core/save/all-external-js&quot;: {
             &quot;title&quot;: &quot;$:/core/save/all-external-js&quot;,
-            &quot;text&quot;: &quot;\\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]\n\\define saveTiddlerFilter()\n[is[tiddler]] -[prefix[$:/state/popup/]] -[prefix[$:/HistoryList]] -[status[pending]plugin-type[import]] -[[$:/core]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] +[sort[title]] $(publishFilter)$\n\\end\n{{$:/core/templates/tiddlywiki5-external-js.html}}\n&quot;
+            &quot;text&quot;: &quot;\\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]\n\\define saveTiddlerFilter()\n[is[tiddler]] -[prefix[$:/state/popup/]] -[prefix[$:/temp/]] -[prefix[$:/HistoryList]] -[status[pending]plugin-type[import]] -[[$:/core]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] +[sort[title]] $(publishFilter)$\n\\end\n{{$:/core/templates/tiddlywiki5-external-js.html}}\n&quot;
         },
         &quot;$:/core/templates/tiddlywiki5.js&quot;: {
             &quot;title&quot;: &quot;$:/core/templates/tiddlywiki5.js&quot;,
@@ -6928,7 +6928,7 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
         },
         &quot;$:/core/save/all&quot;: {
             &quot;title&quot;: &quot;$:/core/save/all&quot;,
-            &quot;text&quot;: &quot;\\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]\n\\define saveTiddlerFilter()\n[is[tiddler]] -[prefix[$:/state/popup/]] -[prefix[$:/HistoryList]] -[status[pending]plugin-type[import]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] +[sort[title]] $(publishFilter)$\n\\end\n{{$:/core/templates/tiddlywiki5.html}}\n&quot;
+            &quot;text&quot;: &quot;\\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]\n\\define saveTiddlerFilter()\n[is[tiddler]] -[prefix[$:/state/popup/]] -[prefix[$:/temp/]] -[prefix[$:/HistoryList]] -[status[pending]plugin-type[import]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] +[sort[title]] $(publishFilter)$\n\\end\n{{$:/core/templates/tiddlywiki5.html}}\n&quot;
         },
         &quot;$:/core/save/empty&quot;: {
             &quot;title&quot;: &quot;$:/core/save/empty&quot;,
@@ -13813,24 +13813,6 @@ $src$
 Benutzer Stylesheets in diesem Wiki: 
 
 &lt;&lt;list-links &quot;[tag[$:/tags/Stylesheet]]&quot;&gt;&gt;</pre>
-</div>
-<div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
-<pre>{
-    &quot;tiddlers&quot;: {
-        &quot;$:/info/browser&quot;: {
-            &quot;title&quot;: &quot;$:/info/browser&quot;,
-            &quot;text&quot;: &quot;no&quot;
-        },
-        &quot;$:/info/node&quot;: {
-            &quot;title&quot;: &quot;$:/info/node&quot;,
-            &quot;text&quot;: &quot;yes&quot;
-        },
-        &quot;$:/info/startup-timestamp&quot;: {
-            &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20201029130340625&quot;
-        }
-    }
-}</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/snowwhite" description="Centralises the story river" name="Centralised" plugin-type="theme" title="$:/themes/tiddlywiki/centralised" type="application/json" version="5.1.23-prerelease">
 <pre>{
