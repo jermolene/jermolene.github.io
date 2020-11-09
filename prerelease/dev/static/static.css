@@ -998,7 +998,9 @@ a.tc-tiddlylink:hover {
 	fill: #bbb;
 }.tc-topbar button:hover svg {
 	fill: #4e432f;
-}.tc-sidebar-header {
+}@media (max-width: 959px) {.tc-show-sidebar-btn svg.tc-image-chevron-left, .tc-hide-sidebar-btn svg.tc-image-chevron-right {
+		transform: rotate(-90deg);
+	}}.tc-sidebar-header {
 	color: #9f8860;
 	fill: #9f8860;
 }.tc-sidebar-header .tc-title a.tc-tiddlylink-resolves {
@@ -1041,7 +1043,10 @@ a.tc-tiddlylink:hover {
 		padding: 14px;
 		min-height: 32px;
 		margin-top: 0px;
-	}.tc-story-river {
+		transition:  min-height 400ms ease-in-out, padding-top 400ms ease-in-out, padding-bottom 400ms ease-in-out;
+	}
+	
+	.tc-story-river {
 		position: relative;
 		padding: 0;
 	}
@@ -2275,6 +2280,7 @@ a.tc-tiddlylink:hover {
 }.tc-word-break {
 	word-break: break-all;
 }
+
 
 /* Left will inherit from right (so we don't need to duplicate code */
 .github-fork-ribbon {
