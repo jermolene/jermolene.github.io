@@ -1074,6 +1074,9 @@ a.tc-tiddlylink:hover {
 		top: 0px;
 		width: 650px;
 		padding: 42px 42px 42px 42px;
+	}.tc-story-river.tc-static-story-river {
+		margin-right: 0;
+		padding-right: 42px;
 	}}@media print {body.tc-body {
 		background-color: transparent;
 	}.tc-sidebar-header, .tc-topbar {

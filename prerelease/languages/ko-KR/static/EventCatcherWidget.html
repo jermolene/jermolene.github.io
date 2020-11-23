@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.23-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>EventCatcherWidget: 티들리위키 — 줄 없는 개인 웹 공책</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">이 문서는 <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/languages/ko-KR/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/languages/ko-KR/</a>에서 티들리위키의 정적 HTML 표현의 일부입니다</div></div>
+</p>
+<section class="tc-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Widgets" data-tags="Widgets" data-tiddler-title="EventCatcherWidget"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="더 보기" class="tc-btn-invisible" title="더 많은 동작을 봅니다"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="편집" class="tc-btn-invisible" title="이 티들러를 편집합니다"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="닫기" class="tc-btn-invisible" title="이 티들러를 닫습니다"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+
+EventCatcherWidget
+
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>2020년 11월 23일 오후 2:31</div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Widgets
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div>
+</div>
+
+
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The event catcher widget traps <a class="tc-tiddlylink tc-tiddlylink-resolves" href="JavaScript.html">JavaScript</a> events dispatched within its child content, and allows invoking a series of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> in response to the events. </p><p>In order for the events to be trapped they must:</p><ul><li>be of the type specified as a parameter to the event catcher widget.</li><li>arise within a DOM node matching the selector specified as a parameter to the widget.</li></ul><p>Use of the event catcher widget is useful when using large numbers of other trigger widgets such as the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a> is causing performance problems. The workflow it enables is akin to what is referred to as &quot;event delegation&quot; in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="JavaScript.html">JavaScript</a> parlance. </p><p><em>This is an advanced widget intended to be used by those familiar with HTML, CSS and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="JavaScript.html">JavaScript</a>.</em></p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$eventcatcher&gt;</code> widget is displayed normally.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">type</td><td align="left">The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="JavaScript.html">JavaScript</a> event type to be trapped, for example &quot;click&quot;, or &quot;dblclick&quot;</td></tr><tr class="evenRow"><td align="left">selector</td><td align="left">A CSS selector. Only events originating inside a DOM node with this selector will be trapped.</td></tr><tr class="oddRow"><td align="left">actions</td><td align="left">Action strings to be invoked when a matching event is trapped</td></tr><tr class="evenRow"><td align="left">class</td><td align="left">An optional CSS class name to be assigned to the HTML element</td></tr><tr class="oddRow"><td align="left">tag</td><td align="left">Optional. The html element the widget creates to capture the events, defaults to:<br>» <code>span</code> when parsed in inline-mode<br>» <code>div</code> when parsed in block-mode</td></tr></tbody></table><h1 class="">Variables</h1><p>The following variables are made available to the actions:</p><table><tbody><tr class="evenRow"><th align="left">Variables</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left"><code>dom-*</code></td><td align="left">All DOM attributes of the node matching the given selector are made available as variables, with the prefix <code>dom-</code></td></tr><tr class="evenRow"><td align="left"><code>modifier</code></td><td align="left">The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="modifier%2520Variable.html">modifier Variable</a> contains the Modifier Key held during the event (can be &quot;normal&quot;, &quot;ctrl&quot;, &quot;shift&quot;, &quot;alt&quot; or combinations thereof)</td></tr><tr class="oddRow"><td><code>event-mousebutton</code></td><td align="left">The mouse button (if any) used to trigger the event (can be &quot;left&quot;, &quot;right&quot; or &quot;middle&quot;). Note that not all event types support the mousebutton property</td></tr><tr class="evenRow"><td><code>tv-popup-coords</code></td><td align="left">A co-ordinate string that can be used with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionPopupWidget.html">ActionPopupWidget</a> to trigger a popup at the DOM node matching the selector where the event originated</td></tr><tr class="oddRow"><td><code>tv-selectednode-posx</code></td><td align="left"><code>x</code> offset position of the selected DOM node</td></tr><tr class="evenRow"><td><code>tv-selectednode-posy</code></td><td align="left"><code>y</code> offset position of the selected DOM node</td></tr><tr class="oddRow"><td><code>tv-selectednode-width</code></td><td align="left"><code>offsetWidth</code> of the selected DOM node</td></tr><tr class="evenRow"><td><code>tv-selectednode-height</code></td><td align="left"><code>offsetHeight</code> of the selected DOM node</td></tr><tr class="oddRow"><td><code>event-fromselected-posx</code></td><td align="left"><code>x</code> position of the event relative to the selected DOM node</td></tr><tr class="evenRow"><td><code>event-fromselected-posy</code></td><td align="left"><code>y</code> position of the event relative to the selected DOM node</td></tr><tr class="oddRow"><td><code>event-fromcatcher-posx</code></td><td align="left"><code>x</code> position of the event relative to the event catcher DOM node</td></tr><tr class="evenRow"><td><code>event-fromcatcher-posy</code></td><td align="left"><code>y</code> position of the event relative to the event catcher DOM node</td></tr></tbody></table><h1 class="">Example</h1><p>This example uses the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionLogWidget.html">ActionLogWidget</a> and will log the <code>data-item-id</code> attribute of the clicked DOM node to the browser's <a class="tc-tiddlylink tc-tiddlylink-resolves" href="JavaScript.html">JavaScript</a> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Web%2520Developer%2520Tools.html">console</a></p><pre><code>\define myactions()
+&lt;$action-log item=&lt;&lt;dom-data-item-id&gt;&gt;/&gt;
+\end
+
+&lt;$eventcatcher type=&quot;click&quot; selector=&quot;.item&quot; actions=&lt;&lt;myactions&gt;&gt; tag=&quot;div&quot;&gt;
+
+&lt;div class=&quot;item&quot; data-item-id=&quot;item1&quot;&gt;
+Click events here will be trapped
+&lt;/div&gt;
+
+&lt;div class=&quot;item&quot; data-item-id=&quot;item2&quot;&gt;
+And here too
+&lt;/div&gt;
+
+&lt;div data-item-id=&quot;item3&quot;&gt;
+Not here
+&lt;/div&gt;
+
+&lt;div class=&quot;item&quot; data-item-id=&quot;item4&quot;&gt;
+And here
+&lt;/div&gt;
+
+&lt;/$eventcatcher&gt;&quot;&quot;&quot;</code></pre></div>
+
+
+
+</div>
+
+</p>
+</section>
+</body>
+</html>
