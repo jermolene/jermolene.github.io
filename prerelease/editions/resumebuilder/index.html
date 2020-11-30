@@ -305,8 +305,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div commit="3406b98af62def252bcb0f7df8a72ed4b74818eb" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 3406b98af62def252bcb0f7df8a72ed4b74818eb of https://github.com/Jermolene/TiddlyWiki5 at 2020-11-30 18:49:40 UTC
+<div commit="fe8606759ebf1db50c57a2e779b086a6d7df2ae6" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit fe8606759ebf1db50c57a2e779b086a6d7df2ae6 of https://github.com/Jermolene/TiddlyWiki5 at 2020-11-30 18:58:23 UTC
 </pre>
 </div>
 <div created="20150719185223155" modified="20150719185226532" title="$:/config/DefaultSidebarTab">
@@ -12041,13 +12041,16 @@ $tw.utils.stringifyDate = function(value) {
 // Parse a date from a UTC YYYYMMDDHHMMSSmmm format string
 $tw.utils.parseDate = function(value) {
 	if(typeof value === "string") {
-		return new Date(Date.UTC(parseInt(value.substr(0,4),10),
+		var year = parseInt(value.substr(0,4),10),
+			d = new Date(Date.UTC(year,
 				parseInt(value.substr(4,2),10)-1,
 				parseInt(value.substr(6,2),10),
 				parseInt(value.substr(8,2)||"00",10),
 				parseInt(value.substr(10,2)||"00",10),
 				parseInt(value.substr(12,2)||"00",10),
 				parseInt(value.substr(14,3)||"000",10)));
+		  d.setUTCFullYear(year); // See https://stackoverflow.com/a/5870822
+		  return d;
 	} else if($tw.utils.isDate(value)) {
 		return value;
 	} else {
