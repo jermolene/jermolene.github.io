@@ -181,8 +181,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div commit="8ffe1389423440a67aa64aba9c6421fdcf951d33" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 8ffe1389423440a67aa64aba9c6421fdcf951d33 of https://github.com/Jermolene/TiddlyWiki5 at 2020-12-04 13:21:24 UTC
+<div commit="046746ba20d129e5f3f936627e8d7754c385d264" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 046746ba20d129e5f3f936627e8d7754c385d264 of https://github.com/Jermolene/TiddlyWiki5 at 2020-12-04 18:25:26 UTC
 </pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" name="Core" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.23-prerelease">
@@ -4993,6 +4993,12 @@ Error message and password prompt
         &quot;$:/core/modules/filterrunprefixes/or.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/filterrunprefixes/or.js&quot;,
             &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filterrunprefixes/or.js\ntype: application/javascript\nmodule-type: filterrunprefix\n\nEquivalent to a filter run with no prefix.\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter prefix function\n*/\nexports.or = function(operationSubFunction) {\n\treturn function(results,source,widget) {\n\t\t$tw.utils.pushTop(results,operationSubFunction(source,widget));\n\t};\n};\n\n})();\n&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;filterrunprefix&quot;
+        },
+        &quot;$:/core/modules/filterrunprefixes/reduce.js&quot;: {
+            &quot;title&quot;: &quot;$:/core/modules/filterrunprefixes/reduce.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filterrunprefixes/reduce.js\ntype: application/javascript\nmodule-type: filterrunprefix\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter prefix function\n*/\nexports.reduce = function(operationSubFunction) {\n\treturn function(results,source,widget) {\n\t\tif(results.length &gt; 0) {\n\t\t\tvar accumulator = \&quot;\&quot;;\n\t\t\tfor(var index=0; index&lt;results.length; index++) {\n\t\t\t\tvar title = results[index],\n\t\t\t\t\tlist = operationSubFunction($tw.wiki.makeTiddlerIterator([title]),{\n\t\t\t\t\t\tgetVariable: function(name) {\n\t\t\t\t\t\t\tswitch(name) {\n\t\t\t\t\t\t\t\tcase \&quot;currentTiddler\&quot;:\n\t\t\t\t\t\t\t\t\treturn \&quot;\&quot; + title;\n\t\t\t\t\t\t\t\tcase \&quot;accumulator\&quot;:\n\t\t\t\t\t\t\t\t\treturn \&quot;\&quot; + accumulator;\n\t\t\t\t\t\t\t\tcase \&quot;index\&quot;:\n\t\t\t\t\t\t\t\t\treturn \&quot;\&quot; + index;\n\t\t\t\t\t\t\t\tcase \&quot;revIndex\&quot;:\n\t\t\t\t\t\t\t\t\treturn \&quot;\&quot; +  (results.length - 1 - index);\n\t\t\t\t\t\t\t\tcase \&quot;length\&quot;:\n\t\t\t\t\t\t\t\t\treturn \&quot;\&quot; + results.length;\n\t\t\t\t\t\t\t\tdefault:\n\t\t\t\t\t\t\t\t\treturn widget.getVariable(name);\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t});\n\t\t\t\tif(list.length &gt; 0) {\n\t\t\t\t\taccumulator = \&quot;\&quot; + list[0];\n\t\t\t\t}\n\t\t\t}\n\t\t\tresults.splice(0,results.length);\n\t\t\tresults.push(accumulator);\t\n\t\t}\n\t}\n};\n\n})();&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;filterrunprefix&quot;
         },
@@ -10038,7 +10044,7 @@ KaTeX
 ImplementationNotes
 </pre>
 </div>
-<div created="20201204132211584" current-tiddler="HelloThere" modified="20201204132211584" title="$:/HistoryList" type="application/json">
+<div created="20201204182618192" current-tiddler="HelloThere" modified="20201204182618192" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;HelloThere&quot;
@@ -10244,7 +10250,7 @@ ImplementationNotes
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20201204132211421&quot;
+            &quot;text&quot;: &quot;20201204182618025&quot;
         }
     }
 }</pre>
