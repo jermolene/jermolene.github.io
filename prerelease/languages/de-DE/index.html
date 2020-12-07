@@ -183,8 +183,8 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
 
 &lt;&lt;list-links filter:&quot;[tag{!!title}]&quot;&gt;&gt;</pre>
 </div>
-<div commit="ce5d20b8fc72056a4c18b09a1135a5634e63888c" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit ce5d20b8fc72056a4c18b09a1135a5634e63888c of https://github.com/Jermolene/TiddlyWiki5 at 2020-12-07 15:56:00 UTC
+<div commit="a878d82c7a943695bed8dd2ed9df3b73b5ee3497" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit a878d82c7a943695bed8dd2ed9df3b73b5ee3497 of https://github.com/Jermolene/TiddlyWiki5 at 2020-12-07 16:01:02 UTC
 </pre>
 </div>
 <div title="$:/config/OriginalTiddlerPaths" type="application/json">
@@ -5138,13 +5138,13 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
         },
         &quot;$:/core/modules/filters/editiondescription.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/filters/editiondescription.js&quot;,
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/editiondescription.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator for returning the descriptions of the specified edition names\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.editiondescription = function(source,operator,options) {\n\tvar results = [],\n\t\teditionInfo = $tw.utils.getEditionInfo();\n\tif(editionInfo) {\n\t\tsource(function(tiddler,title) {\n\t\t\tif($tw.utils.hop(editionInfo,title)) {\n\t\t\t\tresults.push(editionInfo[title].description || \&quot;\&quot;);\t\t\t\t\n\t\t\t}\n\t\t});\n\t}\n\treturn results;\n};\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/editiondescription.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator for returning the descriptions of the specified edition names\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.editiondescription = function(source,operator,options) {\n\tvar results = [];\n\tif($tw.node) {\n\t\tvar editionInfo = $tw.utils.getEditionInfo();\n\t\tif(editionInfo) {\n\t\t\tsource(function(tiddler,title) {\n\t\t\t\tif($tw.utils.hop(editionInfo,title)) {\n\t\t\t\t\tresults.push(editionInfo[title].description || \&quot;\&quot;);\t\t\t\t\n\t\t\t\t}\n\t\t\t});\n\t\t}\n\t}\n\treturn results;\n};\n\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;filteroperator&quot;
         },
         &quot;$:/core/modules/filters/editions.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/filters/editions.js&quot;,
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/editions.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator for returning the names of the available editions in this wiki\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.editions = function(source,operator,options) {\n\tvar results = [],\n\t\teditionInfo = $tw.utils.getEditionInfo();\n\tif(editionInfo) {\n\t\t$tw.utils.each(editionInfo,function(info,name) {\n\t\t\tresults.push(name);\n\t\t});\n\t}\n\tresults.sort();\n\treturn results;\n};\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/editions.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator for returning the names of the available editions in this wiki\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.editions = function(source,operator,options) {\n\tvar results = [];\n\tif($tw.node) {\n\t\tvar editionInfo = $tw.utils.getEditionInfo();\n\t\tif(editionInfo) {\n\t\t\t$tw.utils.each(editionInfo,function(info,name) {\n\t\t\t\tresults.push(name);\n\t\t\t});\n\t\t}\n\t\tresults.sort();\n\t}\n\treturn results;\n};\n\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;filteroperator&quot;
         },
@@ -8714,7 +8714,7 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
             &quot;title&quot;: &quot;$:/core/ui/TiddlerInfo/Advanced&quot;,
             &quot;tags&quot;: &quot;$:/tags/TiddlerInfo&quot;,
             &quot;caption&quot;: &quot;{{$:/language/TiddlerInfo/Advanced/Caption}}&quot;,
-            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/TiddlerInfo/Advanced]!has[draft.of]]\&quot; variable=\&quot;listItem\&quot;&gt;\n&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt;/&gt;\n\n&lt;/$list&gt;\n&quot;
+            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/TiddlerInfo/Advanced]!has[draft.of]]\&quot; variable=\&quot;listItem\&quot;&gt;\n\n&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; mode=\&quot;block\&quot;/&gt;\n&lt;/$list&gt;\n&quot;
         },
         &quot;$:/core/ui/TiddlerInfo/Fields&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/TiddlerInfo/Fields&quot;,
@@ -8783,7 +8783,7 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
         &quot;$:/core/ui/ViewTemplate/plugin&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/ViewTemplate/plugin&quot;,
             &quot;tags&quot;: &quot;$:/tags/ViewTemplate&quot;,
-            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[all[current]has[plugin-type]] -[all[current]field:plugin-type[import]]\&quot;&gt;\n&lt;$set name=\&quot;plugin-type\&quot; value={{!!plugin-type}}&gt;\n&lt;$set name=\&quot;default-popup-state\&quot; value=\&quot;yes\&quot;&gt;\n&lt;$set name=\&quot;qualified-state\&quot; value=&lt;&lt;qualify \&quot;$:/state/plugin-info\&quot;&gt;&gt;&gt;\n{{||$:/core/ui/Components/plugin-info}}\n&lt;/$set&gt;\n&lt;/$set&gt;\n&lt;/$set&gt;\n&lt;/$list&gt;\n&quot;
+            &quot;text&quot;: &quot;&lt;$reveal tag=\&quot;div\&quot; class=\&quot;tc-tiddler-plugin-info\&quot; type=\&quot;nomatch\&quot; stateTitle=&lt;&lt;folded-state&gt;&gt; text=\&quot;hide\&quot; retain=\&quot;yes\&quot; animate=\&quot;yes\&quot;&gt;\n\n&lt;$list filter=\&quot;[all[current]has[plugin-type]] -[all[current]field:plugin-type[import]]\&quot;&gt;\n&lt;$set name=\&quot;plugin-type\&quot; value={{!!plugin-type}}&gt;\n&lt;$set name=\&quot;default-popup-state\&quot; value=\&quot;yes\&quot;&gt;\n&lt;$set name=\&quot;qualified-state\&quot; value=&lt;&lt;qualify \&quot;$:/state/plugin-info\&quot;&gt;&gt;&gt;\n{{||$:/core/ui/Components/plugin-info}}\n&lt;/$set&gt;\n&lt;/$set&gt;\n&lt;/$set&gt;\n&lt;/$list&gt;\n&lt;/$reveal&gt;&quot;
         },
         &quot;$:/core/ui/ViewTemplate/subtitle&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/ViewTemplate/subtitle&quot;,
