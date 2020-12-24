@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.23" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>sortsub: TiddlyWiki — un carnet de notes web personnel et non linéaire
+</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Filter%20Operators tc-tagged-Field%20Operators tc-tagged-Order%20Operators tc-tagged-Negatable%20Operators" data-tags="[[Filter Operators]] [[Field Operators]] [[Order Operators]] [[Negatable Operators]]" data-tiddler-title="sortsub Operator"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+
+sortsub Operator
+
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>24 avril 2020 à 16h01</div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Field Operators
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Filtre, Opérateurs
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Negatable Operators
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Order Operators
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div>
+</div>
+
+
+
+
+
+<table class="doc-table before-tiddler-body">
+
+
+
+<tr><th align="left">purpose</th><td>sort the input by the result of evaluating a subfilter for each item</td></tr>
+
+
+
+
+
+<tr><th align="left"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Syntax.html">input</a></th><td>a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520Selection.html">selection of titles</a></td></tr>
+
+
+
+
+
+
+
+
+
+
+
+
+<tr><th align="left"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Step.html">suffix</a></th><td><code class="doc-place">T</code> = the type used for the comparison (string, number, integer, date, version), defaulting to string</td></tr>
+
+
+
+
+
+
+
+<tr><th align="left"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Parameter.html">parameter</a></th><td><code class="doc-place">S</code> = a subfilter to be evaluated</td></tr>
+
+
+
+
+
+
+<tr><th align="left">output</th><td>the input, sorted into ascending order by the result of evaluating subfilter <code class="doc-param">S</code></td></tr>
+
+
+
+
+
+<tr><th align="left"><code>!</code> output</th><td>the input, sorted into reverse order by the result of evaluating subfilter <code class="doc-param">S</code></td></tr>
+
+
+
+</table>
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><p>Each item in the list of input titles is passed to the subfilter in turn. The subfilter transforms the input titles into the form needed for sorting. For example, the subfilter <code>[length[]]</code> transforms each input title in the number representing its length, and thus sorts the input titles according to their length.</p><p>Note that within the subfilter, the &quot;currentTiddler&quot; variable is set to the title of the tiddler being processed. This permits subfilters like <code>[{!!value}divide{!!cost}]</code> to be used for computation.</p><p>The suffix <code class="doc-place">T</code> determines how the items are compared and can be:</p><ul><li>&quot;string&quot; (the default)</li><li>&quot;number&quot; - invalid numbers are interpreted as zero</li><li>&quot;integer&quot; - invalid integers are interpreted as zero</li><li>&quot;date&quot; - invalid dates are interpreted as 1st January 1970</li><li>&quot;version&quot; - invalid versions are interpreted as &quot;v0.0.0&quot;</li></ul><p>Note that subfilters should return the same number of items that they are passed. Any missing entries will be treated as zero or the empty string. In particular, when retrieving the value of a field with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="get%2520Operator.html">get Operator</a> it is helpful to guard against a missing field value using the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="else%2520Operator.html">else Operator</a>. For example <code>[get[myfield]else[default-value]...</code>.</p><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="sortsub%2520Operator%2520(Examples).html">Examples</a></p></div>
+
+<div class="tc-tiddler-plugin-info tc-reveal"><p>
+</p></div>
+</div>
+
+</p>
+</section>
+</body>
+</html>
+

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.22" />
+<meta name="tiddlywiki-version" content="5.1.23" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -16,7 +16,7 @@
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">이 문서는 <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/languages/ko-KR/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/languages/ko-KR/</a>에서 티들리위키의 정적 HTML 표현의 일부입니다</div></div>
 </p>
-<section class="tc-story-river">
+<section class="tc-story-river tc-static-story-river">
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Concepts tc-tagged-Reference" data-tags="Concepts Reference" data-tiddler-title="Widgets"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -79,6 +79,12 @@ color:#333333;">
 <div class="tc-tiddler-body tc-reveal"><p>TiddlyWiki's display is driven by an underlying collection of <dfn class="doc-def">widgets</dfn>. These are organised into a tree structure: each widget has a parent widget and zero or more child widgets.</p><p>TiddlyWiki generates this <dfn class="doc-def">widget tree</dfn> by parsing the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> of tiddlers. Each component of the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> syntax, including even the trivial case of ordinary text, generates a corresponding widget. The widget tree is an intermediate representation that is subsequently rendered into the actual display.</p><p>Widgets are analogous to elements in an HTML document. Indeed, HTML tags in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> generate dedicated <dfn class="doc-def">element widgets</dfn>.</p><p>Each class of widget contributes a specific ability to the overall functionality, such as the ability to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ImageWidget.html">display an image</a> or <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">a button</a>, to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="MacroCallWidget.html">call a macro</a> or <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TranscludeWidget.html">transclude text from elsewhere</a>, or to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">mark a piece of text as a heading</a>.</p><p>The more specialised widgets use a general-purpose <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widgets%2520in%2520WikiText.html">widget syntax</a> as their only possible <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> representation.</p><p>The following classes of widget are built into the core:</p><p><ul class="">
 
 <li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionConfirmWidget.html">
+action-confirm
+</a>
+</li>
+
+<li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionCreateTiddlerWidget.html">
 action-createtiddler
 </a>
@@ -99,6 +105,12 @@ action-deletetiddler
 <li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionListopsWidget.html">
 action-listops
+</a>
+</li>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionLogWidget.html">
+action-log
 </a>
 </li>
 
@@ -221,6 +233,16 @@ entity
 </li>
 
 <li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="EventCatcherWidget.html">
+
+
+EventCatcherWidget
+
+
+</a>
+</li>
+
+<li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="FieldManglerWidget.html">
 fieldmangler
 </a>
@@ -265,6 +287,16 @@ link
 <li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ListWidget.html">
 list
+</a>
+</li>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="LogWidget.html">
+
+
+LogWidget
+
+
 </a>
 </li>
 
@@ -366,11 +398,12 @@ wikify
 
 </ul></p></div>
 
-
-
+<div class="tc-tiddler-plugin-info tc-reveal"><p>
+</p></div>
 </div>
 
 </p>
 </section>
 </body>
 </html>
+

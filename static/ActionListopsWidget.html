@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.22" />
+<meta name="tiddlywiki-version" content="5.1.23" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -16,8 +16,8 @@
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
-<section class="tc-story-river">
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-ActionWidgets tc-tagged-Widgets" data-tags="ActionWidgets Widgets" data-tiddler-title="ActionListopsWidget"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span></span><span><span class="tc-tiddler-title-icon" style="fill:;"></span><h2 class="tc-title">ActionListopsWidget</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-ActionWidgets tc-tagged-Widgets" data-tags="ActionWidgets Widgets" data-tiddler-title="ActionListopsWidget"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span></span><span><h2 class="tc-title">ActionListopsWidget</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>28th December 2015 at 8:33am</div></div><div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 <span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
@@ -61,6 +61,10 @@ Widgets
 <td>append a range of items from an array to the list </td>
 <td align="center"></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="cycle%2520Operator.html">cycle</a></td>
+<td>toggle in the input, the titles specified in the first operand in a cyclical manner </td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="insertbefore%2520Operator.html">insertbefore</a></td>
 <td>insert an item <code class="doc-place">T</code> into a list immediately before an item <code class="doc-place">B</code> </td>
 <td align="center"></td>
@@ -99,6 +103,10 @@ Widgets
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="sortby%2520Operator.html">sortby</a></td>
 <td>sort the current list in the order of the list referenced in the operand </td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="toggle%2520Operator.html">toggle</a></td>
+<td>toggle the title specified in the operand in the input </td>
 <td align="center"></td>
 </tr>
 </table></p><h1 class="">Examples</h1><p>In this example we shall populate and then clear a list in an ordinary field (myfield) of this tiddler (the default.)</p><div class="doc-example"><p><div style="position: relative;">
@@ -223,11 +231,12 @@ Remove User Tags
 Clear Tags
 </button></p><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widgets.html">Widgets</a></div></div></div>
 
-
-
+<div class="tc-tiddler-plugin-info tc-reveal"><p>
+</p></div>
 </div>
 
 </p>
 </section>
 </body>
 </html>
+

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.22" />
+<meta name="tiddlywiki-version" content="5.1.23" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -17,7 +17,7 @@
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
-<section class="tc-story-river">
+<section class="tc-story-river tc-static-story-river">
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Widgets" data-tags="Widgets" data-tiddler-title="SelectWidget"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -245,6 +245,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="Customise TiddlyWiki">Customise TiddlyWiki</option>
 
+<option value="cycle Operator">cycle Operator</option>
+
 <option value="data-tags-styles">data-tags-styles</option>
 
 <option value="datauri Macro">datauri Macro</option>
@@ -252,6 +254,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="Date Operators">Date Operators</option>
 
 <option value="days Operator">days Operator</option>
+
+<option value="Debugging Widgets">Debugging Widgets</option>
 
 <option value="decodehtml Operator">decodehtml Operator</option>
 
@@ -291,6 +295,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="enlist Operator">enlist Operator</option>
 
+<option value="enlist-input Operator">enlist-input Operator</option>
+
 <option value="escapecss Operator">escapecss Operator</option>
 
 <option value="escaperegexp Operator">escaperegexp Operator</option>
@@ -321,6 +327,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="fields Operator">fields Operator</option>
 
+<option value="filter Operator">filter Operator</option>
+
 <option value="Filter Operators">Filter Operators</option>
 
 <option value="Filter Syntax">Filter Syntax</option>
@@ -338,6 +346,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="floor Operator">floor Operator</option>
 
 <option value="Font Awesome 5">Font Awesome 5</option>
+
+<option value="format Operator">format Operator</option>
 
 <option value="Formatting text in TiddlyWiki">Formatting text in TiddlyWiki</option>
 
@@ -391,8 +401,6 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="join Operator">join Operator</option>
 
-<option value="Journal">Journal</option>
-
 <option value="Language">Language</option>
 
 <option value="Languages">Languages</option>
@@ -428,6 +436,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="Listops Operators">Listops Operators</option>
 
 <option value="ListWidget">ListWidget</option>
+
+<option value="log Operator">log Operator</option>
 
 <option value="lowercase Operator">lowercase Operator</option>
 
@@ -493,6 +503,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="Order Operators">Order Operators</option>
 
+<option value="pad Operator">pad Operator</option>
+
 <option value="PHP">PHP</option>
 
 <option value="picture">picture</option>
@@ -510,6 +522,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="Plugins">Plugins</option>
 
 <option value="plugintiddlers Operator">plugintiddlers Operator</option>
+
+<option value="power Operator">power Operator</option>
 
 <option value="precision Operator">precision Operator</option>
 
@@ -530,6 +544,12 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="putlast Operator">putlast Operator</option>
 
 <option value="qualify Macro">qualify Macro</option>
+
+<option value="RadioWidget">RadioWidget</option>
+
+<option value="RangeWidget">RangeWidget</option>
+
+<option value="reduce Operator">reduce Operator</option>
 
 <option value="Reducing Mathematics Operators">Reducing Mathematics Operators</option>
 
@@ -587,6 +607,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="search Operator">search Operator</option>
 
+<option value="search-replace Operator">search-replace Operator</option>
+
 <option value="Second">Second</option>
 
 <option value="SecondThree">SecondThree</option>
@@ -599,6 +621,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="shadowsource Operator">shadowsource Operator</option>
 
+<option value="shopping">shopping</option>
+
 <option value="sign Operator">sign Operator</option>
 
 <option value="sort Operator">sort Operator</option>
@@ -608,6 +632,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="sortby Operator">sortby Operator</option>
 
 <option value="sortcs Operator">sortcs Operator</option>
+
+<option value="sortsub Operator">sortsub Operator</option>
 
 <option value="Special Operators">Special Operators</option>
 
@@ -682,6 +708,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="title Operator">title Operator</option>
 
 <option value="titlecase Operator">titlecase Operator</option>
+
+<option value="toggle Operator">toggle Operator</option>
 
 <option value="Transclusion in WikiText">Transclusion in WikiText</option>
 
@@ -924,11 +952,12 @@ Every time the user selects a new value in the menu, the selected value is writt
 </select><br>
 </p></div></p></div>
 
-
-
+<div class="tc-tiddler-plugin-info tc-reveal"><p>
+</p></div>
 </div>
 
 </p>
 </section>
 </body>
 </html>
+

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.22" />
+<meta name="tiddlywiki-version" content="5.1.23" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -16,7 +16,7 @@
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
-<section class="tc-story-river">
+<section class="tc-story-river tc-static-story-river">
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Filters" data-tags="Filters" data-tiddler-title="Filter Operators"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -98,6 +98,11 @@ color:#333333;">
 <td align="center"></td>
 <td align="center"><code>!</code></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="duplicateslugs%2520Operator.html">duplicateslugs</a></td>
+<td>returns each item in the list in a human-readable form for use in URLs or filenames</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="each%2520Operator.html">each</a></td>
 <td>select one of each group of input titles by field</td>
 <td align="center"></td>
@@ -127,6 +132,11 @@ color:#333333;">
 <td>select all field names of the input titles</td>
 <td align="center"></td>
 <td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="filter%2520Operator.html">filter</a></td>
+<td>apply a subfilter to each input title and return the titles that return a non-empty result from the subfilter</td>
+<td align="center"></td>
+<td align="center"><code>!</code></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="get%2520Operator.html">get</a></td>
 <td>select all values of a field in the input titles</td>
@@ -208,6 +218,11 @@ color:#333333;">
 <td align="center"></td>
 <td align="center"><code>!</code></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="reduce%2520Operator.html">reduce</a></td>
+<td>apply a subfilter to each input title in turn, accumulating a single value</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="regexp%2520Operator.html">regexp</a></td>
 <td>filter the input by pattern-matched field</td>
 <td align="center"></td>
@@ -225,6 +240,11 @@ color:#333333;">
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="sentencecase%2520Operator.html">sentencecase</a></td>
 <td>returns each item in the list with the first letter capitalised</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="slugify%2520Operator.html">slugify</a></td>
+<td>returns each item in the list in a human-readable form for use in URLs or filenames</td>
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
@@ -255,11 +275,6 @@ color:#333333;">
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="titlecase%2520Operator.html">titlecase</a></td>
 <td>returns each item in the list with each word capitalised</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr><tr>
-<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="trim%2520Operator.html">trim</a></td>
-<td>returns each item in the list with whitespace trimmed from the start and end</td>
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
@@ -364,6 +379,11 @@ color:#333333;">
 <td>sort the input by text field, treating upper and lower case as different</td>
 <td align="center"></td>
 <td align="center"><code>!</code></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="sortsub%2520Operator.html">sortsub</a></td>
+<td>sort the input by the result of evaluating a subfilter for each item</td>
+<td align="center"></td>
+<td align="center"><code>!</code></td>
 </tr>
 <tr class="doc-table-subheading"><th align="center" colspan="4">Listops Operators</th></tr>
 <tr>
@@ -379,6 +399,11 @@ color:#333333;">
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="append%2520Operator.html">append</a></td>
 <td>append a range of items from an array to the list</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="cycle%2520Operator.html">cycle</a></td>
+<td>toggle in the input, the titles specified in the first operand in a cyclical manner</td>
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
@@ -431,6 +456,11 @@ color:#333333;">
 <td>sort the current list in the order of the list referenced in the operand</td>
 <td align="center"></td>
 <td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="toggle%2520Operator.html">toggle</a></td>
+<td>toggle the title specified in the operand in the input</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr class="doc-table-subheading"><th align="center" colspan="4">String Operators</th></tr>
 <tr>
@@ -474,6 +504,11 @@ color:#333333;">
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="enlist-input%2520Operator.html">enlist-input</a></td>
+<td>select titles by interpreting each input title as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520List.html">title list</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="escapecss%2520Operator.html">escapecss</a></td>
 <td>apply CSS escaping to a selection of titles through the CSS.escape() method / operation</td>
 <td align="center"></td>
@@ -484,8 +519,18 @@ color:#333333;">
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="format%2520Operator.html">format</a></td>
+<td>format the input string according to one of supported formats</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="jsonstringify%2520Operator.html">jsonstringify</a></td>
 <td>apply JSON string encoding to a string</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="pad%2520Operator.html">pad</a></td>
+<td>returns each item in the list padded to the specified length</td>
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
@@ -504,6 +549,11 @@ color:#333333;">
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="search-replace%2520Operator.html">search-replace</a></td>
+<td>returns each item in the list, replacing within each title the string specified by the first parameter with the second parameter</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="splitbefore%2520Operator.html">splitbefore</a></td>
 <td>select a delimited prefix from each input title</td>
 <td align="center"></td>
@@ -518,6 +568,11 @@ color:#333333;">
 <td>filter the input titles by how they end</td>
 <td align="center"></td>
 <td align="center"><code>!</code></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="trim%2520Operator.html">trim</a></td>
+<td>returns each item in the list with whitespace, or a given character string, trimmed from the start and/or end</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr class="doc-table-subheading"><th align="center" colspan="4">Mathematics Operators</th></tr>
 <tr>
@@ -556,6 +611,11 @@ color:#333333;">
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="log%2520Operator.html">log</a></td>
+<td>treating each input title as a number, return its logarithm with base equal to the numeric value of the operand if specified, otherwise base <code>e</code></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="max%2520Operator.html">max</a></td>
 <td>treating each input title as a number, take the maximum of its value and the numeric value of the operand</td>
 <td align="center"></td>
@@ -583,6 +643,11 @@ color:#333333;">
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="negate%2520Operator.html">negate</a></td>
 <td>calculate the negation of a list of numbers</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="power%2520Operator.html">power</a></td>
+<td>treating each input title as a number, raise it to the power of the numeric value of the operand</td>
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
@@ -713,11 +778,12 @@ color:#333333;">
 </table></p><p>A typical step is written as <code>[operator[parameter]]</code>, although not all of the operators need a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Parameter.html">parameter</a>.</p><p>Most steps process the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520Selection.html">selection of titles</a> that are supplied as their input, but a few <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Selection%2520Constructors.html">construct an entirely new selection</a> instead. For the exact rules, see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Syntax.html">Filter Syntax</a>.
 </p></div>
 
-
-
+<div class="tc-tiddler-plugin-info tc-reveal"><p>
+</p></div>
 </div>
 
 </p>
 </section>
 </body>
 </html>
+
