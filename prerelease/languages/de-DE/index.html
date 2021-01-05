@@ -186,8 +186,8 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
 
 &lt;&lt;list-links filter:&quot;[tag{!!title}]&quot;&gt;&gt;</pre>
 </div>
-<div commit="87b9dbcda139f9b0b81b846b4594c58f585f5e81" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 87b9dbcda139f9b0b81b846b4594c58f585f5e81 of https://github.com/Jermolene/TiddlyWiki5 at 2021-01-05 17:37:03 UTC
+<div commit="e280f89ca5dc78ba384a3a1108c88bd1ff31f25c" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit e280f89ca5dc78ba384a3a1108c88bd1ff31f25c of https://github.com/Jermolene/TiddlyWiki5 at 2021-01-05 17:47:30 UTC
 </pre>
 </div>
 <div title="$:/config/OriginalTiddlerPaths" type="application/json">
@@ -5333,7 +5333,7 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
         },
         &quot;$:/core/modules/filters/links.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/filters/links.js&quot;,
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/links.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator for returning all the links from a tiddler\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.links = function(source,operator,options) {\n\tvar results = [];\n\tsource(function(tiddler,title) {\n\t\t$tw.utils.pushTop(results,options.wiki.getTiddlerLinks(title));\n\t});\n\treturn results;\n};\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/links.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator for returning all the links from a tiddler\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.links = function(source,operator,options) {\n\tvar results = new $tw.utils.LinkedList();\n\tsource(function(tiddler,title) {\n\t\tresults.pushTop(options.wiki.getTiddlerLinks(title));\n\t});\n\treturn results.toArray();\n};\n\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;filteroperator&quot;
         },
