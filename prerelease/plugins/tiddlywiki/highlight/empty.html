@@ -186,8 +186,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div commit="65ffe96cc2be7e0a441daf69179850409c37de20" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 65ffe96cc2be7e0a441daf69179850409c37de20 of https://github.com/Jermolene/TiddlyWiki5 at 2021-01-13 10:20:00 UTC
+<div commit="ca95f1069fae5223022ad3756366aeab79c9d48f" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit ca95f1069fae5223022ad3756366aeab79c9d48f of https://github.com/Jermolene/TiddlyWiki5 at 2021-01-13 11:50:05 UTC
 </pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" name="Core" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.24-prerelease">
@@ -5741,13 +5741,13 @@ Error message and password prompt
         },
         &quot;$:/core/modules/parsers/wikiparser/rules/commentblock.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/parsers/wikiparser/rules/commentblock.js&quot;,
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/parsers/wikiparser/rules/commentblock.js\ntype: application/javascript\nmodule-type: wikirule\n\nWiki text block rule for HTML comments. For example:\n\n```\n&lt;!-- This is a comment --&gt;\n```\n\nNote that the syntax for comments is simplified to an opening \&quot;&lt;!--\&quot; sequence and a closing \&quot;--&gt;\&quot; sequence -- HTML itself implements a more complex format (see http://ostermiller.org/findhtmlcomment.html)\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nexports.name = \&quot;commentblock\&quot;;\nexports.types = {block: true};\n\nexports.init = function(parser) {\n\tthis.parser = parser;\n\tthis.matchRegExp = /&lt;!--/mg;\n\tthis.endMatchRegExp = /--&gt;/mg;\n};\n\nexports.findNextMatch = function(startPos) {\n\tthis.matchRegExp.lastIndex = startPos;\n\tthis.match = this.matchRegExp.exec(this.parser.source);\n\tif(this.match) {\n\t\tthis.endMatchRegExp.lastIndex = startPos + this.match[0].length;\n\t\tthis.endMatch = this.endMatchRegExp.exec(this.parser.source);\n\t\tif(this.endMatch) {\n\t\t\treturn this.match.index;\n\t\t}\n\t}\n\treturn undefined;\n};\n\nexports.parse = function() {\n\t// Move past the match\n\tthis.parser.pos = this.endMatchRegExp.lastIndex;\n\t// Don't return any elements\n\treturn [];\n};\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/parsers/wikiparser/rules/commentblock.js\ntype: application/javascript\nmodule-type: wikirule\n\nWiki text block rule for HTML comments. For example:\n\n```\n&lt;!-- This is a comment --&gt;\n```\n\nNote that the syntax for comments is simplified to an opening \&quot;&lt;!--\&quot; sequence and a closing \&quot;--&gt;\&quot; sequence -- HTML itself implements a more complex format (see http://ostermiller.org/findhtmlcomment.html)\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nexports.name = \&quot;commentblock\&quot;;\nexports.types = {block: true};\n\nexports.init = function(parser) {\n\tthis.parser = parser;\n\tthis.matchRegExp = /&lt;!--/mg;\n\tthis.endMatchRegExp = /--&gt;/mg;\n};\n\nexports.findNextMatch = function(startPos) {\n\tthis.matchRegExp.lastIndex = startPos;\n\tthis.match = this.matchRegExp.exec(this.parser.source);\n\tif(this.match) {\n\t\tthis.endMatchRegExp.lastIndex = this.match.index + this.match[0].length;\n\t\tthis.endMatch = this.endMatchRegExp.exec(this.parser.source);\n\t\tif(this.endMatch) {\n\t\t\treturn this.match.index;\n\t\t}\n\t}\n\treturn undefined;\n};\n\nexports.parse = function() {\n\t// Move past the match\n\tthis.parser.pos = this.endMatchRegExp.lastIndex;\n\t// Don't return any elements\n\treturn [];\n};\n\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;wikirule&quot;
         },
         &quot;$:/core/modules/parsers/wikiparser/rules/commentinline.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/parsers/wikiparser/rules/commentinline.js&quot;,
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/parsers/wikiparser/rules/commentinline.js\ntype: application/javascript\nmodule-type: wikirule\n\nWiki text inline rule for HTML comments. For example:\n\n```\n&lt;!-- This is a comment --&gt;\n```\n\nNote that the syntax for comments is simplified to an opening \&quot;&lt;!--\&quot; sequence and a closing \&quot;--&gt;\&quot; sequence -- HTML itself implements a more complex format (see http://ostermiller.org/findhtmlcomment.html)\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nexports.name = \&quot;commentinline\&quot;;\nexports.types = {inline: true};\n\nexports.init = function(parser) {\n\tthis.parser = parser;\n\tthis.matchRegExp = /&lt;!--/mg;\n\tthis.endMatchRegExp = /--&gt;/mg;\n};\n\nexports.findNextMatch = function(startPos) {\n\tthis.matchRegExp.lastIndex = startPos;\n\tthis.match = this.matchRegExp.exec(this.parser.source);\n\tif(this.match) {\n\t\tthis.endMatchRegExp.lastIndex = startPos + this.match[0].length;\n\t\tthis.endMatch = this.endMatchRegExp.exec(this.parser.source);\n\t\tif(this.endMatch) {\n\t\t\treturn this.match.index;\n\t\t}\n\t}\n\treturn undefined;\n};\n\nexports.parse = function() {\n\t// Move past the match\n\tthis.parser.pos = this.endMatchRegExp.lastIndex;\n\t// Don't return any elements\n\treturn [];\n};\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/parsers/wikiparser/rules/commentinline.js\ntype: application/javascript\nmodule-type: wikirule\n\nWiki text inline rule for HTML comments. For example:\n\n```\n&lt;!-- This is a comment --&gt;\n```\n\nNote that the syntax for comments is simplified to an opening \&quot;&lt;!--\&quot; sequence and a closing \&quot;--&gt;\&quot; sequence -- HTML itself implements a more complex format (see http://ostermiller.org/findhtmlcomment.html)\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nexports.name = \&quot;commentinline\&quot;;\nexports.types = {inline: true};\n\nexports.init = function(parser) {\n\tthis.parser = parser;\n\tthis.matchRegExp = /&lt;!--/mg;\n\tthis.endMatchRegExp = /--&gt;/mg;\n};\n\nexports.findNextMatch = function(startPos) {\n\tthis.matchRegExp.lastIndex = startPos;\n\tthis.match = this.matchRegExp.exec(this.parser.source);\n\tif(this.match) {\n\t\tthis.endMatchRegExp.lastIndex = this.match.index + this.match[0].length;\n\t\tthis.endMatch = this.endMatchRegExp.exec(this.parser.source);\n\t\tif(this.endMatch) {\n\t\t\treturn this.match.index;\n\t\t}\n\t}\n\treturn undefined;\n};\n\nexports.parse = function() {\n\t// Move past the match\n\tthis.parser.pos = this.endMatchRegExp.lastIndex;\n\t// Don't return any elements\n\treturn [];\n};\n\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;wikirule&quot;
         },
@@ -10059,7 +10059,7 @@ Error message and password prompt
 [[HighlightExample]]
 </pre>
 </div>
-<div created="20210113102104310" current-tiddler="HelloThere" modified="20210113102104310" title="$:/HistoryList" type="application/json">
+<div created="20210113115056218" current-tiddler="HelloThere" modified="20210113115056218" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;HelloThere&quot;
@@ -10166,7 +10166,7 @@ Error message and password prompt
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20210113102104110&quot;
+            &quot;text&quot;: &quot;20210113115056051&quot;
         }
     }
 }</pre>
