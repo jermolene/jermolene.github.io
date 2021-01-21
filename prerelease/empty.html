@@ -7049,7 +7049,7 @@ Error message and password prompt
         },
         &quot;$:/core/save/lazy-images&quot;: {
             &quot;title&quot;: &quot;$:/core/save/lazy-images&quot;,
-            &quot;text&quot;: &quot;\\define saveTiddlerFilter()\n[is[tiddler]] -[prefix[$:/state/popup/]] -[[$:/HistoryList]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] -[!is[system]is[image]] +[sort[title]] \n\\end\n\\define skinnySaveTiddlerFilter()\n[is[image]]\n\\end\n{{$:/core/templates/tiddlywiki5.html}}\n&quot;
+            &quot;text&quot;: &quot;\\define saveTiddlerFilter()\n[is[tiddler]] -[prefix[$:/state/popup/]] -[[$:/HistoryList]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] -[!is[system]is[image]] +[sort[title]] \n\\end\n\\define skinnySaveTiddlerFilter()\n[!is[system]is[image]]\n\\end\n{{$:/core/templates/tiddlywiki5.html}}\n&quot;
         },
         &quot;$:/core/templates/server/static.sidebar.wikitext&quot;: {
             &quot;title&quot;: &quot;$:/core/templates/server/static.sidebar.wikitext&quot;,

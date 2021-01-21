@@ -186,8 +186,8 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
 
 &lt;&lt;list-links filter:&quot;[tag{!!title}]&quot;&gt;&gt;</pre>
 </div>
-<div commit="b4605e357364c24176e6e9c0ede28493621e41af" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit b4605e357364c24176e6e9c0ede28493621e41af of https://github.com/Jermolene/TiddlyWiki5 at 2021-01-21 17:07:37 UTC
+<div commit="2e47f277acfcc52ab872e84261385d254873f67e" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 2e47f277acfcc52ab872e84261385d254873f67e of https://github.com/Jermolene/TiddlyWiki5 at 2021-01-21 19:01:51 UTC
 </pre>
 </div>
 <div title="$:/config/OriginalTiddlerPaths" type="application/json">
@@ -7081,7 +7081,7 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
         },
         &quot;$:/core/save/lazy-images&quot;: {
             &quot;title&quot;: &quot;$:/core/save/lazy-images&quot;,
-            &quot;text&quot;: &quot;\\define saveTiddlerFilter()\n[is[tiddler]] -[prefix[$:/state/popup/]] -[[$:/HistoryList]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] -[!is[system]is[image]] +[sort[title]] \n\\end\n\\define skinnySaveTiddlerFilter()\n[is[image]]\n\\end\n{{$:/core/templates/tiddlywiki5.html}}\n&quot;
+            &quot;text&quot;: &quot;\\define saveTiddlerFilter()\n[is[tiddler]] -[prefix[$:/state/popup/]] -[[$:/HistoryList]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] -[!is[system]is[image]] +[sort[title]] \n\\end\n\\define skinnySaveTiddlerFilter()\n[!is[system]is[image]]\n\\end\n{{$:/core/templates/tiddlywiki5.html}}\n&quot;
         },
         &quot;$:/core/templates/server/static.sidebar.wikitext&quot;: {
             &quot;title&quot;: &quot;$:/core/templates/server/static.sidebar.wikitext&quot;,
