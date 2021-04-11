@@ -186,8 +186,8 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
 
 &lt;&lt;list-links filter:"[tag{!!title}]"&gt;&gt;</pre>
 </div>
-<div commit="eced60853f8f96d1a3dbb9bc8997ae3899c0254c" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit eced60853f8f96d1a3dbb9bc8997ae3899c0254c of https://github.com/Jermolene/TiddlyWiki5 at 2021-04-10 08:50:21 UTC
+<div commit="89546b3357b0696a7047e6915bd6cd137b589de6" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 89546b3357b0696a7047e6915bd6cd137b589de6 of https://github.com/Jermolene/TiddlyWiki5 at 2021-04-11 09:11:47 UTC
 </pre>
 </div>
 <div title="$:/config/OriginalTiddlerPaths" type="application/json">
@@ -5709,7 +5709,7 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
         },
         "$:/core/modules/parsers/htmlparser.js": {
             "title": "$:/core/modules/parsers/htmlparser.js",
-            "text": "/*\\\ntitle: $:/core/modules/parsers/htmlparser.js\ntype: application/javascript\nmodule-type: parser\n\nThe HTML parser displays text as raw HTML\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\nvar HtmlParser = function(type,text,options) {\n\tvar src;\n\tif(options._canonical_uri) {\n\t\tsrc = options._canonical_uri;\n\t} else if(text) {\n\t\tsrc = \"data:text/html;charset=utf-8,\" + encodeURIComponent(text);\n\t}\n\tthis.tree = [{\n\t\ttype: \"element\",\n\t\ttag: \"iframe\",\n\t\tattributes: {\n\t\t\tsrc: {type: \"string\", value: src},\n\t\t\tsandbox: {type: \"string\", value: \"\"}\n\t\t}\n\t}];\n};\n\nexports[\"text/html\"] = HtmlParser;\n\n})();\n\n",
+            "text": "/*\\\ntitle: $:/core/modules/parsers/htmlparser.js\ntype: application/javascript\nmodule-type: parser\n\nThe HTML parser displays text as raw HTML\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\nvar HtmlParser = function(type,text,options) {\n\tvar src;\n\tif(options._canonical_uri) {\n\t\tsrc = options._canonical_uri;\n\t} else if(text) {\n\t\tsrc = \"data:text/html;charset=utf-8,\" + encodeURIComponent(text);\n\t}\n\tthis.tree = [{\n\t\ttype: \"element\",\n\t\ttag: \"iframe\",\n\t\tattributes: {\n\t\t\tsrc: {type: \"string\", value: src}\n\t\t}\n\t}];\n\tif($tw.wiki.getTiddlerText(\"$:/config/HtmlParser/DisableSandbox\",\"no\") !== \"yes\") {\n\t\tthis.tree[0].attributes.sandbox = {type: \"string\", value: $tw.wiki.getTiddlerText(\"$:/config/HtmlParser/SandboxTokens\",\"\")};\n\t}\n};\n\nexports[\"text/html\"] = HtmlParser;\n\n})();\n\n",
             "type": "application/javascript",
             "module-type": "parser"
         },
