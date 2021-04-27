@@ -302,8 +302,8 @@ Error message and password prompt
 \end
 </pre>
 </div>
-<div commit="bf773eb39a5900aaaf11987c74a2b49f7a264083" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit bf773eb39a5900aaaf11987c74a2b49f7a264083 of https://github.com/Jermolene/TiddlyWiki5 at 2021-04-27 09:10:28 UTC
+<div commit="30d23196b64fa61735938d297e3dbd4e6ef964e5" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 30d23196b64fa61735938d297e3dbd4e6ef964e5 of https://github.com/Jermolene/TiddlyWiki5 at 2021-04-27 09:15:26 UTC
 </pre>
 </div>
 <div created="20161021164330811" modified="20161021164331841" title="$:/config/plugins/tiddlywiki/xlsx-utils/default-import-spec" type="text/vnd.tiddlywiki">
@@ -4016,10 +4016,6 @@ Error message and password prompt
             "title": "$:/language/Error/Caption",
             "text": "Error"
         },
-        "$:/language/Error/EditConflict": {
-            "title": "$:/language/Error/EditConflict",
-            "text": "File changed on server"
-        },
         "$:/language/Error/Filter": {
             "title": "$:/language/Error/Filter",
             "text": "Filter error"
@@ -4047,6 +4043,18 @@ Error message and password prompt
         "$:/language/Error/NetworkErrorAlert": {
             "title": "$:/language/Error/NetworkErrorAlert",
             "text": "`&lt;h2&gt;''Network Error''&lt;/h2&gt;It looks like the connection to the server has been lost. This may indicate a problem with your network connection. Please attempt to restore network connectivity before continuing.&lt;br&gt;&lt;br&gt;''Any unsaved changes will be automatically synchronised when connectivity is restored''.`"
+        },
+        "$:/language/Error/PutEditConflict": {
+            "title": "$:/language/Error/PutEditConflict",
+            "text": "File changed on server"
+        },
+        "$:/language/Error/PutForbidden": {
+            "title": "$:/language/Error/PutForbidden",
+            "text": "Permission denied"
+        },
+        "$:/language/Error/PutUnauthorized": {
+            "title": "$:/language/Error/PutUnauthorized",
+            "text": "Authentication required"
         },
         "$:/language/Error/RecursiveTransclusion": {
             "title": "$:/language/Error/RecursiveTransclusion",
@@ -6180,7 +6188,7 @@ Error message and password prompt
         },
         "$:/core/modules/savers/put.js": {
             "title": "$:/core/modules/savers/put.js",
-            "text": "/*\\\ntitle: $:/core/modules/savers/put.js\ntype: application/javascript\nmodule-type: saver\n\nSaves wiki by performing a PUT request to the server\n\nWorks with any server which accepts a PUT request\nto the current URL, such as a WebDAV server.\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\n/*\nRetrieve ETag if available\n*/\nvar retrieveETag = function(self) {\n\tvar headers = {\n\t\tAccept: \"*/*;charset=UTF-8\"\n\t};\n\t$tw.utils.httpRequest({\n\t\turl: self.uri(),\n\t\ttype: \"HEAD\",\n\t\theaders: headers,\n\t\tcallback: function(err,data,xhr) {\n\t\t\tif(err) {\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tvar etag = xhr.getResponseHeader(\"ETag\");\n\t\t\tif(!etag) {\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tself.etag = etag.replace(/^W\\//,\"\");\n\t\t}\n\t});\n};\n\n\n/*\nSelect the appropriate saver module and set it up\n*/\nvar PutSaver = function(wiki) {\n\tthis.wiki = wiki;\n\tvar self = this;\n\tvar uri = this.uri();\n\t// Async server probe. Until probe finishes, save will fail fast\n\t// See also https://github.com/Jermolene/TiddlyWiki5/issues/2276\n\t$tw.utils.httpRequest({\n\t\turl: uri,\n\t\ttype: \"OPTIONS\",\n\t\tcallback: function(err,data,xhr) {\n\t\t\t// Check DAV header http://www.webdav.org/specs/rfc2518.html#rfc.section.9.1\n\t\t\tif(!err) {\n\t\t\t\tself.serverAcceptsPuts = xhr.status === 200 &amp;&amp; !!xhr.getResponseHeader(\"dav\");\n\t\t\t}\n\t\t}\n\t});\n\tretrieveETag(this);\n};\n\nPutSaver.prototype.uri = function() {\n\treturn document.location.toString().split(\"#\")[0];\n};\n\n// TODO: in case of edit conflict\n// Prompt: Do you want to save over this? Y/N\n// Merging would be ideal, and may be possible using future generic merge flow\nPutSaver.prototype.save = function(text,method,callback) {\n\tif(!this.serverAcceptsPuts) {\n\t\treturn false;\n\t}\n\tvar self = this;\n\tvar headers = {\n\t\t\"Content-Type\": \"text/html;charset=UTF-8\"\n\t};\n\tif(this.etag) {\n\t\theaders[\"If-Match\"] = this.etag;\n\t}\n\t$tw.utils.httpRequest({\n\t\turl: this.uri(),\n\t\ttype: \"PUT\",\n\t\theaders: headers,\n\t\tdata: text,\n\t\tcallback: function(err,data,xhr) {\n\t\t\tif(err) {\n\t\t\t\t// response is textual: \"XMLHttpRequest error code: 412\"\n\t\t\t\tvar status = Number(err.substring(err.indexOf(':') + 2, err.length))\n\t\t\t\tif(status === 412) { // edit conflict\n\t\t\t\t\tvar message = $tw.language.getString(\"Error/EditConflict\");\n\t\t\t\t\tcallback(message);\n\t\t\t\t} else {\n\t\t\t\t\tcallback(err); // fail\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\tself.etag = xhr.getResponseHeader(\"ETag\");\n\t\t\t\tif(self.etag == null) {\n\t\t\t\t\tretrieveETag(self);\n\t\t\t\t}\n\t\t\t\tcallback(null); // success\n\t\t\t}\n\t\t}\n\t});\n\treturn true;\n};\n\n/*\nInformation about this saver\n*/\nPutSaver.prototype.info = {\n\tname: \"put\",\n\tpriority: 2000,\n\tcapabilities: [\"save\",\"autosave\"]\n};\n\n/*\nStatic method that returns true if this saver is capable of working\n*/\nexports.canSave = function(wiki) {\n\treturn /^https?:/.test(location.protocol);\n};\n\n/*\nCreate an instance of this saver\n*/\nexports.create = function(wiki) {\n\treturn new PutSaver(wiki);\n};\n\n})();\n",
+            "text": "/*\\\ntitle: $:/core/modules/savers/put.js\ntype: application/javascript\nmodule-type: saver\n\nSaves wiki by performing a PUT request to the server\n\nWorks with any server which accepts a PUT request\nto the current URL, such as a WebDAV server.\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\n/*\nRetrieve ETag if available\n*/\nvar retrieveETag = function(self) {\n\tvar headers = {\n\t\tAccept: \"*/*;charset=UTF-8\"\n\t};\n\t$tw.utils.httpRequest({\n\t\turl: self.uri(),\n\t\ttype: \"HEAD\",\n\t\theaders: headers,\n\t\tcallback: function(err,data,xhr) {\n\t\t\tif(err) {\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tvar etag = xhr.getResponseHeader(\"ETag\");\n\t\t\tif(!etag) {\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tself.etag = etag.replace(/^W\\//,\"\");\n\t\t}\n\t});\n};\n\n\n/*\nSelect the appropriate saver module and set it up\n*/\nvar PutSaver = function(wiki) {\n\tthis.wiki = wiki;\n\tvar self = this;\n\tvar uri = this.uri();\n\t// Async server probe. Until probe finishes, save will fail fast\n\t// See also https://github.com/Jermolene/TiddlyWiki5/issues/2276\n\t$tw.utils.httpRequest({\n\t\turl: uri,\n\t\ttype: \"OPTIONS\",\n\t\tcallback: function(err,data,xhr) {\n\t\t\t// Check DAV header http://www.webdav.org/specs/rfc2518.html#rfc.section.9.1\n\t\t\tif(!err) {\n\t\t\t\tself.serverAcceptsPuts = xhr.status === 200 &amp;&amp; !!xhr.getResponseHeader(\"dav\");\n\t\t\t}\n\t\t}\n\t});\n\tretrieveETag(this);\n};\n\nPutSaver.prototype.uri = function() {\n\treturn document.location.toString().split(\"#\")[0];\n};\n\n// TODO: in case of edit conflict\n// Prompt: Do you want to save over this? Y/N\n// Merging would be ideal, and may be possible using future generic merge flow\nPutSaver.prototype.save = function(text,method,callback) {\n\tif(!this.serverAcceptsPuts) {\n\t\treturn false;\n\t}\n\tvar self = this;\n\tvar headers = {\n\t\t\"Content-Type\": \"text/html;charset=UTF-8\"\n\t};\n\tif(this.etag) {\n\t\theaders[\"If-Match\"] = this.etag;\n\t}\n\t$tw.utils.httpRequest({\n\t\turl: this.uri(),\n\t\ttype: \"PUT\",\n\t\theaders: headers,\n\t\tdata: text,\n\t\tcallback: function(err,data,xhr) {\n\t\t\tif(err) {\n\t\t\t\t// response is textual: \"XMLHttpRequest error code: 412\"\n\t\t\t\tvar status = Number(err.substring(err.indexOf(':') + 2, err.length))\n\t\t\t\tif(status === 412) { // file changed on server\n\t\t\t\t\tcallback($tw.language.getString(\"Error/PutEditConflict\"));\n\t\t\t\t} else if(status === 401) { // authentication required\n\t\t\t\t\tcallback($tw.language.getString(\"Error/PutUnauthorized\"));\n\t\t\t\t} else if(status === 403) { // permission denied\n\t\t\t\t\tcallback($tw.language.getString(\"Error/PutForbidden\"));\n\t\t\t\t} else {\n\t\t\t\t\tcallback(err); // fail\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\tself.etag = xhr.getResponseHeader(\"ETag\");\n\t\t\t\tif(self.etag == null) {\n\t\t\t\t\tretrieveETag(self);\n\t\t\t\t}\n\t\t\t\tcallback(null); // success\n\t\t\t}\n\t\t}\n\t});\n\treturn true;\n};\n\n/*\nInformation about this saver\n*/\nPutSaver.prototype.info = {\n\tname: \"put\",\n\tpriority: 2000,\n\tcapabilities: [\"save\",\"autosave\"]\n};\n\n/*\nStatic method that returns true if this saver is capable of working\n*/\nexports.canSave = function(wiki) {\n\treturn /^https?:/.test(location.protocol);\n};\n\n/*\nCreate an instance of this saver\n*/\nexports.create = function(wiki) {\n\treturn new PutSaver(wiki);\n};\n\n})();\n",
             "type": "application/javascript",
             "module-type": "saver"
         },
