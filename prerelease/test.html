@@ -5907,7 +5907,7 @@ Error message and password prompt
         },
         "$:/core/modules/parsers/wikiparser/rules/import.js": {
             "title": "$:/core/modules/parsers/wikiparser/rules/import.js",
-            "text": "/*\\\ntitle: $:/core/modules/parsers/wikiparser/rules/import.js\ntype: application/javascript\nmodule-type: wikirule\n\nWiki pragma rule for importing variable definitions\n\n```\n\\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]\n```\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\nexports.name = \"import\";\nexports.types = {pragma: true};\n\n/*\nInstantiate parse rule\n*/\nexports.init = function(parser) {\n\tthis.parser = parser;\n\t// Regexp to match\n\tthis.matchRegExp = /^\\\\import[^\\S\\n]/mg;\n};\n\n/*\nParse the most recent match\n*/\nexports.parse = function() {\n\tvar self = this;\n\t// Move past the pragma invocation\n\tthis.parser.pos = this.matchRegExp.lastIndex;\n\t// Parse the filter terminated by a line break\n\tvar reMatch = /(.*)(\\r?\\n)|$/mg;\n\treMatch.lastIndex = this.parser.pos;\n\tvar match = reMatch.exec(this.parser.source);\n\tthis.parser.pos = reMatch.lastIndex;\n\t// Parse tree nodes to return\n\treturn [{\n\t\ttype: \"importvariables\",\n\t\tattributes: {\n\t\t\tfilter: {type: \"string\", value: match[1]}\n\t\t},\n\t\tchildren: []\n\t}];\n};\n\n})();\n",
+            "text": "/*\\\ntitle: $:/core/modules/parsers/wikiparser/rules/import.js\ntype: application/javascript\nmodule-type: wikirule\n\nWiki pragma rule for importing variable definitions\n\n```\n\\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]\n```\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\nexports.name = \"import\";\nexports.types = {pragma: true};\n\n/*\nInstantiate parse rule\n*/\nexports.init = function(parser) {\n\tthis.parser = parser;\n\t// Regexp to match\n\tthis.matchRegExp = /^\\\\import[^\\S\\n]/mg;\n};\n\n/*\nParse the most recent match\n*/\nexports.parse = function() {\n\tvar self = this;\n\t// Move past the pragma invocation\n\tthis.parser.pos = this.matchRegExp.lastIndex;\n\t// Parse the filter terminated by a line break\n\tvar reMatch = /(.*)(?:$|\\r?\\n)/mg;\n\treMatch.lastIndex = this.parser.pos;\n\tvar match = reMatch.exec(this.parser.source);\n\tthis.parser.pos = reMatch.lastIndex;\n\t// Parse tree nodes to return\n\treturn [{\n\t\ttype: \"importvariables\",\n\t\tattributes: {\n\t\t\tfilter: {type: \"string\", value: match[1]}\n\t\t},\n\t\tchildren: []\n\t}];\n};\n\n})();\n",
             "type": "application/javascript",
             "module-type": "wikirule"
         },
@@ -13459,6 +13459,19 @@ describe("Widget module", function() {
 		var wrapper = renderWidgetNode(widgetNode);
 		// Test the rendering
 		expect(wrapper.innerHTML).toBe("&lt;p&gt;Don't forget me.&lt;/p&gt;");
+	});
+
+	/** Special case. \import should parse correctly, even if it's
+	 *  the only line in the tiddler. Technically doesn't cause a
+	 *  visual difference, but may affect plugins if it doesn't.
+	 */
+	it("should work when import pragma is standalone", function() {
+		var wiki = new $tw.Wiki();
+		var text = "\\import [prefix[XXX]]";
+		var parseTreeNode = parseText(text,wiki);
+		// Test the resulting parse tree node, since there is no
+		// rendering which may expose a problem.
+		expect(parseTreeNode.children[0].attributes.filter.value).toBe('[prefix[XXX]]');
 	});
 
 	/** This test reproduces issue #4504.

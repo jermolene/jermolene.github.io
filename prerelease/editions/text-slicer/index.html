@@ -190,8 +190,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div commit="8fbf52e419e71d726ea32b6c44e3ccfc4245d825" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 8fbf52e419e71d726ea32b6c44e3ccfc4245d825 of https://github.com/Jermolene/TiddlyWiki5 at 2021-05-23 10:21:07 UTC
+<div commit="61714cbda34151f0b7e1e8ad690778770044f52f" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 61714cbda34151f0b7e1e8ad690778770044f52f of https://github.com/Jermolene/TiddlyWiki5 at 2021-05-23 16:40:21 UTC
 </pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" name="Core" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.24-prerelease">
@@ -5897,7 +5897,7 @@ Error message and password prompt
         },
         "$:/core/modules/parsers/wikiparser/rules/import.js": {
             "title": "$:/core/modules/parsers/wikiparser/rules/import.js",
-            "text": "/*\\\ntitle: $:/core/modules/parsers/wikiparser/rules/import.js\ntype: application/javascript\nmodule-type: wikirule\n\nWiki pragma rule for importing variable definitions\n\n```\n\\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]\n```\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\nexports.name = \"import\";\nexports.types = {pragma: true};\n\n/*\nInstantiate parse rule\n*/\nexports.init = function(parser) {\n\tthis.parser = parser;\n\t// Regexp to match\n\tthis.matchRegExp = /^\\\\import[^\\S\\n]/mg;\n};\n\n/*\nParse the most recent match\n*/\nexports.parse = function() {\n\tvar self = this;\n\t// Move past the pragma invocation\n\tthis.parser.pos = this.matchRegExp.lastIndex;\n\t// Parse the filter terminated by a line break\n\tvar reMatch = /(.*)(\\r?\\n)|$/mg;\n\treMatch.lastIndex = this.parser.pos;\n\tvar match = reMatch.exec(this.parser.source);\n\tthis.parser.pos = reMatch.lastIndex;\n\t// Parse tree nodes to return\n\treturn [{\n\t\ttype: \"importvariables\",\n\t\tattributes: {\n\t\t\tfilter: {type: \"string\", value: match[1]}\n\t\t},\n\t\tchildren: []\n\t}];\n};\n\n})();\n",
+            "text": "/*\\\ntitle: $:/core/modules/parsers/wikiparser/rules/import.js\ntype: application/javascript\nmodule-type: wikirule\n\nWiki pragma rule for importing variable definitions\n\n```\n\\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]\n```\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\nexports.name = \"import\";\nexports.types = {pragma: true};\n\n/*\nInstantiate parse rule\n*/\nexports.init = function(parser) {\n\tthis.parser = parser;\n\t// Regexp to match\n\tthis.matchRegExp = /^\\\\import[^\\S\\n]/mg;\n};\n\n/*\nParse the most recent match\n*/\nexports.parse = function() {\n\tvar self = this;\n\t// Move past the pragma invocation\n\tthis.parser.pos = this.matchRegExp.lastIndex;\n\t// Parse the filter terminated by a line break\n\tvar reMatch = /(.*)(?:$|\\r?\\n)/mg;\n\treMatch.lastIndex = this.parser.pos;\n\tvar match = reMatch.exec(this.parser.source);\n\tthis.parser.pos = reMatch.lastIndex;\n\t// Parse tree nodes to return\n\treturn [{\n\t\ttype: \"importvariables\",\n\t\tattributes: {\n\t\t\tfilter: {type: \"string\", value: match[1]}\n\t\t},\n\t\tchildren: []\n\t}];\n};\n\n})();\n",
             "type": "application/javascript",
             "module-type": "wikirule"
         },
