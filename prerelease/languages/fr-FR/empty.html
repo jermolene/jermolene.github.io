@@ -10917,6 +10917,14 @@ Error message and password prompt
             "title": "$:/language/ControlPanel/Basics/OverriddenShadowTiddlers/Prompt",
             "text": "Nombre de tiddlers //shadow// modifiés"
         },
+        "$:/language/ControlPanel/Basics/RemoveTags": {
+            "title": "$:/language/ControlPanel/Basics/RemoveTags",
+            "text": "Mettre à jour vers le format courant"
+        },
+        "$:/language/ControlPanel/Basics/RemoveTags/Hint": {
+            "title": "$:/language/ControlPanel/Basics/RemoveTags/Hint",
+            "text": "Met à jour la configuration des tags vers le format le plus récent"
+        },
         "$:/language/ControlPanel/Basics/ShadowTiddlers/Prompt": {
             "title": "$:/language/ControlPanel/Basics/ShadowTiddlers/Prompt",
             "text": "Nombre de tiddlers //shadow//"
@@ -11024,6 +11032,10 @@ Error message and password prompt
         "$:/language/ControlPanel/KeyboardShortcuts/Platform/NonWindows": {
             "title": "$:/language/ControlPanel/KeyboardShortcuts/Platform/NonWindows",
             "text": "Plates-formes non-Windows seulement"
+        },
+        "$:/language/ControlPanel/LayoutSwitcher/Caption": {
+            "title": "$:/language/ControlPanel/LayoutSwitcher/Caption",
+            "text": "Mise en page"
         },
         "$:/language/ControlPanel/LoadedModules/Caption": {
             "title": "$:/language/ControlPanel/LoadedModules/Caption",
@@ -11327,7 +11339,7 @@ Error message and password prompt
         },
         "$:/language/ControlPanel/Saving/TiddlySpot/Description": {
             "title": "$:/language/ControlPanel/Saving/TiddlySpot/Description",
-            "text": "Ces paramètres ne servent que lors de la sauvegarde vers http://tiddlyspot.com ou vers un serveur distant compatible"
+            "text": "Ces paramètres ne servent que lors de la sauvegarde vers [[TiddlySpot|http://tiddlyspot.com]], [[TiddlyHost|https://tiddlyhost.com]] ou vers un serveur distant compatible. Voir [[here|https://github.com/simonbaird/tiddlyhost/wiki/TiddlySpot-Saver-configuration-for-Tiddlyhost-and-Tiddlyspot]] pour plus d'informations sur la configuration de la sauvegarde sur ~TiddlySpot et ~TiddlyHost."
         },
         "$:/language/ControlPanel/Saving/TiddlySpot/Filename": {
             "title": "$:/language/ControlPanel/Saving/TiddlySpot/Filename",
@@ -11344,6 +11356,10 @@ Error message and password prompt
         "$:/language/ControlPanel/Saving/TiddlySpot/Password": {
             "title": "$:/language/ControlPanel/Saving/TiddlySpot/Password",
             "text": "Mot de passe"
+        },
+        "$:/language/ControlPanel/Saving/TiddlySpot/ReadOnly": {
+            "title": "$:/language/ControlPanel/Saving/TiddlySpot/ReadOnly",
+            "text": "Notez que [[TiddlySpot|http://tiddlyspot.com]] n'autorise plus la création de nouveaux sites. Pour les nouveaux sites vous pouvez utiliser [[TiddlyHost|https://tiddlyhost.com]], un nouveau service d'hébergement qui remplace ~TiddlySpot."
         },
         "$:/language/ControlPanel/Saving/TiddlySpot/ServerURL": {
             "title": "$:/language/ControlPanel/Saving/TiddlySpot/ServerURL",
@@ -12113,9 +12129,13 @@ Error message and password prompt
             "title": "$:/language/Docs/ModuleTypes/utils",
             "text": "Ajoute des méthodes dans `$tw.utils`."
         },
+        "$:/language/Docs/ModuleTypes/utils-browser": {
+            "title": "$:/language/Docs/ModuleTypes/utils-browser",
+            "text": "Ajoute des méthodes spécifiques au mode browser dans `$tw.utils`."
+        },
         "$:/language/Docs/ModuleTypes/utils-node": {
             "title": "$:/language/Docs/ModuleTypes/utils-node",
-            "text": "Ajoute des méthodes spécifiques à Node.js dans `$tw.utils`."
+            "text": "Ajoute des méthodes spécifiques au mode Node.js dans `$tw.utils`."
         },
         "$:/language/Docs/ModuleTypes/widget": {
             "title": "$:/language/Docs/ModuleTypes/widget",
@@ -12633,6 +12653,14 @@ Error message and password prompt
             "title": "$:/language/EditTemplate/Tags/Add/Placeholder",
             "text": "nom du tag"
         },
+        "$:/language/EditTemplate/Tags/ClearInput/Caption": {
+            "title": "$:/language/EditTemplate/Tags/ClearInput/Caption",
+            "text": "supprime l'entrée"
+        },
+        "$:/language/EditTemplate/Tags/ClearInput/Hint": {
+            "title": "$:/language/EditTemplate/Tags/ClearInput/Hint",
+            "text": "Supprime le tag entré"
+        },
         "$:/language/EditTemplate/Tags/Dropdown/Caption": {
             "title": "$:/language/EditTemplate/Tags/Dropdown/Caption",
             "text": "liste des tags"
@@ -12873,21 +12901,25 @@ Error message and password prompt
             "title": "$:/language/Filters/ShadowTiddlers",
             "text": "Les tiddlers shadow"
         },
-        "$:/language/Filters/StoryList": {
-            "title": "$:/language/Filters/StoryList",
-            "text": "Les tiddlers du déroulé, hormis $:/AdvancedSearch"
-        },
         "$:/language/Filters/OverriddenShadowTiddlers": {
             "title": "$:/language/Filters/OverriddenShadowTiddlers",
             "text": "Les tiddlers shadow modifiés"
+        },
+        "$:/language/Filters/SessionTiddlers": {
+            "title": "$:/language/Filters/SessionTiddlers",
+            "text": "Les tiddlers modifiés depuis que le dernier chargement du wiki"
         },
         "$:/language/Filters/SystemTags": {
             "title": "$:/language/Filters/SystemTags",
             "text": "Les tags système"
         },
+        "$:/language/Filters/StoryList": {
+            "title": "$:/language/Filters/StoryList",
+            "text": "Les tiddlers du déroulé, hormis  &lt;$text text=\"$:/AdvancedSearch\"/&gt;"
+        },
         "$:/language/Filters/TypedTiddlers": {
             "title": "$:/language/Filters/TypedTiddlers",
-            "text": "Tiddlers ayant un contenu non wiki-text"
+            "text": "Tiddlers dont le contenu n'est pas en wiki-text"
         },
         "GettingStarted": {
             "title": "GettingStarted",
@@ -12940,7 +12972,7 @@ Error message and password prompt
         "$:/language/Help/listen": {
             "title": "$:/language/Help/listen",
             "description": "Fournit à TiddlyWiki une interface serveur HTTP",
-            "text": "Sert un wiki via HTTP.\n\nLa commande //listen// utilise des [[paramètres de commande nommés|NamedCommandParameters]] :\n\n```\n--listen [&lt;nom&gt;=&lt;valeur&gt;]...\n```\n\nTous les paramètres sont optionnels avec des valeurs par défaut sûres, et peuvent être spécifiés dans n'importe quel ordre. Les paramètres reconnus sont les suivants :\n\n* ''host'' - nom ou adresse de machine hôte à laquelle sera attaché le service (par défaut \"127.0.0.1\", autrement dit \"localhost\")\n* ''path-prefix'' - préfixe optionnel pour les noms de chemin\n* ''port'' - numéro de port sur lequel écouter ; une valeur non numérique est interprétée comme un nom de variable d'environnement dont sera extrait le numéro de port (par défaut à \"8080\")\n* ''credentials'' - chemin vers le fichier CSV d'autorisations (relativement au dossier du wiki)\n* ''anon-username'' - nom d'utilisateur qui servira à signer les modifications si l'utilisateur est anonyme\n* ''username'' - nom d'utilisateur optionnel pour l'authentification basique\n* ''password'' - mot de passe optionnel pour l'authentification basique\n* ''authenticated-user-header'' - nom d'en-tête optionnel à utiliser pour les authentifications de confiance\n* ''readers'' - liste de personnes de confiance autorisées à lire ce wiki, séparées par des virgules \n* ''writers'' - liste de personnes de confiance autorisées à modifier ce wiki, séparées par des virgules\n* ''csrf-disable'' - donner la valeur \"yes\" pour désactiver les vérifications CSRF (vaut \"no\" par défaut)\n* ''root-tiddler'' - le tiddler à servir à la racine (par défaut \"$:/core/save/all\")\n* ''root-render-type'' - le type de contenu avec lequel le tiddler racine doit être rendu (par défaut \"text/plain\")\n* ''root-serve-type'' - le type de contenu avec lequel le tiddler racine doit être servi (par défaut \"text/html\")\n* ''tls-cert'' - nom de chemin du fichier de certificat TLS (relativement au dossier du wiki)\n* ''tls-key'' - nom de chemin du fichier de clé TLS (relativement au dossier du wiki)\n* ''debug-level'' - niveau de débogage optionnel ; mettre à \"debug\" pour voir le détail des requêtes (par défaut à \"none\")\n* ''gzip'' - donner la valeur \"yes\" pour activer la compression gzip pour certaines interactions http (par défaut à \"no\")\n\nPour plus d'informations sur la manière de donner accès à votre instance de serveur à l'ensemble de votre réseau local, ainsi que sur les risques éventuels en matière de sécurité, voir le tiddler [[WebServer sur tiddlywiki.com|https://tiddlywiki.com/#WebServer]].\n\n"
+            "text": "Sert un wiki via HTTP.\n\nLa commande //listen// utilise des [[paramètres de commande nommés|NamedCommandParameters]] :\n\n```\n--listen [&lt;nom&gt;=&lt;valeur&gt;]...\n```\n\nTous les paramètres sont optionnels avec des valeurs par défaut sûres, et peuvent être spécifiés dans n'importe quel ordre. Les paramètres reconnus sont les suivants :\n\n* ''host'' - nom ou adresse de machine hôte à laquelle sera attaché le service (par défaut \"127.0.0.1\", autrement dit \"localhost\")\n* ''path-prefix'' - préfixe optionnel pour les noms de chemin\n* ''port'' - numéro de port sur lequel écouter ; une valeur non numérique est interprétée comme un nom de variable d'environnement dont sera extrait le numéro de port (par défaut à \"8080\")\n* ''credentials'' - chemin vers le fichier CSV d'autorisations (relativement au dossier du wiki)\n* ''anon-username'' - nom d'utilisateur qui servira à signer les modifications si l'utilisateur est anonyme\n* ''username'' - nom d'utilisateur optionnel pour l'authentification basique\n* ''password'' - mot de passe optionnel pour l'authentification basique\n* ''authenticated-user-header'' - nom d'en-tête optionnel à utiliser pour les authentifications de confiance\n* ''readers'' - liste de personnes de confiance autorisées à lire ce wiki, séparées par des virgules \n* ''writers'' - liste de personnes de confiance autorisées à modifier ce wiki, séparées par des virgules\n* ''csrf-disable'' - donner la valeur \"yes\" pour désactiver les vérifications CSRF (vaut \"no\" par défaut)\n* ''sse-enabled'' - donner la valeur \"yes\" pour activer les événement envoyés par le serveur (valeur \"no\" par défaut)\n* ''root-tiddler'' - le tiddler à servir à la racine (par défaut \"$:/core/save/all\")\n* ''root-render-type'' - le type de contenu avec lequel le tiddler racine doit être rendu (par défaut \"text/plain\")\n* ''root-serve-type'' - le type de contenu avec lequel le tiddler racine doit être servi (par défaut \"text/html\")\n* ''tls-cert'' - nom de chemin du fichier de certificat TLS (relativement au dossier du wiki)\n* ''tls-key'' - nom de chemin du fichier de clé TLS (relativement au dossier du wiki)\n* ''debug-level'' - niveau de débogage optionnel ; mettre à \"debug\" pour voir le détail des requêtes (par défaut à \"none\")\n* ''gzip'' - donner la valeur \"yes\" pour activer la compression gzip pour certaines interactions http (par défaut à \"no\")\n* ''use-browser-cache'' - une valeur \"yes\" autorise le navigateur à mettre en cache les réponses pour économiser de la bande passante (\"no\" par défaut)\n\nPour plus d'informations sur la manière de donner accès à votre instance de serveur à l'ensemble de votre réseau local, ainsi que sur les risques éventuels en matière de sécurité, voir le tiddler [[WebServer sur tiddlywiki.com|https://tiddlywiki.com/#WebServer]].\n\n"
         },
         "$:/language/Help/load": {
             "title": "$:/language/Help/load",
@@ -12969,7 +13001,7 @@ Error message and password prompt
         "$:/language/Help/render": {
             "title": "$:/language/Help/render",
             "description": "Exécute le contenu de tiddlers individuels vers des fichiers",
-            "text": "Exécute le contenu des tiddlers individuels identifiés par un filtre et enregistre le résultat vers les fichiers spécifiés.\n\nOptionellement, on peut spécifier le titre d'un tiddler modèle (template). Dans ce cas, au lieu d'exécuter directement le contenu de chaque tiddler, le modèle est exécuté après avoir donné pour valeur à la variable \"currentTiddler\" le titre du tiddler dont le contenu est en cours d'exécution.\n\nOn peut spécifier le nom et la valeur d'une variable supplémentaire.\n\n```\n--render &lt;filtre-sur-les-tiddlers&gt; [&lt;filtre-des-noms-de-fichier&gt;] [&lt;type-de-rendu&gt;] [&lt;modèle&gt;] [&lt;nom&gt;] [&lt;valeur&gt;]\n```\n\n* ''filtre-sur-les-tiddlers'': Un filtre qui indentifie les tiddlers dont le contenu doit être exécuté\n* ''filtre-des-noms-de-fichier'': filtre optionnel pour transformer les titres de tiddlers en chemin de fichiers. À défaut, le filtre utilisé est `[is[tiddler]addsuffix[.html]]`, qui utilise le titre inchangé du tiddler comme nom de fichier\n* ''modèle'': Modèle optionnel via lequel chaque tiddler doit être rendu\n* ''type-de-rendu'': Type de rendu optionnel : la valeur `text/html` (par défaut) retourne le text HTML complet et `text/plain` se contente de retourner le contenu sous forme texte (autrement dit ignore les balises HTML et autres caractères non imprimables)\n* ''nom'': Nom de la variable optionnelle\n* ''valeur'': Valeur de la variable optionnelle\n\nPar défaut, le nom de fichier est résolu relativement au sous-répertoire `output` du réepertoire de l'édition. La commande `--output` peut servir à diriger les sorties vers un répertoire différent.\n\nNotes :\n\n* Les éventuels fichiers présents dans le répertoire de sortie ne sont pas supprimmés\n* Les répertoires absents dans le chemin de fichier sont créés automatiquement.\n* Lorsqu'un tiddler contient des espaces dans le titre, prendre garde à utiliser aussi bien les guillemets nécessaires au shell et les doubles crochets droits propres à TiddlyWiki : `--render \"[[Motovun Jack.jpg]]\"`\n* Le filtre des noms de fichier est évalué après avoir initialisé l'élément d'entrée avec le titre du tiddler en cours d'exécution, permettant ainsi d'utiliser le titre comme base de calcul pour le nom de fichier. Par exemple `[encodeuricomponent[]addprefix[static/]]` applique un encodage d'URI à chaque titre, puis ajoute le préfixe `static/`\n* La commande `--render` remplace de manière plus souple les deux commandes `--rendertiddler` et `--rendertiddlers`, qui sont du même coup obsolètes. \n\nExemples :\n\n* `--render \"[!is[system]]\" \"[encodeuricomponent[]addprefix[tiddlers/]addsuffix[.html]]\"` -- enregistre le contenu exécuté de tous les tiddlers non-système vers des fichiers du sous-répertoire \"tiddlers\" nommés par encodage URL des titres et ajout d'une extension html.\n\n"
+            "text": "Exécute le contenu des tiddlers individuels identifiés par un filtre et enregistre le résultat vers les fichiers spécifiés.\n\nOptionellement, on peut spécifier le titre d'un tiddler modèle (template). Dans ce cas, au lieu d'exécuter directement le contenu de chaque tiddler, le modèle est exécuté après avoir donné pour valeur à la variable \"currentTiddler\" le titre du tiddler dont le contenu est en cours d'exécution.\n\nOn peut spécifier le nom et la valeur d'une variable supplémentaire.\n\n```\n--render &lt;filtre-sur-les-tiddlers&gt; [&lt;filtre-des-noms-de-fichier&gt;] [&lt;type-de-rendu&gt;] [&lt;modèle&gt;] [ [&lt;nom&gt;] [&lt;valeur&gt;] ]*\n```\n\n* ''filtre-sur-les-tiddlers'': Un filtre qui indentifie les tiddlers dont le contenu doit être exécuté\n* ''filtre-des-noms-de-fichier'': filtre optionnel pour transformer les titres de tiddlers en chemin de fichiers. À défaut, le filtre utilisé est `[is[tiddler]addsuffix[.html]]`, qui utilise le titre inchangé du tiddler comme nom de fichier\n* ''modèle'': Modèle optionnel via lequel chaque tiddler doit être rendu\n* ''type-de-rendu'': Type de rendu optionnel : la valeur `text/html` (par défaut) retourne le text HTML complet et `text/plain` se contente de retourner le contenu sous forme texte (autrement dit ignore les balises HTML et autres caractères non imprimables)\n* ''nom'': Nom des variables optionnelles\n* ''valeur'': Valeur des variables optionnelles\n\nPar défaut, le nom de fichier est résolu relativement au sous-répertoire `output` du répertoire de l'édition. La commande `--output` peut servir à diriger les sorties vers un répertoire différent.\n\nNotes :\n\n* Les éventuels fichiers présents dans le répertoire de sortie ne sont pas supprimmés\n* Les répertoires absents dans le chemin de fichier sont créés automatiquement.\n* Lorsqu'un tiddler contient des espaces dans le titre, prendre garde à utiliser aussi bien les guillemets nécessaires au shell et les doubles crochets droits propres à TiddlyWiki : `--render \"[[Motovun Jack.jpg]]\"`\n* Le filtre des noms de fichier est évalué après avoir initialisé l'élément d'entrée avec le titre du tiddler en cours d'exécution, permettant ainsi d'utiliser le titre comme base de calcul pour le nom de fichier. Par exemple `[encodeuricomponent[]addprefix[static/]]` applique un encodage d'URI à chaque titre, puis ajoute le préfixe `static/`\n* Il est possible d'utiliser plusieurs paires ''nom''/''valeur'' pour passer plus d'une variable\n* La commande `--render` remplace de manière plus souple les deux commandes `--rendertiddler` et `--rendertiddlers`, qui sont du même coup obsolètes. \n\nExemples :\n\n* `--render \"[!is[system]]\" \"[encodeuricomponent[]addprefix[tiddlers/]addsuffix[.html]]\"` -- enregistre le contenu exécuté de tous les tiddlers non-système vers des fichiers du sous-répertoire \"tiddlers\" nommés par encodage URL des titres et ajout d'une extension html.\n\n"
         },
         "$:/language/Help/rendertiddler": {
             "title": "$:/language/Help/rendertiddler",
@@ -13025,6 +13057,10 @@ Error message and password prompt
             "title": "$:/language/Help/version",
             "description": "Affiche le numéro de version de TiddlyWiki",
             "text": "Affiche le numéro de version de TiddlyWiki.\n\n```\n--version\n```\n"
+        },
+        "$:/language/Import/Editor/Import/Heading": {
+            "title": "$:/language/Import/Editor/Import/Heading",
+            "text": "Images à importer et à insérer dans l'éditeur."
         },
         "$:/language/Import/Imported/Hint": {
             "title": "$:/language/Import/Imported/Hint",
@@ -13170,6 +13206,10 @@ Error message and password prompt
             "title": "$:/language/ConfirmEditShadowTiddler",
             "text": "Vous êtes sur le point d'éditer un ShadowTiddler. Toute modification supplantera la version par défaut du système, rendant les prochaines mises à jour non-triviales. Êtes-vous sûr(e) de vouloir éditer \"&lt;$text text=&lt;&lt;title&gt;&gt;/&gt;\"?"
         },
+        "$:/language/ConfirmAction": {
+            "title": "$:/language/ConfirmAction",
+            "text": "Souhaitez-vous poursuivre ?"
+        },
         "$:/language/Count": {
             "title": "$:/language/Count",
             "text": "total"
@@ -13254,6 +13294,14 @@ Error message and password prompt
             "title": "$:/language/Error/PutEditConflict",
             "text": "Le fichier a changé sur le serveur"
         },
+        "$:/language/Error/PutForbidden": {
+            "title": "$:/language/Error/PutForbidden",
+            "text": "Permission refusée"
+        },
+        "$:/language/Error/PutUnauthorized": {
+            "title": "$:/language/Error/PutUnauthorized",
+            "text": "Authentification nécessaire"
+        },
         "$:/language/Error/RecursiveTransclusion": {
             "title": "$:/language/Error/RecursiveTransclusion",
             "text": "Erreur dans le widget //transclude// : transclusion récursive"
@@ -13285,6 +13333,10 @@ Error message and password prompt
         "$:/language/InvalidFieldName": {
             "title": "$:/language/InvalidFieldName",
             "text": "Caractères illicites dans le nom du champ « &lt;$text text=&lt;&lt;fieldName&gt;&gt;/&gt; ». Les champs ne peuvent contenir que des lettres minuscules non accentuées et les caractères souligné (`_`), tiret (`-`) et point (`.`)"
+        },
+        "$:/language/LayoutSwitcher/Description": {
+            "title": "$:/language/LayoutSwitcher/Description",
+            "text": "Ouvre le commutateur de mise en page"
         },
         "$:/language/LazyLoadingWarning": {
             "title": "$:/language/LazyLoadingWarning",
@@ -13378,6 +13430,14 @@ Error message and password prompt
             "title": "$:/language/OfficialPluginLibrary/Hint",
             "text": "La bibliothèque officielle des plugins ~TiddlyWiki sur tiddlywiki.com. Plugins, thèmes et packs pour les différentes langues sont maintenus par l'équipe responsable du noyau."
         },
+        "$:/language/PageTemplate/Description": {
+            "title": "$:/language/PageTemplate/Description",
+            "text": "la mise en page par défaut de ~TiddlyWiki"
+        },
+        "$:/language/PageTemplate/Name": {
+            "title": "$:/language/PageTemplate/Name",
+            "text": "~PageTemplate par défaut"
+        },
         "$:/language/PluginReloadWarning": {
             "title": "$:/language/PluginReloadWarning",
             "text": "Merci d'enregistrer {{$:/core/ui/Buttons/save-wiki}} et de recharger {{$:/core/ui/Buttons/refresh}} pour que les changements apportés aux plugins ~JavaScript prennent effet"
@@ -13421,6 +13481,22 @@ Error message and password prompt
         "$:/language/Shortcuts/SidebarLayout/Hint": {
             "title": "$:/language/Shortcuts/SidebarLayout/Hint",
             "text": "Change la mise en forme de la barre latérale"
+        },
+        "$:/language/Switcher/Subtitle/theme": {
+            "title": "$:/language/Switcher/Subtitle/theme",
+            "text": "Change de Thème"
+        },
+        "$:/language/Switcher/Subtitle/layout": {
+            "title": "$:/language/Switcher/Subtitle/layout",
+            "text": "Change de Mise en page"
+        },
+        "$:/language/Switcher/Subtitle/language": {
+            "title": "$:/language/Switcher/Subtitle/language",
+            "text": "Change de Langue"
+        },
+        "$:/language/Switcher/Subtitle/palette": {
+            "title": "$:/language/Switcher/Subtitle/palette",
+            "text": "Change de Palette"
         },
         "$:/language/SystemTiddler/Tooltip": {
             "title": "$:/language/SystemTiddler/Tooltip",
@@ -13888,11 +13964,11 @@ Error message and password prompt
         },
         "$:/language/TiddlerInfo/References/Caption": {
             "title": "$:/language/TiddlerInfo/References/Caption",
-            "text": "Références"
+            "text": "Pointeurs"
         },
         "$:/language/TiddlerInfo/References/Empty": {
             "title": "$:/language/TiddlerInfo/References/Empty",
-            "text": "Aucun tiddler ne comporte de lien vers celui-ci"
+            "text": "Aucun tiddler ne pointe vers celui-ci"
         },
         "$:/language/TiddlerInfo/Tagging/Caption": {
             "title": "$:/language/TiddlerInfo/Tagging/Caption",
