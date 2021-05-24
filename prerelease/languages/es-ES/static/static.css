@@ -854,8 +854,7 @@ a.tc-tiddlylink:hover {
 	width: 1em;
 	fill: #bbb;
 }.tc-btn-text {
-	padding: 0;
-	margin: 0;
+	margin-left: 7px;
 }/* used for documentation "fake" buttons */
 .tc-btn-standard {
 	line-height: 1.8;
