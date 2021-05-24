@@ -5245,6 +5245,12 @@ Error message and password prompt
             "type": "application/javascript",
             "module-type": "formatfilteroperator"
         },
+        "$:/core/modules/filters/format/titlelist.js": {
+            "title": "$:/core/modules/filters/format/titlelist.js",
+            "text": "/*\\\ntitle: $:/core/modules/filters/format/titlelist.js\ntype: application/javascript\nmodule-type: formatfilteroperator\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\n/*\nExport our filter function\n*/\nexports.titlelist = function(source,operand,options) {\n\tvar results = [];\n\tsource(function(tiddler,title) {\n\t\tif(title &amp;&amp; title.length) {\n\t\t\tresults.push($tw.utils.stringifyList([title]));\n\t\t}\n\t});\n\treturn results;\n};\n\n})();\n",
+            "type": "application/javascript",
+            "module-type": "formatfilteroperator"
+        },
         "$:/core/modules/filters/format.js": {
             "title": "$:/core/modules/filters/format.js",
             "text": "/*\\\ntitle: $:/core/modules/filters/format.js\ntype: application/javascript\nmodule-type: filteroperator\nFilter operator for formatting strings\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\nvar formatFilterOperators;\n\nfunction getFormatFilterOperators() {\n\tif(!formatFilterOperators) {\n\t\tformatFilterOperators = {};\n\t\t$tw.modules.applyMethods(\"formatfilteroperator\",formatFilterOperators);\n\t}\n\treturn formatFilterOperators;\n}\n\n/*\nExport our filter function\n*/\nexports.format = function(source,operator,options) {\n\t// Dispatch to the correct formatfilteroperator\n\tvar formatFilterOperators = getFormatFilterOperators();\n\tif(operator.suffix) {\n\t\tvar formatFilterOperator = formatFilterOperators[operator.suffix];\n\t\tif(formatFilterOperator) {\n\t\t\treturn formatFilterOperator(source,operator.operand,options);\n\t\t} else {\n\t\t\treturn [$tw.language.getString(\"Error/FormatFilterOperator\")];\n\t\t}\n\t} else {\n\t\t// Return all unchanged if the suffix is missing\n\t\tvar results = [];\n\t\tsource(function(tiddler,title) {\n\t\t\tresults.push(title);\n\t\t});\n\t\treturn results;\n\t}\n};\n\n})();",
@@ -11399,6 +11405,12 @@ function runTests(wiki) {
 	expect(wiki.filterTiddlers("1234 +[escapecss[]]").join(",")).toBe("\\31 234");
 	expect(wiki.filterTiddlers("'-25' +[escapecss[]]").join(",")).toBe("-\\32 5");
 	expect(wiki.filterTiddlers("'-' +[escapecss[]]").join(",")).toBe("\\-");
+	});
+	
+	it("should handle the format operator", function() {
+		expect(wiki.filterTiddlers("[[Hello There]] [[GettingStarted]] +[format:titlelist[]]").join(" ")).toBe("[[Hello There]] GettingStarted");
+		expect(wiki.filterTiddlers("[title[Hello There]] +[format:titlelist[]]").join(" ")).toBe("[[Hello There]]");
+		expect(wiki.filterTiddlers("[title[HelloThere]] +[format:titlelist[]]").join(" ")).toBe("HelloThere");		
 	});
 
 	it("should handle the deserializers operator", function() {

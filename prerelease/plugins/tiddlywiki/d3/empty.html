@@ -188,8 +188,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div commit="c30ce544d194aea0e7f3fce0644c764b619a1067" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit c30ce544d194aea0e7f3fce0644c764b619a1067 of https://github.com/Jermolene/TiddlyWiki5 at 2021-05-24 18:25:59 UTC
+<div commit="7a41283c6bfdfddd24122be5bb8897889ff67415" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 7a41283c6bfdfddd24122be5bb8897889ff67415 of https://github.com/Jermolene/TiddlyWiki5 at 2021-05-24 18:30:13 UTC
 </pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" name="Core" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.24-prerelease">
@@ -5233,6 +5233,12 @@ Error message and password prompt
             "type": "application/javascript",
             "module-type": "formatfilteroperator"
         },
+        "$:/core/modules/filters/format/titlelist.js": {
+            "title": "$:/core/modules/filters/format/titlelist.js",
+            "text": "/*\\\ntitle: $:/core/modules/filters/format/titlelist.js\ntype: application/javascript\nmodule-type: formatfilteroperator\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\n/*\nExport our filter function\n*/\nexports.titlelist = function(source,operand,options) {\n\tvar results = [];\n\tsource(function(tiddler,title) {\n\t\tif(title &amp;&amp; title.length) {\n\t\t\tresults.push($tw.utils.stringifyList([title]));\n\t\t}\n\t});\n\treturn results;\n};\n\n})();\n",
+            "type": "application/javascript",
+            "module-type": "formatfilteroperator"
+        },
         "$:/core/modules/filters/format.js": {
             "title": "$:/core/modules/filters/format.js",
             "text": "/*\\\ntitle: $:/core/modules/filters/format.js\ntype: application/javascript\nmodule-type: filteroperator\nFilter operator for formatting strings\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\nvar formatFilterOperators;\n\nfunction getFormatFilterOperators() {\n\tif(!formatFilterOperators) {\n\t\tformatFilterOperators = {};\n\t\t$tw.modules.applyMethods(\"formatfilteroperator\",formatFilterOperators);\n\t}\n\treturn formatFilterOperators;\n}\n\n/*\nExport our filter function\n*/\nexports.format = function(source,operator,options) {\n\t// Dispatch to the correct formatfilteroperator\n\tvar formatFilterOperators = getFormatFilterOperators();\n\tif(operator.suffix) {\n\t\tvar formatFilterOperator = formatFilterOperators[operator.suffix];\n\t\tif(formatFilterOperator) {\n\t\t\treturn formatFilterOperator(source,operator.operand,options);\n\t\t} else {\n\t\t\treturn [$tw.language.getString(\"Error/FormatFilterOperator\")];\n\t\t}\n\t} else {\n\t\t// Return all unchanged if the suffix is missing\n\t\tvar results = [];\n\t\tsource(function(tiddler,title) {\n\t\t\tresults.push(title);\n\t\t});\n\t\treturn results;\n\t}\n};\n\n})();",
@@ -10135,7 +10141,7 @@ Error message and password prompt
 <div title="$:/grouped">
 <pre>yes</pre>
 </div>
-<div created="20210524182651686" current-tiddler="HelloThere" modified="20210524182651686" title="$:/HistoryList" type="application/json">
+<div created="20210524183103311" current-tiddler="HelloThere" modified="20210524183103311" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         "title": "HelloThere"
@@ -10212,7 +10218,7 @@ Error message and password prompt
         },
         "$:/info/startup-timestamp": {
             "title": "$:/info/startup-timestamp",
-            "text": "20210524182651537"
+            "text": "20210524183103160"
         }
     }
 }</pre>
