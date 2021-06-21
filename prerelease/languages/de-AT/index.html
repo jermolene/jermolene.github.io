@@ -186,8 +186,8 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
 
 &lt;&lt;list-links filter:"[tag{!!title}]"&gt;&gt;</pre>
 </div>
-<div commit="2da7ae0b735c45725802d813d15d0c807f95e65b" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 2da7ae0b735c45725802d813d15d0c807f95e65b of https://github.com/Jermolene/TiddlyWiki5 at 2021-06-14 17:15:34 UTC
+<div commit="0b56d5fd379e01a86b7faef8e8a70ef49d721d0e" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 0b56d5fd379e01a86b7faef8e8a70ef49d721d0e of https://github.com/Jermolene/TiddlyWiki5 at 2021-06-21 11:16:05 UTC
 </pre>
 </div>
 <div created="20140909085347212" modified="20140909085346177" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home" type="text/vnd.tiddlywiki">
@@ -11112,6 +11112,14 @@ $src$
             "title": "$:/language/ControlPanel/Basics/OverriddenShadowTiddlers/Prompt",
             "text": "Anzahl überschriebener Schatten-Tiddler"
         },
+        "$:/language/ControlPanel/Basics/RemoveTags": {
+            "title": "$:/language/ControlPanel/Basics/RemoveTags",
+            "text": "Auf neues Format umstellen"
+        },
+        "$:/language/ControlPanel/Basics/RemoveTags/Hint": {
+            "title": "$:/language/ControlPanel/Basics/RemoveTags/Hint",
+            "text": "Die \"tags\" Konfiguration wird auf das aktuelle Format umgestellt"
+        },
         "$:/language/ControlPanel/Basics/ShadowTiddlers/Prompt": {
             "title": "$:/language/ControlPanel/Basics/ShadowTiddlers/Prompt",
             "text": "Anzahl Schatten-Tiddler"
@@ -11219,6 +11227,10 @@ $src$
         "$:/language/ControlPanel/KeyboardShortcuts/Platform/NonWindows": {
             "title": "$:/language/ControlPanel/KeyboardShortcuts/Platform/NonWindows",
             "text": "Alle Plattformen, außer Windows"
+        },
+        "$:/language/ControlPanel/LayoutSwitcher/Caption": {
+            "title": "$:/language/ControlPanel/LayoutSwitcher/Caption",
+            "text": "Layout"
         },
         "$:/language/ControlPanel/LoadedModules/Caption": {
             "title": "$:/language/ControlPanel/LoadedModules/Caption",
@@ -11526,7 +11538,7 @@ $src$
         },
         "$:/language/ControlPanel/Saving/TiddlySpot/Description": {
             "title": "$:/language/ControlPanel/Saving/TiddlySpot/Description",
-            "text": "Diese Einstellungen sind nur für http://tiddlyspot.com und kompatible Server aktiv!"
+            "text": "Diese Einstellungen sind nur für [[TiddlySpot|http://tiddlyspot.com]], [[TiddlyHost|https://tiddlyhost.com]], und kompatible Server aktiv! [[Diese Beschreibung|https://github.com/simonbaird/tiddlyhost/wiki/TiddlySpot-Saver-configuration-for-Tiddlyhost-and-Tiddlyspot]] enthält weitergehende Informationen."
         },
         "$:/language/ControlPanel/Saving/TiddlySpot/Filename": {
             "title": "$:/language/ControlPanel/Saving/TiddlySpot/Filename",
@@ -11543,6 +11555,10 @@ $src$
         "$:/language/ControlPanel/Saving/TiddlySpot/Password": {
             "title": "$:/language/ControlPanel/Saving/TiddlySpot/Password",
             "text": "Passwort"
+        },
+        "$:/language/ControlPanel/Saving/TiddlySpot/ReadOnly": {
+            "title": "$:/language/ControlPanel/Saving/TiddlySpot/ReadOnly",
+            "text": "~TiddlySpot wurde durch https://tiddlyhost.com ersetzt. Neue Wikis können nur noch unter ~TiddlyHost erstellt werden. Bestehende Projekte können mit bekanntem Passwort gespeichert werden. Genaue Informationen finden Sie unter: http://tiddlyspot.com/"
         },
         "$:/language/ControlPanel/Saving/TiddlySpot/ServerURL": {
             "title": "$:/language/ControlPanel/Saving/TiddlySpot/ServerURL",
@@ -12312,6 +12328,10 @@ $src$
             "title": "$:/language/Docs/ModuleTypes/utils",
             "text": "Methoden werden `$tw.utils` hinzugefügt."
         },
+        "$:/language/Docs/ModuleTypes/utils-browser": {
+            "title": "$:/language/Docs/ModuleTypes/utils-browser",
+            "text": "Browser-spezifische Methoden werden zu `$tw.utils` hinzugefügt."
+        },
         "$:/language/Docs/ModuleTypes/utils-node": {
             "title": "$:/language/Docs/ModuleTypes/utils-node",
             "text": "Erweitert `$tw.utils` mit Methoden aus node.js."
@@ -12768,6 +12788,14 @@ $src$
             "title": "$:/language/EditTemplate/Body/Preview/Type/Output",
             "text": "Anzeige"
         },
+        "$:/language/EditTemplate/Body/Preview/Type/DiffShadow": {
+            "title": "$:/language/EditTemplate/Body/Preview/Type/DiffShadow",
+            "text": "Unterschiede zum Schatten-Tiddler (wenn vorhanden)"
+        },
+        "$:/language/EditTemplate/Body/Preview/Type/DiffCurrent": {
+            "title": "$:/language/EditTemplate/Body/Preview/Type/DiffCurrent",
+            "text": "Unterschiede zum aktuellen Tiddler"
+        },
         "$:/language/EditTemplate/Field/Remove/Caption": {
             "title": "$:/language/EditTemplate/Field/Remove/Caption",
             "text": "Lösche Feld"
@@ -13155,7 +13183,7 @@ $src$
         "$:/language/Help/listen": {
             "title": "$:/language/Help/listen",
             "description": "Definiert das HTTP-Server Interface für Tiddlywiki",
-            "text": "Stellt das Wiki über einen HTTP-Server zur Verfügung.\n\nDie \"listen\" Parameter werden wie folgt verwendet: \n\n```\n--listen [&lt;name&gt;=&lt;wert&gt;]...\n```\n\nAlle Parameter sind optional, die Reihenfolge ist beliebig und es werden \"sichere\" standard parametern verwendet.\n\nMögliche Parameter:\n\n* ''host'' - Host-Name, von dem übertragen wird. (Standard: \"127.0.0.1\" aka \"localhost\")\n* ''path-prefix'' - Prefix, der auf alle Pfade angewendet wird\n* ''port'' - Port Nummer, die überwacht werden soll; Nicht-numerische Werte werden als System Umgebungs-Variable interpretiert. (Standard: 8080)\n* ''credentials'' - Pfad zur Authentifizierungsdatei im CSV-format. Angabe ist relativ zum Wiki-Verzeichnis\n* ''anon-username'' - Name, der für anonymer Benutzer verwendet wird, um bearbeitete Tiddler zu markieren\n* ''username'' - Benutzername für die Basis-Authentifizierung\n* ''password'' - Passwort für die Basis-Authentifizierung\n* ''authenticated-user-header'' - HTTP Header-Name für vertrauenswürdige, authentifizierte Benutzer\n* ''readers'' - Komma separierte Liste für Benutzer, mit Schreiberlaubnis\n* ''writers'' - Komma separierte Liste für Benutzer, mit Leseerlaubnis\n* ''csrf-disable'' - \"yes\" bedeutet, dass CSRF checks deaktiviert sind. (Standard: \"no\")\n* ''root-tiddler'' - Tiddler, der für den \"Root-Pfad\" verwendet wird. (Standard: \"$:/core/save/all\")\n* ''root-render-type'' - Darstellungs-Type, die für den Root-Tiddler verwendet wird. (Standard: \"text/plain\")\n* ''root-serve-type'' - Inhalts-Type, die für den Root-Tiddler verwendet wird. (Standard: \"text/html\")\n* ''tls-cert'' - Pfad zur \"TLS certificate\" Datei (relativ zum Wiki Verzeichnis)\n* ''tls-key'' - Pfad zur \"TLS key\" Datei (relativ zum Wiki Verzeichnis)\n* ''debug-level'' - \"debug\" bewikt eine detailierte Anzeige der HTTP Anfrage-Parameter. (Standard: \"none\")\n* ''gzip'' - Wenn auf \"yes\" gesetzt, dann wird gzip Kompression aktiviert. (Standard: \"no\")\n* ''use-browser-cache'' - Ist dieser Parameter auf \"yes\" gesetzt kann der Browser Inhalte zwischenspeichern um Übertragungsbandbreite zu sparen. (Standard: \"no\")\n\nFür weitere Sicherheitshinweise und Informationen für die Verwendung in lokalen Netzwerken siehe: WebServer auf TiddlyWiki.com\n"
+            "text": "Stellt das Wiki über einen HTTP-Server zur Verfügung.\n\nDie \"listen\" Parameter werden wie folgt verwendet: \n\n```\n--listen [&lt;name&gt;=&lt;wert&gt;]...\n```\n\nAlle Parameter sind optional, die Reihenfolge ist beliebig und es werden \"sichere\" standard parametern verwendet.\n\nMögliche Parameter:\n\n* ''host'' - Host-Name, von dem übertragen wird. (Standard: \"127.0.0.1\" aka \"localhost\")\n* ''path-prefix'' - Prefix, der auf alle Pfade angewendet wird\n* ''port'' - Port Nummer, die überwacht werden soll; Nicht-numerische Werte werden als System Umgebungs-Variable interpretiert. (Standard: 8080)\n* ''credentials'' - Pfad zur Authentifizierungsdatei im CSV-format. Angabe ist relativ zum Wiki-Verzeichnis\n* ''anon-username'' - Name, der für anonymer Benutzer verwendet wird, um bearbeitete Tiddler zu markieren\n* ''username'' - Benutzername für die Basis-Authentifizierung\n* ''password'' - Passwort für die Basis-Authentifizierung\n* ''authenticated-user-header'' - HTTP Header-Name für vertrauenswürdige, authentifizierte Benutzer\n* ''readers'' - Komma-separierte Liste für Benutzer, mit Schreiberlaubnis\n* ''writers'' - Komma-separierte Liste für Benutzer, mit Leseerlaubnis\n* ''csrf-disable'' - \"yes\" bedeutet, dass CSRF checks deaktiviert sind. (Standard: \"no\")\n* ''sse-enabled'' - \"yes\" bedeuted, dass \"Server-sent events\" aktiv sind (Standard: \"no\")\n* ''root-tiddler'' - Tiddler, der für den \"Root-Pfad\" verwendet wird. (Standard: \"$:/core/save/all\")\n* ''root-render-type'' - Darstellungs-Type, die für den Root-Tiddler verwendet wird. (Standard: \"text/plain\")\n* ''root-serve-type'' - Inhalts-Type, die für den Root-Tiddler verwendet wird. (Standard: \"text/html\")\n* ''tls-cert'' - Pfad zur \"TLS certificate\" Datei (relativ zum Wiki Verzeichnis)\n* ''tls-key'' - Pfad zur \"TLS key\" Datei (relativ zum Wiki Verzeichnis)\n* ''debug-level'' - \"debug\" bewikt eine detailierte Anzeige der HTTP Anfrage-Parameter. (Standard: \"none\")\n* ''gzip'' - Wenn auf \"yes\" gesetzt, dann wird gzip Kompression aktiviert. (Standard: \"no\")\n* ''use-browser-cache'' - Ist dieser Parameter auf \"yes\" gesetzt kann der Browser Inhalte zwischenspeichern um Übertragungsbandbreite zu sparen. (Standard: \"no\")\n\nFür weitere Sicherheitshinweise und Informationen für die Verwendung in lokalen Netzwerken siehe: WebServer auf TiddlyWiki.com\n"
         },
         "$:/language/Help/load": {
             "title": "$:/language/Help/load",
@@ -13184,7 +13212,7 @@ $src$
         "$:/language/Help/render": {
             "title": "$:/language/Help/render",
             "description": "Ausgabe individueller Tiddler in Dateien",
-            "text": "Individuelle Tiddler werden anhand von Filtern spezifiziert, gelesen und in Dateien umgesetzt.\n\nOptionell kann eine Template-Datei angegeben werden. In diesem Fall wird nicht der Inhalt des Tiddlers, sondern des Templates umgesetzt. Die `currentTiddler` Variable wird auf den Titel, des auszugebenden, Tiddlers gesetzt.\n\nEs können noch zusätzliche Variablen per Name und Wert gesetzt werden.\n\n```\n--render &lt;tiddler-filter&gt; [&lt;filename-filter&gt;] [&lt;render-type&gt;] [&lt;template&gt;] [&lt;name&gt;] [&lt;value&gt;]\n```\n\n* ''tiddler-filter'': Ein Filter, der die Auszugebenden Tiddler eindeutig spezifiziert. \n* ''filename-filter'': [Option] Filter, der aus Tiddler Titeln, Pfadnamen extrahiert. Wenn weggelassen, dann wird der Standard verwendet: `[is[tiddler]addsuffix[.html]]`, welcher den Titel als Dateiname verwendet.\n* ''render-type'': [Option] Ausgabe Type: `text/html` (Standard) generiert HTML Text und `text/plain` gibt den \"reinen\" Text Inhalt zurück. `text/plain` ignoriert HTML Marker und andere \"nicht-druckbare\" Zeichen.\n* ''template'': [Option] Template, das verwendet werden soll\n* ''name'': [Option] Name einer zusätzlichen Variablen.\n* ''value'': [Option] Wert dieser zusätzlichen Variablen.\n\nStandardmäßig sind die Dateinamen \"relativ\" zum `output` Verzeichnis, des `edition` Verzeichnisses.\n\nMit dem `--output` Befehl kann die Ausgabe in jedes beliebige Verzeichnis umgeleitet werden.\n\nWichtig:\n\n* Das `output` Verzeichnis wird nicht gelöscht, bevor neue Dateien geschrieben werden.\n* Verzeichnisse und Dateien werden automatisch angelegt, sollten sie nicht vorhanden sein.\n* Wenn eine Datei Leerzeichen enthält, dann muss dies ''doppelt'' angezeigt werden. Für TiddlyWiki mit eckigen Klammern `[[]]` und für die Kommandozeile mit Hochkomma \"\". Zum Beispiel: `--render \"[[Motovun Jack.jpg]]\"`\n* Dateinamens-Filter zeigen immer auf den Titel, des gerade umzusetzenden Tiddlers. Das erlaubt uns, diesen als Basis für den Dateinamen zu verwenden. zB: `[encodeuricomponent[]addprefix[static/]]` ... Verwendet eine URI-Enkodierung für jeden Dateinamen und stellt das Wort `static/` als Pfadname voran. \n* Der `--render` Befehl ist flexibler und ersetzt daher `--rendertiddler` und `--rendertiddlers`, welche mit V5.1.15 auslaufen!\n\nBeispiel:\n\n* `--render \"[!is[system]]\" \"[encodeuricomponent[]addprefix[tiddlers/]addsuffix[.html]]\"` ... Übersetzt alle Nicht-System Tiddler und schreibt sie in ein Unterverzeichnis `tiddlers/` mit URL-kodiertem Titel und der Erweiterung `.html`\n\n"
+            "text": "Individuelle Tiddler werden anhand von Filtern spezifiziert, gelesen und in Dateien umgesetzt.\n\nOptionell kann eine Template-Datei angegeben werden. In diesem Fall wird nicht der Inhalt des Tiddlers, sondern des Templates umgesetzt. Die `currentTiddler` Variable wird auf den Titel, des auszugebenden, Tiddlers gesetzt.\n\nEs können noch zusätzliche Variablen per Name und Wert gesetzt werden.\n\n```\n--render &lt;tiddler-filter&gt; [&lt;filename-filter&gt;] [&lt;render-type&gt;] [&lt;template&gt;] [ [&lt;name&gt;] [&lt;value&gt;] ]*\n```\n\n* ''tiddler-filter'': Ein Filter, der die Auszugebenden Tiddler eindeutig spezifiziert. \n* ''filename-filter'': [Option] Filter, der aus Tiddler Titeln, Pfadnamen extrahiert. Wenn weggelassen, dann wird der Standard verwendet: `[is[tiddler]addsuffix[.html]]`, welcher den Titel als Dateiname verwendet.\n* ''render-type'': [Option] Ausgabe Type: `text/html` (Standard) generiert HTML Text und `text/plain` gibt den \"reinen\" Text Inhalt zurück. `text/plain` ignoriert HTML Marker und andere \"nicht-druckbare\" Zeichen.\n* ''template'': [Option] Template, das verwendet werden soll\n* ''name'': [Option] Name einer zusätzlichen Variablen.\n* ''value'': [Option] Wert dieser zusätzlichen Variablen.\n\nStandardmäßig sind die Dateinamen \"relativ\" zum `output` Verzeichnis, des `edition` Verzeichnisses.\n\nMit dem `--output` Befehl kann die Ausgabe in jedes beliebige Verzeichnis umgeleitet werden.\n\nWichtig:\n\n* Das `output` Verzeichnis wird nicht gelöscht, bevor neue Dateien geschrieben werden.\n* Verzeichnisse und Dateien werden automatisch angelegt, sollten sie nicht vorhanden sein.\n* Wenn eine Datei Leerzeichen enthält, dann muss dies ''doppelt'' angezeigt werden. Für TiddlyWiki mit eckigen Klammern `[[]]` und für die Kommandozeile mit Hochkomma \"\". Zum Beispiel: `--render \"[[Motovun Jack.jpg]]\"`\n* Dateinamens-Filter zeigen immer auf den Titel, des gerade umzusetzenden Tiddlers. Das erlaubt uns, diesen als Basis für den Dateinamen zu verwenden. zB: `[encodeuricomponent[]addprefix[static/]]` ... Verwendet eine URI-Enkodierung für jeden Dateinamen und stellt das Wort `static/` als Pfadname voran. \n* Es können mehrere ''name/value'' Paare verwendet werden.\n* Der `--render` Befehl ist flexibler und ersetzt daher `--rendertiddler` und `--rendertiddlers`, welche mit V5.1.15 auslaufen!\n\nBeispiel:\n\n* `--render \"[!is[system]]\" \"[encodeuricomponent[]addprefix[tiddlers/]addsuffix[.html]]\"` ... Übersetzt alle Nicht-System Tiddler und schreibt sie in ein Unterverzeichnis `tiddlers/` mit URL-kodiertem Titel und der Erweiterung `.html`\n\n"
         },
         "$:/language/Help/rendertiddler": {
             "title": "$:/language/Help/rendertiddler",
@@ -13240,6 +13268,10 @@ $src$
             "title": "$:/language/Help/version",
             "description": "Gibt die Versionsnummer von TiddlyWiki aus.",
             "text": "Gibt die Versionsnummer von TiddlyWiki aus.\n\n```\n--version\n```\n"
+        },
+        "$:/language/Import/Editor/Import/Heading": {
+            "title": "$:/language/Import/Editor/Import/Heading",
+            "text": "Bilder in den Editor importieren."
         },
         "$:/language/Import/Imported/Hint": {
             "title": "$:/language/Import/Imported/Hint",
@@ -13329,6 +13361,10 @@ $src$
             "title": "$:/language/Import/Upgrader/State/Suppressed",
             "text": "Unterdrückte temporäre Status Tiddler."
         },
+        "$:/language/Import/Upgrader/System/Disabled": {
+            "title": "$:/language/Import/Upgrader/System/Disabled",
+            "text": "Deaktivierter \"System-Tiddler\"."
+        },
         "$:/language/Import/Upgrader/System/Suppressed": {
             "title": "$:/language/Import/Upgrader/System/Suppressed",
             "text": "Unterdrückte \"System Tiddler\"."
@@ -13344,6 +13380,18 @@ $src$
         "$:/language/Import/Upgrader/ThemeTweaks/Created": {
             "title": "$:/language/Import/Upgrader/ThemeTweaks/Created",
             "text": "Migrieren der \"theme tweaks\" von: &lt;$text text=&lt;&lt;from&gt;&gt;/&gt;."
+        },
+        "$:/language/Import/Upgrader/Tiddler/Disabled": {
+            "title": "$:/language/Import/Upgrader/Tiddler/Disabled",
+            "text": "Deaktivierter Tiddler."
+        },
+        "$:/language/Import/Upgrader/Tiddler/Selected": {
+            "title": "$:/language/Import/Upgrader/Tiddler/Selected",
+            "text": "Vom Anwender ausgewählt."
+        },
+        "$:/language/Import/Upgrader/Tiddler/Unselected": {
+            "title": "$:/language/Import/Upgrader/Tiddler/Unselected",
+            "text": "Auswahl aufgehoben."
         },
         "$:/language/AboveStory/ClassicPlugin/Warning": {
             "title": "$:/language/AboveStory/ClassicPlugin/Warning",
@@ -13471,7 +13519,15 @@ $src$
         },
         "$:/language/Error/PutEditConflict": {
             "title": "$:/language/Error/PutEditConflict",
-            "text": "Datei auf Server verändert"
+            "text": "Datei am Server verändert"
+        },
+        "$:/language/Error/PutForbidden": {
+            "title": "$:/language/Error/PutForbidden",
+            "text": "Erlaubnis verweigert"
+        },
+        "$:/language/Error/PutUnauthorized": {
+            "title": "$:/language/Error/PutUnauthorized",
+            "text": "Authentifizierung benötigt"
         },
         "$:/language/Error/RecursiveTransclusion": {
             "title": "$:/language/Error/RecursiveTransclusion",
@@ -13504,6 +13560,10 @@ $src$
         "$:/language/InvalidFieldName": {
             "title": "$:/language/InvalidFieldName",
             "text": "Das Feld: \"&lt;$text text=&lt;&lt;fieldName&gt;&gt;/&gt;\" enthält illegale Zeichen. Felder müssen klein geschrieben werden. Erlaubte Sonderzeichen sind: Zahlen, Unterstrich (`_`), Minus (`-`) und Punkt (`.`)."
+        },
+        "$:/language/LayoutSwitcher/Description": {
+            "title": "$:/language/LayoutSwitcher/Description",
+            "text": "\"Layout\" Selektor anzeigen"
         },
         "$:/language/LazyLoadingWarning": {
             "title": "$:/language/LazyLoadingWarning",
@@ -13597,6 +13657,14 @@ $src$
             "title": "$:/language/OfficialPluginLibrary/Hint",
             "text": "Offizielles ~TiddlyWiki Plugin-Verzeichnis auf tiddlywiki.com. Plugin, Themes und Sprach Dateien werden vom \"core team\" gewartet."
         },
+        "$:/language/PageTemplate/Description": {
+            "title": "$:/language/PageTemplate/Description",
+            "text": "das Standard ~TiddlyWiki Layout"
+        },
+        "$:/language/PageTemplate/Name": {
+            "title": "$:/language/PageTemplate/Name",
+            "text": "Standard ~PageTemplate"
+        },
         "$:/language/PluginReloadWarning": {
             "title": "$:/language/PluginReloadWarning",
             "text": "Das Wiki muss gespeichert {{$:/core/ui/Buttons/save-wiki}} und neu gladen {{$:/core/ui/Buttons/refresh}} werden, damit die ~JavaScript Plugins ausgeführt werden."
@@ -13640,6 +13708,22 @@ $src$
         "$:/language/Shortcuts/SidebarLayout/Hint": {
             "title": "$:/language/Shortcuts/SidebarLayout/Hint",
             "text": "Das Layout des rechten Menüs ändern"
+        },
+        "$:/language/Switcher/Subtitle/theme": {
+            "title": "$:/language/Switcher/Subtitle/theme",
+            "text": "Theme auswählen"
+        },
+        "$:/language/Switcher/Subtitle/layout": {
+            "title": "$:/language/Switcher/Subtitle/layout",
+            "text": "Layout auswählen"
+        },
+        "$:/language/Switcher/Subtitle/language": {
+            "title": "$:/language/Switcher/Subtitle/language",
+            "text": "Sprache auswählen"
+        },
+        "$:/language/Switcher/Subtitle/palette": {
+            "title": "$:/language/Switcher/Subtitle/palette",
+            "text": "Palette auswählen"
         },
         "$:/language/SystemTiddler/Tooltip": {
             "title": "$:/language/SystemTiddler/Tooltip",
@@ -13907,11 +13991,11 @@ $src$
         },
         "$:/language/ThemeTweaks/Options/SidebarLayout/Fixed-Fluid": {
             "title": "$:/language/ThemeTweaks/Options/SidebarLayout/Fixed-Fluid",
-            "text": "Fixe Story, variable Seitenleiste"
+            "text": "Fixe \"Story\", variable Seitenleiste"
         },
         "$:/language/ThemeTweaks/Options/SidebarLayout/Fluid-Fixed": {
             "title": "$:/language/ThemeTweaks/Options/SidebarLayout/Fluid-Fixed",
-            "text": "Variable Story, fixe Seitenleiste"
+            "text": "Variable \"Story\", fixe Seitenleiste"
         },
         "$:/language/ThemeTweaks/Options/StickyTitles": {
             "title": "$:/language/ThemeTweaks/Options/StickyTitles",
@@ -14107,7 +14191,7 @@ $src$
         },
         "$:/language/TiddlerInfo/References/Caption": {
             "title": "$:/language/TiddlerInfo/References/Caption",
-            "text": "Referenzen"
+            "text": "Rückverweise"
         },
         "$:/language/TiddlerInfo/References/Empty": {
             "title": "$:/language/TiddlerInfo/References/Empty",
