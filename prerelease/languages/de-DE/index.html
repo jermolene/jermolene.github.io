@@ -186,8 +186,8 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
 
 &lt;&lt;list-links filter:"[tag{!!title}]"&gt;&gt;</pre>
 </div>
-<div commit="afa653a7aad37fd4b351fbea6aab707bcdc5751c" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit afa653a7aad37fd4b351fbea6aab707bcdc5751c of https://github.com/Jermolene/TiddlyWiki5 at 2021-06-21 20:00:23 UTC
+<div commit="644062fc2119950658cd4d74b1aeef7f9db7d9fd" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 644062fc2119950658cd4d74b1aeef7f9db7d9fd of https://github.com/Jermolene/TiddlyWiki5 at 2021-06-22 09:00:07 UTC
 </pre>
 </div>
 <div title="$:/config/OriginalTiddlerPaths" type="application/json">
@@ -5064,6 +5064,12 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
         "$:/core/modules/filterrunprefixes/intersection.js": {
             "title": "$:/core/modules/filterrunprefixes/intersection.js",
             "text": "/*\\\ntitle: $:/core/modules/filterrunprefixes/intersection.js\ntype: application/javascript\nmodule-type: filterrunprefix\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\n/*\nExport our filter prefix function\n*/\nexports.intersection = function(operationSubFunction) {\n\treturn function(results,source,widget) {\n\t\tif(results.length !== 0) {\n\t\t\tvar secondRunResults = operationSubFunction(source,widget);\n\t\t\tvar firstRunResults = results.toArray();\n\t\t\tresults.clear();\n\t\t\t$tw.utils.each(firstRunResults,function(title) {\n\t\t\t\tif(secondRunResults.indexOf(title) !== -1) {\n\t\t\t\t\tresults.push(title);\n\t\t\t\t}\n\t\t\t});\n\t\t}\n\t};\n};\n\n})();\n",
+            "type": "application/javascript",
+            "module-type": "filterrunprefix"
+        },
+        "$:/core/modules/filterrunprefixes/map.js": {
+            "title": "$:/core/modules/filterrunprefixes/map.js",
+            "text": "/*\\\ntitle: $:/core/modules/filterrunprefixes/map.js\ntype: application/javascript\nmodule-type: filterrunprefix\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\n/*\nExport our filter prefix function\n*/\nexports.map = function(operationSubFunction,options) {\n\treturn function(results,source,widget) {\n\t\tif(results.length &gt; 0) {\n\t\t\tvar inputTitles = results.toArray();\n\t\t\tresults.clear();\n\t\t\t$tw.utils.each(inputTitles,function(title) {\n\t\t\t\tvar filtered = operationSubFunction(options.wiki.makeTiddlerIterator([title]),{\n\t\t\t\t\tgetVariable: function(name) {\n\t\t\t\t\t\tswitch(name) {\n\t\t\t\t\t\t\tcase \"currentTiddler\":\n\t\t\t\t\t\t\t\treturn \"\" + title;\n\t\t\t\t\t\t\tcase \"..currentTiddler\":\n\t\t\t\t\t\t\t\treturn widget.getVariable(\"currentTiddler\");\n\t\t\t\t\t\t\tdefault:\n\t\t\t\t\t\t\t\treturn widget.getVariable(name);\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t});\n\t\t\t\tresults.push(filtered[0] || \"\");\n\t\t\t});\n\t\t}\n\t}\n};\n\n})();",
             "type": "application/javascript",
             "module-type": "filterrunprefix"
         },

@@ -5020,6 +5020,12 @@ Error message and password prompt
             "type": "application/javascript",
             "module-type": "filterrunprefix"
         },
+        "$:/core/modules/filterrunprefixes/map.js": {
+            "title": "$:/core/modules/filterrunprefixes/map.js",
+            "text": "/*\\\ntitle: $:/core/modules/filterrunprefixes/map.js\ntype: application/javascript\nmodule-type: filterrunprefix\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\n/*\nExport our filter prefix function\n*/\nexports.map = function(operationSubFunction,options) {\n\treturn function(results,source,widget) {\n\t\tif(results.length &gt; 0) {\n\t\t\tvar inputTitles = results.toArray();\n\t\t\tresults.clear();\n\t\t\t$tw.utils.each(inputTitles,function(title) {\n\t\t\t\tvar filtered = operationSubFunction(options.wiki.makeTiddlerIterator([title]),{\n\t\t\t\t\tgetVariable: function(name) {\n\t\t\t\t\t\tswitch(name) {\n\t\t\t\t\t\t\tcase \"currentTiddler\":\n\t\t\t\t\t\t\t\treturn \"\" + title;\n\t\t\t\t\t\t\tcase \"..currentTiddler\":\n\t\t\t\t\t\t\t\treturn widget.getVariable(\"currentTiddler\");\n\t\t\t\t\t\t\tdefault:\n\t\t\t\t\t\t\t\treturn widget.getVariable(name);\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t});\n\t\t\t\tresults.push(filtered[0] || \"\");\n\t\t\t});\n\t\t}\n\t}\n};\n\n})();",
+            "type": "application/javascript",
+            "module-type": "filterrunprefix"
+        },
         "$:/core/modules/filterrunprefixes/or.js": {
             "title": "$:/core/modules/filterrunprefixes/or.js",
             "text": "/*\\\ntitle: $:/core/modules/filterrunprefixes/or.js\ntype: application/javascript\nmodule-type: filterrunprefix\n\nEquivalent to a filter run with no prefix.\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\n/*\nExport our filter prefix function\n*/\nexports.or = function(operationSubFunction) {\n\treturn function(results,source,widget) {\n\t\tresults.pushTop(operationSubFunction(source,widget));\n\t};\n};\n\n})();\n",
