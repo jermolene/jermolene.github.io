@@ -519,7 +519,7 @@
         "title": "$:/plugins/tiddlywiki/katex",
         "name": "KaTeX",
         "description": "KaTeX library for mathematical typography",
-        "list": "readme usage",
+        "list": "readme usage config",
         "library-version": "v0.12.0",
         "version": "5.2.0-prerelease",
         "plugin-type": "plugin",
