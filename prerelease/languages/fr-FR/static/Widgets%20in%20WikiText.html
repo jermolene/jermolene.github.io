@@ -70,14 +70,84 @@ color:#333333;">
 <div class="tc-tiddler-body tc-reveal"><p>Les widgets enrichissent les fonctionnalités du <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a>. Ils ont la même syntaxe que les <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">éléments HTML</a>, mais leur nom de balise commence toujours par <code>$</code>. Par exemple :</p><pre><code>&lt;$button message="tm-close-tiddler"&gt;Fermez Moi !&lt;/$button&gt;</code></pre><p>Notez que les widgets héritent de toutes les caractéristiques du <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">HTML dans WikiText</a>:</p><ul><li>Les attributs des Widgets peuvent être spécifiés via :<ul><li>Des chaines non-cotées (sans aucun espace)</li><li>Des chaines cotées par simple ou double cotes</li><li>Des chaines cotées par des doubles cotés triplées</li><li>Des invocations de Macro (eg <code>attr=&lt;&lt;maMacro&gt;&gt;</code>)</li><li>Des transclusions (eg, <code>attr={{MonTiddler!!champ}}</code>)</li></ul></li><li>Le contenu d'un widget est analysé en mode en ligne jusqu'à ce que l'ouverture d'une balise soit suivie par deux sautsdeligne, ce qui force le mode bloc<ul><li>Le 'mode Enligne' indique que les règles d'analyse en 'mode bloc' de rubriques, tables, listes, ... ne sont pas reconnues</li></ul></li></ul><p>Voir <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">HTML dans WikiText</a> pour plus de détails.</p><p>Les widgets disponibles inclus :</p><p><ul class="">
 
 <li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="MessageHandlerWidgets.html">
+
+
+MessageHandlerWidgets
+
+
+</a>
+</li>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="TriggeringWidgets.html">
+
+
+TriggeringWidgets
+
+
+</a>
+</li>
+
+<li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionConfirmWidget.html">
 action-confirm
 </a>
 </li>
 
 <li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionCreateTiddlerWidget%2520Example%25201.html">
+
+
+ActionCreateTiddlerWidget Example 1
+
+
+</a>
+</li>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionCreateTiddlerWidget%2520Example%25202.html">
+
+
+ActionCreateTiddlerWidget Example 2
+
+
+</a>
+</li>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionCreateTiddlerWidget%2520Example%25203.html">
+
+
+ActionCreateTiddlerWidget Example 3
+
+
+</a>
+</li>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionCreateTiddlerWidget%2520Example%25204.html">
+
+
+ActionCreateTiddlerWidget Example 4
+
+
+</a>
+</li>
+
+<li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionCreateTiddlerWidget.html">
 action-createtiddler
+</a>
+</li>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionCreateTiddlerWidget%2520Example.html">
+
+
+ActionCreateTiddlerWidget Example
+
+
 </a>
 </li>
 
@@ -132,6 +202,16 @@ action-setfield
 <li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionSetMultipleFieldsWidget.html">
 action-setmultiplefields
+</a>
+</li>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidget%2520Execution%2520Modes.html">
+
+
+ActionWidget Execution Modes
+
+
 </a>
 </li>
 

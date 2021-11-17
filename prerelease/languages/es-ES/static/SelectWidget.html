@@ -20,7 +20,7 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river tc-static-story-river">
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Widgets tc-tagged-TriggeringWidgets" data-tags="Widgets TriggeringWidgets" data-tiddler-title="SelectWidget"><div class="tc-tiddler-title">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-TriggeringWidgets tc-tagged-Widgets" data-tags="TriggeringWidgets Widgets" data-tiddler-title="SelectWidget"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class=" tc-reveal"><button aria-expanded="false" aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
@@ -46,7 +46,7 @@ SelectWidget
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
 </div><div class=" tc-reveal" hidden="true"></div>
-<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>9 octubre 2021 a las 12:18</div></div><div class=" tc-reveal">
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>8 noviembre 2021 a las 16:50</div></div><div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
@@ -264,10 +264,6 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="Community Plugins">Community Plugins</option>
 
-<option value="Community plugins">Community plugins</option>
-
-<option value="Community Plugns">Community Plugns</option>
-
 <option value="Community Resources">Community Resources</option>
 
 <option value="Community Themes">Community Themes</option>
@@ -319,6 +315,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="decodeuricomponent Operator">decodeuricomponent Operator</option>
 
 <option value="Definitions">Definitions</option>
+
+<option value="Demonstrations">Demonstrations</option>
 
 <option value="deserializer Operator">deserializer Operator</option>
 
@@ -416,6 +414,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="getindex Operator">getindex Operator</option>
 
+<option value="GettingStarted">GettingStarted</option>
+
 <option value="getvariable Operator">getvariable Operator</option>
 
 <option value="Group Operators">Group Operators</option>
@@ -429,8 +429,6 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="HelloThumbnail">HelloThumbnail</option>
 
 <option value="HelloThumbnail-disabled">HelloThumbnail-disabled</option>
-
-<option value="Hidden Setting">Hidden Setting</option>
 
 <option value="Hidden Settings">Hidden Settings</option>
 
@@ -576,11 +574,7 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="Order Operators">Order Operators</option>
 
-<option value="Other resources">Other resources</option>
-
 <option value="Other Resources">Other Resources</option>
-
-<option value="Other Resourches">Other Resourches</option>
 
 <option value="pad Operator">pad Operator</option>
 
@@ -748,6 +742,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="SystemTiddlers">SystemTiddlers</option>
 
+<option value="Table-of-Contents Demonstrations">Table-of-Contents Demonstrations</option>
+
 <option value="Table-of-Contents Macros">Table-of-Contents Macros</option>
 
 <option value="table-of-contents-example">table-of-contents-example</option>
@@ -773,6 +769,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="tan Operator">tan Operator</option>
 
 <option value="task">task</option>
+
+<option value="TaskManagementExample">TaskManagementExample</option>
 
 <option value="test">test</option>
 
@@ -1048,7 +1046,30 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option>About</option>
 
 </select><br>
-</p></div></div>
+</p></div><h2 class="">Actions </h2><p>This example uses the actions attribute to apply days of the week as tags to the current tiddler.</p><div class="doc-example"><pre><code>&lt;$select tiddler='$:/generated-list-demo-state' field='actions-test' 
+actions='&lt;$action-listops $field="myfield" $tags={{$:/generated-list-demo-state!!actions-test}}/&gt;'
+&gt;
+&lt;$list filter='[list[Days of the Week]]'&gt;
+&lt;option&gt;&lt;$view field='title'/&gt;&lt;/option&gt;
+&lt;/$list&gt;
+&lt;/$select&gt;
+</code></pre><p>Este es su aspecto:</p><p><select value="undefined">
+
+<option>Monday</option>
+
+<option>Tuesday</option>
+
+<option>Wednesday</option>
+
+<option>Thursday</option>
+
+<option>Friday</option>
+
+<option>Saturday</option>
+
+<option>Sunday</option>
+
+</select></p></div></div>
 </div></p>
 </section>
 </body>
