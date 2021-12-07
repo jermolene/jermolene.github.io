@@ -1952,6 +1952,7 @@ a.tc-tiddlylink:hover {
 	width: 100%;
 }.tc-plugin-info {
 	display: flex;
+	text-shadow: none;
 	border: 1px solid #bbb;
 	fill: #bbb;
 	background-color: #ffffff;
