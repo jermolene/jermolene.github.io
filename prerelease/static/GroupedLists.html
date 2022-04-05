@@ -11,10 +11,7 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>GroupedLists: TiddlyWiki Pre-release
-
-— 5.2.3-prerelease
-</title>
+<title>GroupedLists: TiddlyWiki Pre-release — 5.2.3-prerelease</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
@@ -40,7 +37,8 @@ ListWidget
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>The following sidebar tabs give examples of grouped lists created by nesting.</p><h2 class="">Types Tab</h2><p>For the <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FMoreSideBar%252FTypes.html">Types</a> tab, the outer list filter as shown below selects each discrete value found in the <code>type</code> field. The inner list filter selects all the (non-system) tiddlers with that type.</p><p><pre><code>&lt;$list filter={{$:/core/Filters/TypedTiddlers!!filter}}&gt;
+<div class="tc-tiddler-body tc-reveal"><p>The following sidebar tabs give examples of grouped lists created by nesting.</p><h2 class="">Types Tab</h2><p>For the <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FMoreSideBar%252FTypes.html">Types</a> tab, the outer list filter as shown below selects each discrete value found in the <code>type</code> field. The inner list filter selects all the (non-system) tiddlers with that type.</p><p><pre><code>\whitespace trim
+&lt;$list filter={{$:/core/Filters/TypedTiddlers!!filter}}&gt;
 &lt;div class="tc-menu-list-item"&gt;
 &lt;$view field="type"/&gt;
 &lt;$list filter="[type{!!type}!is[system]sort[title]]"&gt;

@@ -70,7 +70,6 @@ Error message and password prompt
 .tc-password-wrapper input {
 	width: 100%;
 }
-
 .tc-sidebar-header {
 	text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
 }.tc-tiddler-info {
@@ -219,8 +218,6 @@ background-image: -ms-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,25
           box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 
 }
-
-
 /*
 ** Start with the normalize CSS reset, and then belay some of its effects
 *//*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
@@ -2418,10 +2415,6 @@ a.tc-tiddlylink:hover {
 }.tc-word-break {
 	word-break: break-all;
 }
-
-
-
-
 nav.tc-menubar {
 	position: fixed;
 	z-index: 850;
@@ -2543,8 +2536,6 @@ nav.tc-menubar .tc-drop-down .tc-menubar-dropdown-sidebar button {
 @media print {nav.tc-menubar {
 		display: none;
 	}}
-
-
 /* CSS modified for TiddlyWiki */svg.railroad-diagram {
 	background-color: #ffffff;
 	border-radius: 5px;
@@ -2578,9 +2569,7 @@ svg.railroad-diagram text.comment {
 }
 svg.railroad-diagram path.arrow {
     stroke-width: 2;
-}
-
-.tc-double-spaced-list li {
+}.tc-double-spaced-list li {
 	padding-bottom: .5em;
 	padding-top: .5em;
 }.tc-link-info-item {
@@ -2715,9 +2704,7 @@ svg.railroad-diagram path.arrow {
         fill: #fff;
 }.tc-btn-download:active {
 	background: #1475ff;
-}
-
-.tc-custom-tiddler-template {
+}.tc-custom-tiddler-template {
 	border: 3px solid #bbb;
 	border-radius: 1em;
 	margin-bottom: 1em;
@@ -2740,9 +2727,7 @@ svg.railroad-diagram path.arrow {
 
 }.tc-custom-tiddler-template-list .tc-custom-tiddler-template-list-item .tc-tiddler-frame {
 	margin: 0;
-}
-
-.doc-def {
+}.doc-def {
 	font-style: normal;
 	font-weight: bold;
 }.doc-em {
@@ -2933,8 +2918,6 @@ a .doc-attr {
 
 	}
 }
-
-
 .tc-thumbnail-tabs .tc-tab-buttons {
 	background: #ecf2ff;
     text-align: center;
@@ -2985,9 +2968,7 @@ a .doc-attr {
 }.tc-thumbnail-tabs .tc-btn-pushed {
 	background-color: #333333;
 	fill: #ffffff;
-}
-
-[data-tiddler-title="Custom styles by data-tiddler-title"] {
+}[data-tiddler-title="Custom styles by data-tiddler-title"] {
   border: 1px solid blue;
 }[data-tags*="example-test"] {
   border: 2px solid pink;
@@ -3009,4 +2990,3 @@ a .doc-attr {
   border-radius: 3px;
   font-family: Monaco, Consolas, "Lucida Console", "DejaVu Sans Mono", monospace;
 }
-
