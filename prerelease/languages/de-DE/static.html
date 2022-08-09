@@ -691,7 +691,9 @@ pre > code {
 	border: none;
 	background-color: inherit;
 	color: inherit;
-}table {
+}/*
+Table defaults
+*/table {
 	border: 1px solid #dddddd;
 	width: auto;
 	max-width: 100%;
@@ -710,9 +712,27 @@ pre > code {
 	font-weight: bold;
 }table tfoot tr td {
 	background-color: #a8a8a8;
-}.tc-csv-table {
+}/*
+Table utility classes
+*//* Remove borders from table as used in eg: GettingStarted*/
+.tc-table-no-border,
+.tc-table-no-border th,
+.tc-table-no-border td {
+	border: initial;
+}/* First column in table width will fit to text.*/
+/* This rule makes most sense with tc-first-link-nowrap*/
+.tc-first-col-min-width td:nth-child(1) {
+	width: 1%;
+}/* First link A element will not wrap */
+.tc-first-link-nowrap:first-of-type a {
 	white-space: nowrap;
-}.tc-tiddler-frame img,
+}/*
+CSV parser plugin
+*/.tc-csv-table {
+	white-space: nowrap;
+}/*
+Tiddler frame in story river
+*/.tc-tiddler-frame img,
 .tc-tiddler-frame svg,
 .tc-tiddler-frame canvas,
 .tc-tiddler-frame embed,
