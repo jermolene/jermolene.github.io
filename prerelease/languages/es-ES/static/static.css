@@ -806,7 +806,7 @@ a.tc-tiddlylink:hover {
 	right: 0;
 	background: rgba(0,200,0,0.7);
 	text-align: center;
-	content: "Suéltalo aquí o pulsa ESC para cancelar";
+	content: "Suéltalo ahora o pulsa ESC para cancelar";
 }.tc-droppable > .tc-droppable-placeholder {
 	display: none;
 }.tc-droppable.tc-dragover > .tc-droppable-placeholder {
@@ -1474,7 +1474,7 @@ a.tc-tiddlylink:hover {
 	right:0;
 	height: 100%;
 	background: rgba(0,200,0,0.7);
-	content: "Suéltalo aquí o pulsa ESC para cancelar";
+	content: "Suéltalo ahora o pulsa ESC para cancelar";
 	pointer-events: none;
 	position: absolute;
 	display: flex;
