@@ -30,7 +30,7 @@ color:#ffffff;"><svg class="tc-image-globe tc-image-button" height="22pt" viewBo
 <div class="tc-tiddler-body tc-reveal"><p>It's a frequent use case in TiddlyWiki that you will want to put the results of variables together with various bits of strings of text. This process in some programming languages is often referred to as "concatenating" text.</p><p>You might, for instance want to set up a template for your customer database, where links will automatically refer to additional contact information about your customer. Inside your tiddler, you might try something like this:</p><p><table class="doc-bad-example">
 <tbody>
 <tr class="evenRow">
-<td><span class="tc-inline-style" style="font-size:1.5em;">⚠</span> Attention :<br> Ne faites pas comme ça !</td>
+<td><span style="font-size:1.5em;">⚠</span> Attention :<br> Ne faites pas comme ça !</td>
 <td><p><code>[[Additional Info|&lt;&lt;currentTiddler&gt;&gt;-Contact]]</code>
 </p></td>
 </tr>
@@ -38,7 +38,7 @@ color:#ffffff;"><svg class="tc-image-globe tc-image-button" height="22pt" viewBo
 </table></p><p>But that won't work. If you try this, the link will be interpreted very literally, and will attempt to take you to:</p><pre><code>&lt;&lt;currentTiddler&gt;&gt;-Contact</code></pre><p>The solution is to use a macro to put the rendered value of <code>&lt;&lt;currentTiddler&gt;&gt;</code> together with the bit of additional text, <code>-Contact</code>.</p><p>Create a macro at the top of the tiddler like this:</p><pre><code>\define linkup(link) [[Additional Info|$link$-Contact]]</code></pre><p>You might be tempted to invoke the new macro like this:</p><p><table class="doc-bad-example">
 <tbody>
 <tr class="evenRow">
-<td><span class="tc-inline-style" style="font-size:1.5em;">⚠</span> Attention :<br> Ne faites pas comme ça !</td>
+<td><span style="font-size:1.5em;">⚠</span> Attention :<br> Ne faites pas comme ça !</td>
 <td><p><code>&lt;&lt;linkup &lt;&lt;currentTiddler&gt;&gt; &gt;&gt;</code>
 </p></td>
 </tr>

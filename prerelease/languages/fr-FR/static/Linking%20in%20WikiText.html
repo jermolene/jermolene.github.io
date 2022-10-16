@@ -51,7 +51,7 @@ color:#333333;">WikiTexte</span><span class="tc-drop-down tc-reveal" hidden="tru
 &lt;/$link&gt;</code></pre><p>Comme le titre du lien ("lien vers moi-même") et la cible du lien ("Linking in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a>") sont utilisés en tant qu'attributs de widgets, aucune expansion de <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiTexte</a> ne peut avoir lieu.</p><p>Par exemple, une tentative d'utilisation d'une <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextReference.html">référence</a> et d'une <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Variables.html">variable</a> pour générer un lien dynamique comme ceci :</p><p><table class="doc-bad-example">
 <tbody>
 <tr class="evenRow">
-<td><span class="tc-inline-style" style="font-size:1.5em;">⚠</span> Attention :<br> Ne faites pas comme ça !</td>
+<td><span style="font-size:1.5em;">⚠</span> Attention :<br> Ne faites pas comme ça !</td>
 <td><p><code>[[{{!!mon_texte}}|&lt;&lt;currentTiddler&gt;&gt;]]</code>
 </p></td>
 </tr>
@@ -59,7 +59,7 @@ color:#333333;">WikiTexte</span><span class="tc-drop-down tc-reveal" hidden="tru
 </table></p><p>revient à essayer d'utiliser les widgets Lien et Texte ainsi :</p><p><table class="doc-bad-example">
 <tbody>
 <tr class="evenRow">
-<td><span class="tc-inline-style" style="font-size:1.5em;">⚠</span> Attention :<br> Ne faites pas comme ça !</td>
+<td><span style="font-size:1.5em;">⚠</span> Attention :<br> Ne faites pas comme ça !</td>
 <td><pre><code>&lt;$link to="&lt;&lt;currentTiddler&gt;&gt;"&gt;
   &lt;$text text="{{!!mon_texte}}"/&gt;
 &lt;/$link&gt;</code></pre></td>
