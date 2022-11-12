@@ -751,6 +751,18 @@
         "requires-reload": "yes"
     },
     {
+        "title": "$:/plugins/tiddlywiki/twitter-archivist",
+        "name": "Twitter Archivist",
+        "description": "Twitter archiving tools",
+        "list": "readme",
+        "version": "5.2.4-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "! Introduction\n\nThe Twitter Archivist imports the tweets and associated media from a [[Twitter Archive|https://help.twitter.com/en/managing-your-account/how-to-download-your-twitter-archive]] as individual tiddlers.\n\nThe Twitter Archivist plugin is available from the official plugin library for installation in your own wikis.\n\n! Limitations\n\nThis initial version of the Twitter Archivist has several shortcomings that may be addressed in the future:\n\n* Does not handle editable tweets\n* Does not handle direct messages\n\n! Limitations of Twitter Archives\n\nThe Twitter Archive format itself has many shortcomings which affect this tool:\n\n* Retweets come through as old-school RTs, which means that they are often truncated\n* Likes only have minimal information, lacking date, author and mentions\n* External links go to the t.co shortener\n* Twitter archives can be delivered in multiple parts, but this tool has only been tested with single archives. It is hoped that cumulatively importing each of the archives in turn should work\n\nA future version of this tool may use the Twitter API to get around these restrictions.\n\n! Getting Started\n\nFirst, request your Tweet archive from Twitter. Once it is available, download and unzip it.\n\nThe Twitter Archivist can operate in the browser or under Node.js.\n\n!! In the Browser\n\nTo import a Twitter archive in the browser, click the button below and navigate to the root of the archive:\n\n<$button>\n<$action-sendmessage $message=\"tm-load-twitter-archive\"/>\nOpen Twitter archive\n</$button>\n\n!! Under Node.js\n\nTo import a Twitter archive under Node.js, use the `--loadtwitterarchive` command:\n\n```\ntiddlywiki editions/twitter-archivist/ --loadtwitterarchive '/path/to/archive' --build index\n```\n\n! Imported Archives\n\nAny imported archives will show here:\n\n<<list-archives>>\n\n",
+        "requires-reload": "yes"
+    },
+    {
         "title": "$:/plugins/tiddlywiki/xlsx-utils",
         "name": "XLSX Utils",
         "description": "XLSX spreadsheet utilities",
