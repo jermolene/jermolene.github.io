@@ -698,7 +698,7 @@ Table defaults
 	border-collapse: collapse;
 	border-spacing: 0;
 }table th, table td {
-	padding: 0 7px 0 7px;
+	padding: 4px 6px 4px 6px;
 	border-top: 1px solid #dddddd;
 	border-left: 1px solid #dddddd;
 }table thead tr td, table th {
@@ -717,9 +717,24 @@ Table utility classes
 /* This rule makes most sense with tc-first-link-nowrap*/
 .tc-first-col-min-width td:nth-child(1) {
 	width: 1%;
-}/* First link A element will not wrap */
+}/*
+** Utility classes work well with tables but also for other containers
+*//* First link A element will not wrap */
 .tc-first-link-nowrap:first-of-type a {
 	white-space: nowrap;
+}/* Move the table to the center of the container */
+.tc-center {
+	margin-left: auto;
+	margin-right: auto;
+}.tc-max-width {
+	width: 100%;
+}.tc-max-width-80 {
+	max-width: 80%;
+}/* Allow input and textarea to look like the ControlPanel inputs */
+.tc-edit-max-width input,
+.tc-edit-max-width textarea {
+	width: 100%;
+	padding: 3px;
 }/*
 CSV parser plugin
 */.tc-csv-table {
@@ -3056,17 +3071,17 @@ svg.railroad-diagram path.arrow {
 }.tc-btn-download {
 	padding: 10px 30px;
 	border-radius: 5px;
-	background: #1462ff;
-        border: none;
-	box-shadow: 0 2px 2px 0 #4a74c9;
+	background: #34c734;
+	border: none;
+	box-shadow: 1px 2px 2px 0 #bbb;
 	overflow: hidden;
 	cursor: pointer;
-        font-size: 1.2em;
-        line-height: 1.4em;
-        color: #fff;
-        fill: #fff;
+	font-size: 1.2em;
+	line-height: 1.4em;
+	color: #fff;
+	fill: #fff;
 }.tc-btn-download:active {
-	background: #1475ff;
+	box-shadow: none;
 }
 .tc-custom-tiddler-template {
 	border: 3px solid #bbb;
