@@ -566,7 +566,7 @@ html button {
 	display: block;
 	margin-top: 1em;
 	margin-bottom: 1em;
-	word-break: normal;
+	word-break: break-word;
 	word-wrap: break-word;
 	white-space: pre-wrap;
 	background-color: #f5f5f5;
@@ -1204,6 +1204,19 @@ a.tc-tiddlylink:hover {
 		border-radius: 2px;
 	}.tc-tiddler-info {
 		margin: 0 -42px 0 -42px;
+	}
+}/* prevent overflow for table content for small screens*/
+@media (max-width: 960px) {
+	.tc-tiddler-frame tr {
+		word-wrap: anywhere;
+	}.tc-tiddler-frame table blockquote {
+		margin-left: 12.5px;
+		margin-right: 12.5px; 
+	}.tc-tiddler-frame table dd {
+		margin-left: 12.5px;
+	}.tc-tiddler-frame table ol,
+	.tc-tiddler-frame table ul {
+		padding-left: 20px;
 	}
 }.tc-site-title,
 .tc-titlebar {
@@ -2811,6 +2824,7 @@ svg.railroad-diagram path.arrow {
 	right: 0;
 	overflow: hidden;
 	top: 0;
+	z-index: 849;
 	pointer-events: none;
 }.tc-card-ribbon {
 	transition: top 0.3s ease-in-out;
