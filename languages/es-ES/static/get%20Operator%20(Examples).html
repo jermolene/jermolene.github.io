@@ -42,7 +42,7 @@ get Operator (Examples)
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 9 marzo 2023 a las 18:05</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 10 marzo 2023 a las 15:40</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
@@ -121,7 +121,18 @@ color:#333333;">
 	</dl>
 </span>
 <span class=" tc-reveal" hidden="true"></span>
-</div></p><p>The above example works by first using the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Filter%2520Run%2520Prefix.html">Filter Filter Run Prefix</a> to only select titles that have the field <code class="doc-field">myfield</code> and then using the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Map%2520Filter%2520Run%2520Prefix.html">Map Filter Run Prefix</a> to replace those titles with their value of that field.  The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Map%2520Filter%2520Run%2520Prefix.html">Map Filter Run Prefix</a> outputs an empty string when its filter run returns an empty <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520Selection.html">selection</a>.</p></div>
+</div></p><p>The above example works by first using the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Filter%2520Run%2520Prefix.html">Filter Filter Run Prefix</a> to only select titles that have the field <code class="doc-field">myfield</code> and then using the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Map%2520Filter%2520Run%2520Prefix.html">Map Filter Run Prefix</a> to replace those titles with their value of that field.  The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Map%2520Filter%2520Run%2520Prefix.html">Map Filter Run Prefix</a> outputs an empty string when its filter run returns an empty <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520Selection.html">selection</a>.</p><p><div class="doc-example">
+
+<span class=" tc-reveal">
+	<code>[all[tiddlers]] :filter[get[created]compare:date:lt{HelloThere!!created}]</code>
+	<dd>→ return all tiddlers that are older than <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HelloThere.html">HelloThere</a></dd>
+	<dl>
+	<dd><button class="">Try it</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></p><p>The above example demonstrates two different ways of accessing field values in filters: Use <a class="tc-tiddlylink tc-tiddlylink-resolves" href="get%2520Operator.html"><code class="doc-operator">get</code></a> when the title is not known in advance as with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Filter%2520Run%2520Prefix.html">Filter Filter Run Prefix</a> where <code class="doc-var">currentTiddler</code> is set to the current input title. Use a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextReference.html">TextReference</a> as an indirect <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Parameter.html">Filter Parameter</a> when the title is known.
+</p></div>
 
 </div></p>
 </section>
