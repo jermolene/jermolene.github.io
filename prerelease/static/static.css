@@ -2612,6 +2612,12 @@ button > .tc-toc-caption{
 	mix-blend-mode: multiply;
 	background: repeating-linear-gradient(-45deg, #ff8 0, #dd8 25%, transparent 0, transparent 50%) 0 / .6em .6em;
 	animation: ta-dynannotation-search-overlay-animated 12s linear infinite;
+}.tc-dynannotate-example-frame {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 1em;
+}.tc-control-panel table.tc-dynannotate-search-parameters, .tc-control-panel table.tc-dynannotate-search-parameters input {
+    width: initial;
 }.tc-dynannotate-snippet-highlight {
 	background: #efef53;
 }.tc-dynannotation-example-info {
