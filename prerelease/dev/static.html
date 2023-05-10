@@ -2433,6 +2433,20 @@ button > .tc-toc-caption{
 	color: ;
 	background: ;
 }/*
+** Translink macro
+*/.tc-translink {
+	background-color: #f5f5f5;
+	border: 1px solid #cccccc;
+	padding: 0 3px;
+	border-radius: 3px;
+}div.tc-translink > div {
+	margin: 1em;
+}div.tc-translink > div > a:first-child > h1 {
+	font-size: 1.2em;
+	font-weight: bold;
+}span.tc-translink > a:first-child {
+	font-weight: bold;
+}/*
 ** Classes for displaying globals
 */.tc-global-tiddler-body {
 	padding: 0.25em;
@@ -2494,7 +2508,8 @@ button > .tc-toc-caption{
 	word-break: break-all;
 }/* Vertical gaps */.tc-tiny-v-gap-bottom {
 	margin-bottom: 3px;
-}/* Left will inherit from right (so we don't need to duplicate code */
+}
+/* Left will inherit from right (so we don't need to duplicate code */
 .github-fork-ribbon {
   /* The right and left lasses determine the side we attach our banner to */
   position: absolute;/* Add a bit of padding to give some substance outside the "stitching" */
