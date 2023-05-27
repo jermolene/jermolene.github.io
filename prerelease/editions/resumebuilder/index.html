@@ -304,7 +304,7 @@ Error message and password prompt
 </noscript>
 <!--~~ Ordinary tiddlers ~~-->
 <script class="tiddlywiki-tiddler-store" type="application/json">[
-{"title":"$:/build","commit":"74e061978267ae3b901cb27d8ffd0e475e29cb31","text":"Prerelease built from branch 'master' at commit 74e061978267ae3b901cb27d8ffd0e475e29cb31 of https://github.com/Jermolene/TiddlyWiki5 at 2023-05-27 16:24:36 UTC\n"},
+{"title":"$:/build","commit":"bc3a7d9826538e0ad71addc7abea0247bc249516","text":"Prerelease built from branch 'master' at commit bc3a7d9826538e0ad71addc7abea0247bc249516 of https://github.com/Jermolene/TiddlyWiki5 at 2023-05-27 16:28:40 UTC\n"},
 {"title":"$:/config/DefaultSidebarTab","created":"20150719185223155","modified":"20150719185226532","text":"Preview"},
 {"title":"$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home","modified":"20150719172915740","text":"show"},
 {"title":"$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/new-tiddler","modified":"20150719172917795","text":"hide"},
@@ -1141,26 +1141,17 @@ $tw.utils.getTypeEncoding = function(ext) {
 	return typeInfo ? typeInfo.encoding : "utf8";
 };
 
-var polyfill =[
-	"// this polyfills the globalThis variable",
-	"// using the this variable on a getter ",
-	"// inserted into the prototype of globalThis",
-	"(function() {",
-	"	if (typeof globalThis === 'object') return;",
-	"	// node.green says this is available since 0.10.48",
-	"	Object.prototype.__defineGetter__('__temp__', function() {",
-	"		return this;",
-	"	});",
-	"	__temp__.globalThis = __temp__;",
-	"	delete Object.prototype.__temp__;",
-	"}());"
-].join("\n");
-
 var globalCheck =[
-	"  if(Object.keys(globalThis).length){",
-	"    console.log(Object.keys(globalThis));",
+	"  Object.defineProperty(Object.prototype, '__temp__', {",
+	"    get: function () { return this; },",
+	"    configurable: true",
+	"  });",
+	"  if(Object.keys(__temp__).length){",
+	"    console.log(Object.keys(__temp__));",
+	"    delete Object.prototype.__temp__;",
 	"    throw \"Global assignment is not allowed within modules on node.\";",
-	"  }"
+	"  }",
+	"  delete Object.prototype.__temp__;",
 ].join('\n');
 
 /*
@@ -1176,7 +1167,6 @@ $tw.utils.evalGlobal = function(code,context,filename,sandbox,allowGlobals) {
 	});
 	// Add the code prologue and epilogue
 	code = [
-		(!$tw.browser ? polyfill : ""),
 		"(function(" + contextNames.join(",") + ") {",
 		"  (function(){\n" + code + "\n;})();",
 		(!$tw.browser && sandbox && !allowGlobals) ? globalCheck : "",
