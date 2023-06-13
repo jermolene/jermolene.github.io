@@ -2454,6 +2454,8 @@ button > .tc-toc-caption{
 ** Utility classes for SVG icons
 */.tc-fill-background {
 	fill: #e5f8fd;
+}.tc-network-activity-background {
+	fill: #448844;
 }/*
 ** Flexbox utility classes
 */.tc-flex {
