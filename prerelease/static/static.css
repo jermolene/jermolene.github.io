@@ -1291,7 +1291,7 @@ a.tc-tiddlylink:hover {
 	color: #333333;
 	fill: #333333;
 }button:disabled.tc-btn-invisible  {
-	cursor: default; 
+	cursor: default;
 	color: #bbb;
 }.tc-btn-boxed {
 	font-size: 0.6em;
@@ -2632,11 +2632,9 @@ a.tc-tiddlylink:hover {
 ** Table of contents
 */.tc-sidebar-lists .tc-table-of-contents {
 	white-space: nowrap;
-}.tc-table-of-contents button {
+}.tc-table-of-contents button,
+.tc-table-of-contents .toc-item-muted {
 	color: #acacac;
-}button + .tc-toc-caption,
-button > .tc-toc-caption{
-	margin-left: .25em;
 }.tc-table-of-contents svg {
 	width: 0.7em;
 	height: 0.7em;
