@@ -21,7 +21,9 @@
 fill:#4e432f;
 color:#4e432f;">doc</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="new"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#4e432f;
-color:#4e432f;">new</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"><p>The core plug-in introduces a segregation of tiddlers.
+color:#4e432f;">new</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div>
+
+<div class="tc-tiddler-body tc-reveal"><p>The core plug-in introduces a segregation of tiddlers.
 The tiddler model is central in the whole <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> application and can be used in various roles.
 Because of the fact that a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> user works with tiddlers (taking the role of a wiki page) and tiddlers are the building blocks of the whole application (including modules, UI elements, etc.) we need to identify the internal tiddlers.</p><p>The core plug-in introduces the concept of system tiddlers. It builds on the convention that application internal tiddler names start with <code>$:/</code>.
 Then the core plug-in introduces a set of new functions to the wiki store which are used to retrieve tiddlers like <code>getTiddlers(options)</code> and <code>forEachTiddler(callback, options)</code>.
