@@ -43,7 +43,7 @@ SetWidget
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 2022년 5월 23일 오전 7:55</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper">
+</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 2023년 7월 20일 오후 5:47</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper">
 
 <span class="tc-tag-list-item">
 
@@ -101,7 +101,10 @@ A Gentle Guide to TiddlyWiki
   
     [[A Gentle Guide to TiddlyWiki]] [[Discover TiddlyWiki]] [[Some of the things you can do with TiddlyWiki]] [[Ten reasons to switch to TiddlyWiki]] Examples [[What happened to the original TiddlyWiki?]]
   
-</p></div></blockquote></div>
+</p></div></blockquote><h2 class="">Using the Set Widget to Create Global Variables</h2><p>There are times when it makes sense to use the features of the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="SetWidget.html">SetWidget</a> rather than procedures or functions to create global variables.  This can be accomplished by placing the set variable widget in a tiddler that is tagged <a class="tc-tiddlylink tc-tiddlylink-resolves" href="SystemTag%253A%2520%2524%253A%252Ftags%252FGlobal.html">$:/tags/Global</a>.  If multiple variables are required, the set variable widget can be nested as shown here:</p><blockquote class="tc-quote"><div class="doc-example"><pre><code>&lt;$set name="myGlobalVariable" value="I am global"&gt;
+    &lt;$set name="myOtherGlobalVariable" value="I am also a global variable."&gt;
+    &lt;/$set&gt;
+&lt;/$set&gt;</code></pre></div></blockquote></div>
 
 </div></p>
 </section>
