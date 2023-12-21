@@ -25,10 +25,6 @@
 
 
 
-
-
-
-
 <div class="tc-tiddler-body tc-reveal"><p>Le widget ListWidget affiche la suite de tiddlers qui correspondent au <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filters.html">tiddler filtre</a>. Il répond à de nombreux cas d'utilisation :</p><ul><li>Affichage de listes personnalisées de liens, comme le menu latéral de <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki5.html">TiddlyWiki5</a></li><li>Listes personnalisées, comme "tous les tiddlers étiquetés 'task' et non-étiquetés 'fait'"</li><li>Lister chacun des tags appliqués au tiddler</li><li>Manipuler le déroulé principal</li></ul><p>Les tiddlers sont affichés en transcluant chacun tour à tour via un gabarit. Il existe plusieurs façons de spécifier le gabarit et de contrôler le comportement de la liste.</p><h1 class="">Exemples</h1><p><strong>Liste brute</strong></p><pre><code>&lt;$list filter="[tag[ListWidget]sort[title]]"/&gt;</code></pre><p>Affichera  :</p><blockquote class="tc-quote"><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="GroupedLists.html">GroupedLists</a></div></blockquote><p><strong>Sorties personnalisées</strong></p><pre><code>&lt;$list filter="[tag[ListWidget]sort[title]]"&gt;
 &lt;&lt;currentTiddler&gt;&gt;
 {{||$:/core/ui/ViewTemplate/tags}}
