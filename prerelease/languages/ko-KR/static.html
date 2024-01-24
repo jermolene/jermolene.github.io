@@ -1313,7 +1313,7 @@ a.tc-tiddlylink:hover {
 	grid-template-areas:
 		"toolbar toolbar"
 		"editor preview";
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: repeat(2, minmax(0px, 1fr));
 	grid-template-rows: auto 1fr;
 }.tc-tiddler-frame .tc-tiddler-editor.tc-tiddler-preview-hidden {
 	grid-template-areas:
