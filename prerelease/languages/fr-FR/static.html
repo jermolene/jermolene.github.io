@@ -2405,6 +2405,50 @@ a.tc-tiddlylink:hover {
 }/* Vertical gaps */.tc-tiny-v-gap-bottom {
 	margin-bottom: 3px;
 }
+.tc-dynannotation-wrapper {
+	position: relative;
+}.tc-dynannotation-annotation-overlay {
+	position: absolute;
+	background: rgba(255,255,0,0.3);
+	mix-blend-mode: multiply;
+}.tc-dynannotation-search-overlay {
+	position: absolute;
+	pointer-events: none;
+	background: rgba(255,0,0,0.3);
+}.tc-dynannotation-search-overlay-blurred {
+	background: rgba(255,0,0,0.3);
+	mix-blend-mode: multiply;
+	border-radius: 4px;
+	filter: blur(2px);
+}@keyframes ta-dynannotation-search-overlay-animated { to { background-position: 100% 100% } }.tc-dynannotation-search-overlay-animated {
+	mix-blend-mode: multiply;
+	background: repeating-linear-gradient(-45deg, #ff8 0, #dd8 25%, transparent 0, transparent 50%) 0 / .6em .6em;
+	animation: ta-dynannotation-search-overlay-animated 12s linear infinite;
+}.tc-dynannotate-example-frame {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 1em;
+}.tc-control-panel table.tc-dynannotate-search-parameters, .tc-control-panel table.tc-dynannotate-search-parameters input {
+    width: initial;
+}.tc-dynannotate-snippet-highlight {
+	background: #efef53;
+}.tc-dynannotation-example-info {
+	background: #ffa;
+	padding: 1em;
+}.tc-dynannotate-spotlight-wrapper {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 1000;
+	pointer-events: none;
+}.tc-dynannotate-spotlight {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display: none;
+}
 nav.tc-menubar {
 	position: fixed;
 	z-index: 850;
@@ -2563,7 +2607,191 @@ svg.railroad-diagram text.comment {
 }
 svg.railroad-diagram path.arrow {
     stroke-width: 2;
-}.tc-sidebar-header {
+}.tc-tour-panel {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 310px;
+	height: 400px;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+
+	border: 1px solid #228877;
+	background: #cbfff8;
+	border-radius: 8px;
+	padding: 1em;
+	margin: 0.5em;
+	z-index: 2000;
+}.tc-tour-panel-navigation .tc-btn-big-green {
+	border-radius: 0.25em;
+	margin: 0 1em 0 0;
+}.tc-tour-panel-navigation .tc-btn-big-green.tc-tour-panel-navigation-back {
+	background: red;
+	color: white;
+}.tc-tour-panel-navigation .tc-btn-big-green.tc-tour-panel-navigation-next {
+	background: purple;
+	color: white;
+}.tc-tour-panel-navigation .tc-btn-big-green.tc-tour-panel-navigation-hint {
+	background: purple;
+	color: white;
+}.tc-tour-panel-navigation .tc-btn-big-green:hover {
+	color: #ffffff;
+	background: #333333;
+}.tc-tour-panel-fullscreen {
+	top: 0;
+	right: 0;
+	width: auto;
+	height: auto;
+	box-shadow: none;
+	border: none;
+	background: #f4f4f4;
+	margin: 0;
+	border-radius: 0;
+}.tc-tour-panel-controls .tc-tour-panel-list-button {
+	padding: 2px 8px;
+	border-radius: 1em;
+	color: #888888;
+	text-align: left;
+}.tc-tour-panel-controls .tc-tour-panel-list-button.tc-selected {
+	color: #ffffff;
+	fill: #ffffff;
+	background: #5778d8;
+}.tc-tour-panel-controls .tc-tour-panel-list-button:hover {
+	background: #bbb;
+	color: #ffffff;
+}.tc-tour-panel-controls .tc-popup .tc-drop-down {
+	font-size: 1em;
+	color: #888888;
+	min-width: auto;
+}.tc-tour-panel-chooser-item {
+	border: 1px solid #bbb;
+	background: #ffffff;
+	color: #333333;
+	padding: 4px 4px 4px 8px;
+	margin: 12px 0;
+	border-radius: 12px;
+	box-shadow: 3px 3px 5px #bbb;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 1em;
+}.tc-tour-panel-chooser-item .tc-tour-panel-chooser-start-button {
+	display: inline-block;
+	width: auto;
+	padding: 4px;
+	font-size: 0.7em;
+	vertical-align: baseline;
+	border-radius: 1em;
+	background: #34c734;
+	color: #ffffff;
+	fill: #ffffff;
+	text-transform: uppercase;
+}.tc-tour-panel-chooser-wrapper button:hover {
+	background: #5778d8;
+	color: #ffffff;
+}.tc-tour-panel-fullscreen h1 {
+	background: none;
+	padding: 0.25em;
+	margin: -0.25em;
+	border-radius: 4px;
+}.tc-tour-panel-fullscreen .tc-tour-panel-controls {
+	/* display: none; */
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 4px;
+	color: #bbb;
+}.tc-tour-panel .tc-tour-panel-banner-image {
+	display: none;
+}.tc-tour-panel-fullscreen .tc-tour-panel-banner-image {
+	display: block;
+	width: 200px;
+	float: right;
+	margin: 4em 2em 2em 2em;
+}.tc-tour-panel-fullscreen .tc-tour-panel-inner {
+	width: 30%;
+	min-width: 400px;
+	height: 30%;
+	margin: 20% auto;
+}.tc-tour-panel .tc-tour-panel-inner .tc-tiddler-frame {
+	width: auto;
+	padding: 1.5em 2.5em;
+}.tc-tour-panel .tc-tour-panel-inner .tc-tiddler-frame .tc-titlebar {
+	font-size: 1.5em;
+	line-height: 1.1;
+}.tc-tour-task {
+	background: #34c734;
+	color: #ffffff;
+	padding: 0.5em;
+	border-radius: 1em;
+}.tc-tour-task svg {
+	fill: #ffffff;
+	vertical-align: middle;
+	width: 1.2em;
+	height: 1.2em;
+	margin-right: 0.5em;
+}.tc-tour-settings-tour-details,
+.tc-tour-settings-tour-step-details {
+	width: 100%;
+}.tc-tour-settings-tour-details th,
+.tc-tour-settings-tour-step-details th {
+	text-align: right;
+	vertical-align: top;
+	font-weight: normal;
+	width:10em;
+}.tc-tour-settings-tour-details td,
+.tc-tour-settings-tour-step-details td {
+	font-weight: bold;
+}.tc-tour-settings-tour-details-description {}.tc-tour-settings-tour-details-logo img {
+	max-width: 200px;
+	max-height: 100px;
+}.tc-tour-settings-tour-settings {
+	border: 1px solid #bbb;
+	margin: 0.5em 0;
+	padding: 0.5em;
+}.tc-tour-settings-tour-step {
+	border: 1px solid #333333;
+}.tc-tour-settings-tour-step-heading {
+	background: #bbb;
+	border: 0;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 5px;
+}.tc-tour-settings-tour-step-open-button,
+.tc-tour-settings-tour-step-launch-button {
+	display: inline-block;
+	padding: 0.25em;
+}.tc-tour-settings-tour-step-open-button {
+	flex-grow: 1;
+	text-align: left;
+}.tc-tour-settings-tour-step-launch-button {
+	flex-grow: 0;
+}.tc-tour-settings-tour-step-open-button:hover,
+.tc-tour-settings-tour-step-launch-button:hover {
+	background: #333333;
+	color: #ffffff;
+	fill: #ffffff;
+}.tc-tour-settings-tour-step-heading-step-number {
+	font-weight: bold;
+	background: #333333;
+	color: #ffffff;
+	border-radius: 1em;
+	font-size: 0.9em;
+	display: inline-block;
+	padding: 0 4px;
+}.tc-tour-settings-tour-step-details {
+	margin: 0;
+}.tc-tour-settings-tour-step-body {
+	padding: 0.5em;
+}
+.tc-sidebar-header {
 	text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
 }.tc-tiddler-info {
 	
@@ -3403,7 +3631,11 @@ ol.doc-github-contributors li {
 <path d="M64.856912,0 C100.203136,0 128.856912,28.653776 128.856912,64 C128.856912,99.346224 100.203136,128 64.856912,128 C29.510688,128 0.856911958,99.346224 0.856911958,64 C0.856911958,28.653776 29.510688,0 64.856912,0 Z M64.856912,16 C38.347244,16 16.856912,37.490332 16.856912,64 C16.856912,90.509668 38.347244,112 64.856912,112 C91.3665799,112 112.856912,90.509668 112.856912,64 C112.856912,37.490332 91.3665799,16 64.856912,16 Z"></path>
 <circle cx="65" cy="64" r="32"></circle>
 </g>
-</svg></span></button></div></p></div><div class=" tc-reveal"><div class="tc-sidebar-lists tc-sidebar-search"><p><div class="tc-search"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><form class="tc-form-inline"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><input class="tc-popup-handle" type="search" value=""></span></span></span></span></span></form></span></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="recherche avancée" class="tc-btn-invisible" title="Recherche avancée"><svg class="tc-image-advanced-search-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M74.565 87.985A47.776 47.776 0 0148 96C21.49 96 0 74.51 0 48S21.49 0 48 0s48 21.49 48 48c0 9.854-2.97 19.015-8.062 26.636l34.347 34.347a9.443 9.443 0 010 13.36 9.446 9.446 0 01-13.36 0l-34.36-34.358zM48 80c17.673 0 32-14.327 32-32 0-17.673-14.327-32-32-32-17.673 0-32 14.327-32 32 0 17.673 14.327 32 32 32z"></path><circle cx="48" cy="48" r="8"></circle><circle cx="28" cy="48" r="8"></circle><circle cx="68" cy="48" r="8"></circle></g></svg></button></span></div><div class="tc-block-dropdown-wrapper tc-reveal" hidden="true"></div></p></div></div><div class=" tc-reveal"><div aria-label="Barre latérale" class="tc-sidebar-lists tc-sidebar-tabs" role="region"><p><div class="tc-tab-set tc-sidebar-tabs-main"><div class="tc-tab-buttons tc-sidebar-tabs-main"><button aria-checked="true" class=" tc-tab-selected" data-tab-title="$:/core/ui/SideBar/Open" role="switch">Ouverts</button><button class="" data-tab-title="TableOfContents" role="switch">Sommaire</button><button class="" data-tab-title="$:/core/ui/SideBar/Recent" role="switch">Récents</button><button class="" data-tab-title="$:/core/ui/SideBar/Tools" role="switch">Outils</button><button class="" data-tab-title="$:/core/ui/SideBar/More" role="switch">Plus</button><button class="" data-tab-title="Informations pour les traducteurs" role="switch">Informations pour les traducteurs</button></div><div class="tc-tab-divider tc-sidebar-tabs-main"></div><div class="tc-tab-content tc-sidebar-tabs-main"><div class=" tc-reveal"><p><div class="tc-sidebar-tab-open"><div class="tc-sidebar-tab-open-item"><div class=" tc-droppable"><div class="tc-droppable-placeholder"></div><div><button aria-label="fermer" class="tc-btn-invisible tc-btn-mini tc-small-gap-right" title="Ferme ce tiddler"><svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M65.086 75.41l-50.113 50.113c-3.121 3.121-8.192 3.126-11.316.002-3.118-3.118-3.123-8.19.002-11.316l50.114-50.114L3.659 13.982C.538 10.86.533 5.79 3.657 2.666c3.118-3.118 8.19-3.123 11.316.002l50.113 50.114L115.2 2.668c3.121-3.121 8.192-3.126 11.316-.002 3.118 3.118 3.123 8.19-.002 11.316L76.4 64.095l50.114 50.114c3.121 3.121 3.126 8.192.002 11.316-3.118 3.118-8.19 3.123-11.316-.002L65.086 75.409z" fill-rule="evenodd"></path></svg></button><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/HelloThere.html">Bienvenue !</a></div></div></div><div class="tc-sidebar-tab-open-item"><div class=" tc-droppable"><div class="tc-droppable-placeholder"></div><div><button aria-label="fermer" class="tc-btn-invisible tc-btn-mini tc-small-gap-right" title="Ferme ce tiddler"><svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M65.086 75.41l-50.113 50.113c-3.121 3.121-8.192 3.126-11.316.002-3.118-3.118-3.123-8.19.002-11.316l50.114-50.114L3.659 13.982C.538 10.86.533 5.79 3.657 2.666c3.118-3.118 8.19-3.123 11.316.002l50.113 50.114L115.2 2.668c3.121-3.121 8.192-3.126 11.316-.002 3.118 3.118 3.123 8.19-.002 11.316L76.4 64.095l50.114 50.114c3.121 3.121 3.126 8.192.002 11.316-3.118 3.118-8.19 3.123-11.316-.002L65.086 75.409z" fill-rule="evenodd"></path></svg></button><a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="static/GettingStarted.html">La mise en route</a></div></div></div><div class="tc-sidebar-tab-open-item"><div class=" tc-droppable"><div class="tc-droppable-placeholder"></div><div><button aria-label="fermer" class="tc-btn-invisible tc-btn-mini tc-small-gap-right" title="Ferme ce tiddler"><svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M65.086 75.41l-50.113 50.113c-3.121 3.121-8.192 3.126-11.316.002-3.118-3.118-3.123-8.19.002-11.316l50.114-50.114L3.659 13.982C.538 10.86.533 5.79 3.657 2.666c3.118-3.118 8.19-3.123 11.316.002l50.113 50.114L115.2 2.668c3.121-3.121 8.192-3.126 11.316-.002 3.118 3.118 3.123 8.19-.002 11.316L76.4 64.095l50.114 50.114c3.121 3.121 3.126 8.192.002 11.316-3.118 3.118-8.19 3.123-11.316-.002L65.086 75.409z" fill-rule="evenodd"></path></svg></button><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Community.html">Communauté</a></div></div></div><div><div class=" tc-droppable"><div class="tc-droppable-placeholder"></div><div><button class="tc-btn-invisible tc-btn-mini">tout fermer</button></div></div></div></div></p></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div></div></div></p></div></div></div></div></div></div><section class="tc-story-river" role="main"><section class="story-backdrop"></section><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-TableOfContents" data-tags="TableOfContents" data-tiddler-title="HelloThere" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="plus" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="Actions supplémentaires"><svg class="tc-image-down-arrow tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M64.177 100.069a7.889 7.889 0 01-5.6-2.316l-55.98-55.98a7.92 7.92 0 010-11.196c3.086-3.085 8.105-3.092 11.196 0l50.382 50.382 50.382-50.382a7.92 7.92 0 0111.195 0c3.086 3.086 3.092 8.104 0 11.196l-55.98 55.98a7.892 7.892 0 01-5.595 2.316z"></path></svg></button><div class=" tc-reveal" hidden="true"></div><button aria-label="éditer" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Édite ce tiddler"><svg class="tc-image-edit-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M95.627 10.059l-5.656 5.657 11.313 11.313 5.657-5.656-11.314-11.314zm5.657-5.657l1.966-1.966c3.123-3.122 8.194-3.129 11.319-.005 3.117 3.118 3.122 8.192-.005 11.32l-1.966 1.965-11.314-11.314zm-16.97 16.97l-60.25 60.25a8.12 8.12 0 00-.322.342c-.1.087-.198.179-.295.275-5.735 5.735-10.702 22.016-10.702 22.016s16.405-5.09 22.016-10.702c.095-.096.186-.193.272-.292a8.12 8.12 0 00.345-.325l60.25-60.25-11.314-11.313zM35.171 124.19c6.788-.577 13.898-2.272 23.689-5.348 1.825-.573 3.57-1.136 6.336-2.04 16-5.226 21.877-6.807 28.745-7.146 8.358-.413 13.854 2.13 17.58 8.699a4 4 0 006.959-3.946c-5.334-9.406-13.745-13.296-24.933-12.744-7.875.39-14.057 2.052-30.835 7.533-2.739.894-4.46 1.45-6.25 2.012-19.46 6.112-30.77 7.072-39.597 1.747a4 4 0 10-4.132 6.85c6.333 3.82 13.754 5.12 22.438 4.383z"></path></g></svg></button><span class="tc-popup-keep"><button aria-expanded="false" aria-label="QR code" class="tc-btn-invisible tc-btn-%24%3A%2Fplugins%2Ftiddlywiki%2Fqrcode%2FViewToolbarButton" title="Generate QR code for this tiddler"><svg class="tc-image-qrcode tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+</svg></span></button><button aria-label="Start Tour" class="tc-btn-invisible tc-btn-%24%3A%2Fplugins%2Ftiddlywiki%2Ftour%2Fstart-tour-button" title="Start interactive training tour"><svg class="tc-image-tour-button tc-image-button" height="22pt" viewBox="0 0 24 24" width="22pt">
+<path d="M0 0h24v24H0z" style="fill:none;"></path>
+<path d="M1.832 10.356a1.024 1.024 0 0 1 0-1.832l9.71-4.856c.288-.144.628-.144.916 0l9.71 4.856a1.024 1.024 0 0 1 0 1.832l-9.71 4.855a1.025 1.025 0 0 1-.916 0l-9.71-4.855Z"></path>
+<path d="M18.5 13.19v3.25h-.066c.044.163.066.33.066.5 0 1.932-2.913 3.5-6.5 3.5s-6.5-1.568-6.5-3.5c0-.17.022-.337.066-.5H5.5v-3.25l6.042 3.02c.288.145.628.145.916 0l6.042-3.02ZM2.73 8.44l.208 5-.681 3s-.002.709.974.717c.92.007 1-.717 1-.717l-.793-3 .293-5h-1Z"></path>
+</svg></button></div></p></div><div class=" tc-reveal"><div class="tc-sidebar-lists tc-sidebar-search"><p><div class="tc-search"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><form class="tc-form-inline"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><input class="tc-popup-handle" type="search" value=""></span></span></span></span></span></form></span></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="recherche avancée" class="tc-btn-invisible" title="Recherche avancée"><svg class="tc-image-advanced-search-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M74.565 87.985A47.776 47.776 0 0148 96C21.49 96 0 74.51 0 48S21.49 0 48 0s48 21.49 48 48c0 9.854-2.97 19.015-8.062 26.636l34.347 34.347a9.443 9.443 0 010 13.36 9.446 9.446 0 01-13.36 0l-34.36-34.358zM48 80c17.673 0 32-14.327 32-32 0-17.673-14.327-32-32-32-17.673 0-32 14.327-32 32 0 17.673 14.327 32 32 32z"></path><circle cx="48" cy="48" r="8"></circle><circle cx="28" cy="48" r="8"></circle><circle cx="68" cy="48" r="8"></circle></g></svg></button></span></div><div class="tc-block-dropdown-wrapper tc-reveal" hidden="true"></div></p></div></div><div class=" tc-reveal"><div aria-label="Barre latérale" class="tc-sidebar-lists tc-sidebar-tabs" role="region"><p><div class="tc-tab-set tc-sidebar-tabs-main"><div class="tc-tab-buttons tc-sidebar-tabs-main"><button aria-checked="true" class=" tc-tab-selected" data-tab-title="$:/core/ui/SideBar/Open" role="switch">Ouverts</button><button class="" data-tab-title="TableOfContents" role="switch">Sommaire</button><button class="" data-tab-title="$:/core/ui/SideBar/Recent" role="switch">Récents</button><button class="" data-tab-title="$:/core/ui/SideBar/Tools" role="switch">Outils</button><button class="" data-tab-title="$:/core/ui/SideBar/More" role="switch">Plus</button><button class="" data-tab-title="Informations pour les traducteurs" role="switch">Informations pour les traducteurs</button></div><div class="tc-tab-divider tc-sidebar-tabs-main"></div><div class="tc-tab-content tc-sidebar-tabs-main"><div class=" tc-reveal"><p><div class="tc-sidebar-tab-open"><div class="tc-sidebar-tab-open-item"><div class=" tc-droppable"><div class="tc-droppable-placeholder"></div><div><button aria-label="fermer" class="tc-btn-invisible tc-btn-mini tc-small-gap-right" title="Ferme ce tiddler"><svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M65.086 75.41l-50.113 50.113c-3.121 3.121-8.192 3.126-11.316.002-3.118-3.118-3.123-8.19.002-11.316l50.114-50.114L3.659 13.982C.538 10.86.533 5.79 3.657 2.666c3.118-3.118 8.19-3.123 11.316.002l50.113 50.114L115.2 2.668c3.121-3.121 8.192-3.126 11.316-.002 3.118 3.118 3.123 8.19-.002 11.316L76.4 64.095l50.114 50.114c3.121 3.121 3.126 8.192.002 11.316-3.118 3.118-8.19 3.123-11.316-.002L65.086 75.409z" fill-rule="evenodd"></path></svg></button><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/HelloThere.html">Bienvenue !</a></div></div></div><div class="tc-sidebar-tab-open-item"><div class=" tc-droppable"><div class="tc-droppable-placeholder"></div><div><button aria-label="fermer" class="tc-btn-invisible tc-btn-mini tc-small-gap-right" title="Ferme ce tiddler"><svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M65.086 75.41l-50.113 50.113c-3.121 3.121-8.192 3.126-11.316.002-3.118-3.118-3.123-8.19.002-11.316l50.114-50.114L3.659 13.982C.538 10.86.533 5.79 3.657 2.666c3.118-3.118 8.19-3.123 11.316.002l50.113 50.114L115.2 2.668c3.121-3.121 8.192-3.126 11.316-.002 3.118 3.118 3.123 8.19-.002 11.316L76.4 64.095l50.114 50.114c3.121 3.121 3.126 8.192.002 11.316-3.118 3.118-8.19 3.123-11.316-.002L65.086 75.409z" fill-rule="evenodd"></path></svg></button><a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="static/GettingStarted.html">La mise en route</a></div></div></div><div class="tc-sidebar-tab-open-item"><div class=" tc-droppable"><div class="tc-droppable-placeholder"></div><div><button aria-label="fermer" class="tc-btn-invisible tc-btn-mini tc-small-gap-right" title="Ferme ce tiddler"><svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M65.086 75.41l-50.113 50.113c-3.121 3.121-8.192 3.126-11.316.002-3.118-3.118-3.123-8.19.002-11.316l50.114-50.114L3.659 13.982C.538 10.86.533 5.79 3.657 2.666c3.118-3.118 8.19-3.123 11.316.002l50.113 50.114L115.2 2.668c3.121-3.121 8.192-3.126 11.316-.002 3.118 3.118 3.123 8.19-.002 11.316L76.4 64.095l50.114 50.114c3.121 3.121 3.126 8.192.002 11.316-3.118 3.118-8.19 3.123-11.316-.002L65.086 75.409z" fill-rule="evenodd"></path></svg></button><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Community.html">Communauté</a></div></div></div><div><div class=" tc-droppable"><div class="tc-droppable-placeholder"></div><div><button class="tc-btn-invisible tc-btn-mini">tout fermer</button></div></div></div></div></p></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div></div></div></p></div></div></div></div></div></div><section class="tc-story-river" role="main"><section class="story-backdrop"></section><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-TableOfContents" data-tags="TableOfContents" data-tiddler-title="HelloThere" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="plus" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="Actions supplémentaires"><svg class="tc-image-down-arrow tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M64.177 100.069a7.889 7.889 0 01-5.6-2.316l-55.98-55.98a7.92 7.92 0 010-11.196c3.086-3.085 8.105-3.092 11.196 0l50.382 50.382 50.382-50.382a7.92 7.92 0 0111.195 0c3.086 3.086 3.092 8.104 0 11.196l-55.98 55.98a7.892 7.892 0 01-5.595 2.316z"></path></svg></button><div class=" tc-reveal" hidden="true"></div><button aria-label="éditer" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Édite ce tiddler"><svg class="tc-image-edit-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M95.627 10.059l-5.656 5.657 11.313 11.313 5.657-5.656-11.314-11.314zm5.657-5.657l1.966-1.966c3.123-3.122 8.194-3.129 11.319-.005 3.117 3.118 3.122 8.192-.005 11.32l-1.966 1.965-11.314-11.314zm-16.97 16.97l-60.25 60.25a8.12 8.12 0 00-.322.342c-.1.087-.198.179-.295.275-5.735 5.735-10.702 22.016-10.702 22.016s16.405-5.09 22.016-10.702c.095-.096.186-.193.272-.292a8.12 8.12 0 00.345-.325l60.25-60.25-11.314-11.313zM35.171 124.19c6.788-.577 13.898-2.272 23.689-5.348 1.825-.573 3.57-1.136 6.336-2.04 16-5.226 21.877-6.807 28.745-7.146 8.358-.413 13.854 2.13 17.58 8.699a4 4 0 006.959-3.946c-5.334-9.406-13.745-13.296-24.933-12.744-7.875.39-14.057 2.052-30.835 7.533-2.739.894-4.46 1.45-6.25 2.012-19.46 6.112-30.77 7.072-39.597 1.747a4 4 0 10-4.132 6.85c6.333 3.82 13.754 5.12 22.438 4.383z"></path></g></svg></button><span class="tc-popup-keep"><button aria-expanded="false" aria-label="QR code" class="tc-btn-invisible tc-btn-%24%3A%2Fplugins%2Ftiddlywiki%2Fqrcode%2FViewToolbarButton" title="Generate QR code for this tiddler"><svg class="tc-image-qrcode tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
     <g fill-rule="evenodd">
         <path d="M0,15.9969199 C0,7.16206498 7.16987059,0 15.9969199,0 L64.0030801,0 C72.837935,0 80,7.16987059 80,15.9969199 L80,64.0030801 C80,72.837935 72.8301294,80 64.0030801,80 L15.9969199,80 C7.16206498,80 0,72.8301294 0,64.0030801 L0,15.9969199 Z M16,22.0063866 C16,18.6891509 18.6835413,16 22.0063866,16 L57.9936134,16 C61.3108491,16 64,18.6835413 64,22.0063866 L64,57.9936134 C64,61.3108491 61.3164587,64 57.9936134,64 L22.0063866,64 C18.6891509,64 16,61.3164587 16,57.9936134 L16,22.0063866 Z M28,31.990053 C28,29.7864076 29.7842933,28 31.990053,28 L48.009947,28 C50.2135924,28 52,29.7842933 52,31.990053 L52,48.009947 C52,50.2135924 50.2157067,52 48.009947,52 L31.990053,52 C29.7864076,52 28,50.2157067 28,48.009947 L28,31.990053 Z"></path>
         <path d="M112,16 L112,8.49833453 L112,6.00333095 C112,2.68778282 114.67804,0 118.003331,0 L121.996669,0 C125.312217,0 128,2.67804027 128,6.00333095 L128,8.49833453 L128,23.0016655 L128,25.9966691 C128,29.3122172 125.32196,32 121.996669,32 L119.001665,32 L104.998335,32 L102.003331,32 C98.6877828,32 96,29.3219597 96,25.9966691 L96,22.0033309 C96,18.6877828 98.6780403,16 102.003331,16 L104.998335,16 L112,16 Z"></path>

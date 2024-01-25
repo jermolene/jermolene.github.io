@@ -2519,6 +2519,19 @@ a.tc-tiddlylink:hover {
 }.tc-dynannotation-example-info {
 	background: #ffa;
 	padding: 1em;
+}.tc-dynannotate-spotlight-wrapper {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 1000;
+	pointer-events: none;
+}.tc-dynannotate-spotlight {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display: none;
 }
 body.tc-dynaview .tc-dynaview-zoom-visible-1-and-above,
 body.tc-dynaview .tc-dynaview-zoom-visible-1a-and-above,
@@ -2827,7 +2840,191 @@ svg.railroad-diagram text.comment {
 }
 svg.railroad-diagram path.arrow {
     stroke-width: 2;
-}.tc-sidebar-header {
+}.tc-tour-panel {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 310px;
+	height: 400px;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+
+	border: 1px solid #228877;
+	background: #cbfff8;
+	border-radius: 8px;
+	padding: 1em;
+	margin: 0.5em;
+	z-index: 2000;
+}.tc-tour-panel-navigation .tc-btn-big-green {
+	border-radius: 0.25em;
+	margin: 0 1em 0 0;
+}.tc-tour-panel-navigation .tc-btn-big-green.tc-tour-panel-navigation-back {
+	background: red;
+	color: white;
+}.tc-tour-panel-navigation .tc-btn-big-green.tc-tour-panel-navigation-next {
+	background: purple;
+	color: white;
+}.tc-tour-panel-navigation .tc-btn-big-green.tc-tour-panel-navigation-hint {
+	background: purple;
+	color: white;
+}.tc-tour-panel-navigation .tc-btn-big-green:hover {
+	color: #ffffff;
+	background: #333333;
+}.tc-tour-panel-fullscreen {
+	top: 0;
+	right: 0;
+	width: auto;
+	height: auto;
+	box-shadow: none;
+	border: none;
+	background: #f4f4f4;
+	margin: 0;
+	border-radius: 0;
+}.tc-tour-panel-controls .tc-tour-panel-list-button {
+	padding: 2px 8px;
+	border-radius: 1em;
+	color: #888888;
+	text-align: left;
+}.tc-tour-panel-controls .tc-tour-panel-list-button.tc-selected {
+	color: #ffffff;
+	fill: #ffffff;
+	background: #5778d8;
+}.tc-tour-panel-controls .tc-tour-panel-list-button:hover {
+	background: #bbb;
+	color: #ffffff;
+}.tc-tour-panel-controls .tc-popup .tc-drop-down {
+	font-size: 1em;
+	color: #888888;
+	min-width: auto;
+}.tc-tour-panel-chooser-item {
+	border: 1px solid #bbb;
+	background: #ffffff;
+	color: #333333;
+	padding: 4px 4px 4px 8px;
+	margin: 12px 0;
+	border-radius: 12px;
+	box-shadow: 3px 3px 5px #bbb;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 1em;
+}.tc-tour-panel-chooser-item .tc-tour-panel-chooser-start-button {
+	display: inline-block;
+	width: auto;
+	padding: 4px;
+	font-size: 0.7em;
+	vertical-align: baseline;
+	border-radius: 1em;
+	background: #34c734;
+	color: #ffffff;
+	fill: #ffffff;
+	text-transform: uppercase;
+}.tc-tour-panel-chooser-wrapper button:hover {
+	background: #5778d8;
+	color: #ffffff;
+}.tc-tour-panel-fullscreen h1 {
+	background: none;
+	padding: 0.25em;
+	margin: -0.25em;
+	border-radius: 4px;
+}.tc-tour-panel-fullscreen .tc-tour-panel-controls {
+	/* display: none; */
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 4px;
+	color: #bbb;
+}.tc-tour-panel .tc-tour-panel-banner-image {
+	display: none;
+}.tc-tour-panel-fullscreen .tc-tour-panel-banner-image {
+	display: block;
+	width: 200px;
+	float: right;
+	margin: 4em 2em 2em 2em;
+}.tc-tour-panel-fullscreen .tc-tour-panel-inner {
+	width: 30%;
+	min-width: 400px;
+	height: 30%;
+	margin: 20% auto;
+}.tc-tour-panel .tc-tour-panel-inner .tc-tiddler-frame {
+	width: auto;
+	padding: 1.5em 2.5em;
+}.tc-tour-panel .tc-tour-panel-inner .tc-tiddler-frame .tc-titlebar {
+	font-size: 1.5em;
+	line-height: 1.1;
+}.tc-tour-task {
+	background: #34c734;
+	color: #ffffff;
+	padding: 0.5em;
+	border-radius: 1em;
+}.tc-tour-task svg {
+	fill: #ffffff;
+	vertical-align: middle;
+	width: 1.2em;
+	height: 1.2em;
+	margin-right: 0.5em;
+}.tc-tour-settings-tour-details,
+.tc-tour-settings-tour-step-details {
+	width: 100%;
+}.tc-tour-settings-tour-details th,
+.tc-tour-settings-tour-step-details th {
+	text-align: right;
+	vertical-align: top;
+	font-weight: normal;
+	width:10em;
+}.tc-tour-settings-tour-details td,
+.tc-tour-settings-tour-step-details td {
+	font-weight: bold;
+}.tc-tour-settings-tour-details-description {}.tc-tour-settings-tour-details-logo img {
+	max-width: 200px;
+	max-height: 100px;
+}.tc-tour-settings-tour-settings {
+	border: 1px solid #bbb;
+	margin: 0.5em 0;
+	padding: 0.5em;
+}.tc-tour-settings-tour-step {
+	border: 1px solid #333333;
+}.tc-tour-settings-tour-step-heading {
+	background: #bbb;
+	border: 0;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 5px;
+}.tc-tour-settings-tour-step-open-button,
+.tc-tour-settings-tour-step-launch-button {
+	display: inline-block;
+	padding: 0.25em;
+}.tc-tour-settings-tour-step-open-button {
+	flex-grow: 1;
+	text-align: left;
+}.tc-tour-settings-tour-step-launch-button {
+	flex-grow: 0;
+}.tc-tour-settings-tour-step-open-button:hover,
+.tc-tour-settings-tour-step-launch-button:hover {
+	background: #333333;
+	color: #ffffff;
+	fill: #ffffff;
+}.tc-tour-settings-tour-step-heading-step-number {
+	font-weight: bold;
+	background: #333333;
+	color: #ffffff;
+	border-radius: 1em;
+	font-size: 0.9em;
+	display: inline-block;
+	padding: 0 4px;
+}.tc-tour-settings-tour-step-details {
+	margin: 0;
+}.tc-tour-settings-tour-step-body {
+	padding: 0.5em;
+}
+.tc-sidebar-header {
 	text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
 }.tc-tiddler-info {
 	

@@ -2404,6 +2404,50 @@ a.tc-tiddlylink:hover {
 }/* Vertical gaps */.tc-tiny-v-gap-bottom {
 	margin-bottom: 3px;
 }
+.tc-dynannotation-wrapper {
+	position: relative;
+}.tc-dynannotation-annotation-overlay {
+	position: absolute;
+	background: rgba(255,255,0,0.3);
+	mix-blend-mode: multiply;
+}.tc-dynannotation-search-overlay {
+	position: absolute;
+	pointer-events: none;
+	background: rgba(255,0,0,0.3);
+}.tc-dynannotation-search-overlay-blurred {
+	background: rgba(255,0,0,0.3);
+	mix-blend-mode: multiply;
+	border-radius: 4px;
+	filter: blur(2px);
+}@keyframes ta-dynannotation-search-overlay-animated { to { background-position: 100% 100% } }.tc-dynannotation-search-overlay-animated {
+	mix-blend-mode: multiply;
+	background: repeating-linear-gradient(-45deg, #ff8 0, #dd8 25%, transparent 0, transparent 50%) 0 / .6em .6em;
+	animation: ta-dynannotation-search-overlay-animated 12s linear infinite;
+}.tc-dynannotate-example-frame {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 1em;
+}.tc-control-panel table.tc-dynannotate-search-parameters, .tc-control-panel table.tc-dynannotate-search-parameters input {
+    width: initial;
+}.tc-dynannotate-snippet-highlight {
+	background: #efef53;
+}.tc-dynannotation-example-info {
+	background: #ffa;
+	padding: 1em;
+}.tc-dynannotate-spotlight-wrapper {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 1000;
+	pointer-events: none;
+}.tc-dynannotate-spotlight {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display: none;
+}
 nav.tc-menubar {
 	position: fixed;
 	z-index: 850;
@@ -2562,7 +2606,191 @@ svg.railroad-diagram text.comment {
 }
 svg.railroad-diagram path.arrow {
     stroke-width: 2;
-}.tc-sidebar-header {
+}.tc-tour-panel {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 310px;
+	height: 400px;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+
+	border: 1px solid #228877;
+	background: #cbfff8;
+	border-radius: 8px;
+	padding: 1em;
+	margin: 0.5em;
+	z-index: 2000;
+}.tc-tour-panel-navigation .tc-btn-big-green {
+	border-radius: 0.25em;
+	margin: 0 1em 0 0;
+}.tc-tour-panel-navigation .tc-btn-big-green.tc-tour-panel-navigation-back {
+	background: red;
+	color: white;
+}.tc-tour-panel-navigation .tc-btn-big-green.tc-tour-panel-navigation-next {
+	background: purple;
+	color: white;
+}.tc-tour-panel-navigation .tc-btn-big-green.tc-tour-panel-navigation-hint {
+	background: purple;
+	color: white;
+}.tc-tour-panel-navigation .tc-btn-big-green:hover {
+	color: #ffffff;
+	background: #333333;
+}.tc-tour-panel-fullscreen {
+	top: 0;
+	right: 0;
+	width: auto;
+	height: auto;
+	box-shadow: none;
+	border: none;
+	background: #f4f4f4;
+	margin: 0;
+	border-radius: 0;
+}.tc-tour-panel-controls .tc-tour-panel-list-button {
+	padding: 2px 8px;
+	border-radius: 1em;
+	color: #888888;
+	text-align: left;
+}.tc-tour-panel-controls .tc-tour-panel-list-button.tc-selected {
+	color: #ffffff;
+	fill: #ffffff;
+	background: #5778d8;
+}.tc-tour-panel-controls .tc-tour-panel-list-button:hover {
+	background: #bbb;
+	color: #ffffff;
+}.tc-tour-panel-controls .tc-popup .tc-drop-down {
+	font-size: 1em;
+	color: #888888;
+	min-width: auto;
+}.tc-tour-panel-chooser-item {
+	border: 1px solid #bbb;
+	background: #ffffff;
+	color: #333333;
+	padding: 4px 4px 4px 8px;
+	margin: 12px 0;
+	border-radius: 12px;
+	box-shadow: 3px 3px 5px #bbb;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 1em;
+}.tc-tour-panel-chooser-item .tc-tour-panel-chooser-start-button {
+	display: inline-block;
+	width: auto;
+	padding: 4px;
+	font-size: 0.7em;
+	vertical-align: baseline;
+	border-radius: 1em;
+	background: #34c734;
+	color: #ffffff;
+	fill: #ffffff;
+	text-transform: uppercase;
+}.tc-tour-panel-chooser-wrapper button:hover {
+	background: #5778d8;
+	color: #ffffff;
+}.tc-tour-panel-fullscreen h1 {
+	background: none;
+	padding: 0.25em;
+	margin: -0.25em;
+	border-radius: 4px;
+}.tc-tour-panel-fullscreen .tc-tour-panel-controls {
+	/* display: none; */
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 4px;
+	color: #bbb;
+}.tc-tour-panel .tc-tour-panel-banner-image {
+	display: none;
+}.tc-tour-panel-fullscreen .tc-tour-panel-banner-image {
+	display: block;
+	width: 200px;
+	float: right;
+	margin: 4em 2em 2em 2em;
+}.tc-tour-panel-fullscreen .tc-tour-panel-inner {
+	width: 30%;
+	min-width: 400px;
+	height: 30%;
+	margin: 20% auto;
+}.tc-tour-panel .tc-tour-panel-inner .tc-tiddler-frame {
+	width: auto;
+	padding: 1.5em 2.5em;
+}.tc-tour-panel .tc-tour-panel-inner .tc-tiddler-frame .tc-titlebar {
+	font-size: 1.5em;
+	line-height: 1.1;
+}.tc-tour-task {
+	background: #34c734;
+	color: #ffffff;
+	padding: 0.5em;
+	border-radius: 1em;
+}.tc-tour-task svg {
+	fill: #ffffff;
+	vertical-align: middle;
+	width: 1.2em;
+	height: 1.2em;
+	margin-right: 0.5em;
+}.tc-tour-settings-tour-details,
+.tc-tour-settings-tour-step-details {
+	width: 100%;
+}.tc-tour-settings-tour-details th,
+.tc-tour-settings-tour-step-details th {
+	text-align: right;
+	vertical-align: top;
+	font-weight: normal;
+	width:10em;
+}.tc-tour-settings-tour-details td,
+.tc-tour-settings-tour-step-details td {
+	font-weight: bold;
+}.tc-tour-settings-tour-details-description {}.tc-tour-settings-tour-details-logo img {
+	max-width: 200px;
+	max-height: 100px;
+}.tc-tour-settings-tour-settings {
+	border: 1px solid #bbb;
+	margin: 0.5em 0;
+	padding: 0.5em;
+}.tc-tour-settings-tour-step {
+	border: 1px solid #333333;
+}.tc-tour-settings-tour-step-heading {
+	background: #bbb;
+	border: 0;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 5px;
+}.tc-tour-settings-tour-step-open-button,
+.tc-tour-settings-tour-step-launch-button {
+	display: inline-block;
+	padding: 0.25em;
+}.tc-tour-settings-tour-step-open-button {
+	flex-grow: 1;
+	text-align: left;
+}.tc-tour-settings-tour-step-launch-button {
+	flex-grow: 0;
+}.tc-tour-settings-tour-step-open-button:hover,
+.tc-tour-settings-tour-step-launch-button:hover {
+	background: #333333;
+	color: #ffffff;
+	fill: #ffffff;
+}.tc-tour-settings-tour-step-heading-step-number {
+	font-weight: bold;
+	background: #333333;
+	color: #ffffff;
+	border-radius: 1em;
+	font-size: 0.9em;
+	display: inline-block;
+	padding: 0 4px;
+}.tc-tour-settings-tour-step-details {
+	margin: 0;
+}.tc-tour-settings-tour-step-body {
+	padding: 0.5em;
+}
+.tc-sidebar-header {
 	text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
 }.tc-tiddler-info {
 	
@@ -3372,7 +3600,11 @@ ol.doc-github-contributors li {
 <path d="M64.856912,0 C100.203136,0 128.856912,28.653776 128.856912,64 C128.856912,99.346224 100.203136,128 64.856912,128 C29.510688,128 0.856911958,99.346224 0.856911958,64 C0.856911958,28.653776 29.510688,0 64.856912,0 Z M64.856912,16 C38.347244,16 16.856912,37.490332 16.856912,64 C16.856912,90.509668 38.347244,112 64.856912,112 C91.3665799,112 112.856912,90.509668 112.856912,64 C112.856912,37.490332 91.3665799,16 64.856912,16 Z"></path>
 <circle cx="65" cy="64" r="32"></circle>
 </g>
-</svg></span></button></div></p></div><div class=" tc-reveal"><div class="tc-sidebar-lists tc-sidebar-search"><p><div class="tc-search"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><form class="tc-form-inline"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><input class="tc-popup-handle" type="search" value=""></span></span></span></span></span></form></span></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Búsqueda avanzada" class="tc-btn-invisible" title="Búsqueda avanzada"><svg class="tc-image-advanced-search-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M74.565 87.985A47.776 47.776 0 0148 96C21.49 96 0 74.51 0 48S21.49 0 48 0s48 21.49 48 48c0 9.854-2.97 19.015-8.062 26.636l34.347 34.347a9.443 9.443 0 010 13.36 9.446 9.446 0 01-13.36 0l-34.36-34.358zM48 80c17.673 0 32-14.327 32-32 0-17.673-14.327-32-32-32-17.673 0-32 14.327-32 32 0 17.673 14.327 32 32 32z"></path><circle cx="48" cy="48" r="8"></circle><circle cx="28" cy="48" r="8"></circle><circle cx="68" cy="48" r="8"></circle></g></svg></button></span></div><div class="tc-block-dropdown-wrapper tc-reveal" hidden="true"></div></p></div></div><div class=" tc-reveal"><div aria-label="Panel Lateral" class="tc-sidebar-lists tc-sidebar-tabs" role="region"><p><div class="tc-tab-set tc-sidebar-tabs-main"><div class="tc-tab-buttons tc-sidebar-tabs-main"><button aria-checked="true" class=" tc-tab-selected" data-tab-title="$:/core/ui/SideBar/Open" role="switch">Abiertos</button><button class="" data-tab-title="TableOfContents" role="switch">Contenido</button><button class="" data-tab-title="$:/core/ui/SideBar/Recent" role="switch">Recientes</button><button class="" data-tab-title="$:/core/ui/SideBar/Tools" role="switch">Herramientas</button><button class="" data-tab-title="$:/core/ui/SideBar/More" role="switch">Más</button><button class="" data-tab-title="Información para traductores" role="switch">Información para traductores</button></div><div class="tc-tab-divider tc-sidebar-tabs-main"></div><div class="tc-tab-content tc-sidebar-tabs-main"><div class=" tc-reveal"><p><button aria-label="Cerrar" class="tc-btn-invisible tc-btn-mini" title="Cierra este tiddler">×</button> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/HelloThere.html">¡Hola! ¿Qué tal?</a></p><p><button aria-label="Cerrar" class="tc-btn-invisible tc-btn-mini" title="Cierra este tiddler">×</button> <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="static/GettingStarted.html">Puesta en marcha</a></p><p><button aria-label="Cerrar" class="tc-btn-invisible tc-btn-mini" title="Cierra este tiddler">×</button> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Community.html">Comunidad</a></p><p><button class="tc-btn-invisible tc-btn-mini">Cerrar todo</button>
+</svg></span></button><button aria-label="Start Tour" class="tc-btn-invisible tc-btn-%24%3A%2Fplugins%2Ftiddlywiki%2Ftour%2Fstart-tour-button" title="Start interactive training tour"><svg class="tc-image-tour-button tc-image-button" height="22pt" viewBox="0 0 24 24" width="22pt">
+<path d="M0 0h24v24H0z" style="fill:none;"></path>
+<path d="M1.832 10.356a1.024 1.024 0 0 1 0-1.832l9.71-4.856c.288-.144.628-.144.916 0l9.71 4.856a1.024 1.024 0 0 1 0 1.832l-9.71 4.855a1.025 1.025 0 0 1-.916 0l-9.71-4.855Z"></path>
+<path d="M18.5 13.19v3.25h-.066c.044.163.066.33.066.5 0 1.932-2.913 3.5-6.5 3.5s-6.5-1.568-6.5-3.5c0-.17.022-.337.066-.5H5.5v-3.25l6.042 3.02c.288.145.628.145.916 0l6.042-3.02ZM2.73 8.44l.208 5-.681 3s-.002.709.974.717c.92.007 1-.717 1-.717l-.793-3 .293-5h-1Z"></path>
+</svg></button></div></p></div><div class=" tc-reveal"><div class="tc-sidebar-lists tc-sidebar-search"><p><div class="tc-search"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><form class="tc-form-inline"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><input class="tc-popup-handle" type="search" value=""></span></span></span></span></span></form></span></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Búsqueda avanzada" class="tc-btn-invisible" title="Búsqueda avanzada"><svg class="tc-image-advanced-search-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M74.565 87.985A47.776 47.776 0 0148 96C21.49 96 0 74.51 0 48S21.49 0 48 0s48 21.49 48 48c0 9.854-2.97 19.015-8.062 26.636l34.347 34.347a9.443 9.443 0 010 13.36 9.446 9.446 0 01-13.36 0l-34.36-34.358zM48 80c17.673 0 32-14.327 32-32 0-17.673-14.327-32-32-32-17.673 0-32 14.327-32 32 0 17.673 14.327 32 32 32z"></path><circle cx="48" cy="48" r="8"></circle><circle cx="28" cy="48" r="8"></circle><circle cx="68" cy="48" r="8"></circle></g></svg></button></span></div><div class="tc-block-dropdown-wrapper tc-reveal" hidden="true"></div></p></div></div><div class=" tc-reveal"><div aria-label="Panel Lateral" class="tc-sidebar-lists tc-sidebar-tabs" role="region"><p><div class="tc-tab-set tc-sidebar-tabs-main"><div class="tc-tab-buttons tc-sidebar-tabs-main"><button aria-checked="true" class=" tc-tab-selected" data-tab-title="$:/core/ui/SideBar/Open" role="switch">Abiertos</button><button class="" data-tab-title="TableOfContents" role="switch">Contenido</button><button class="" data-tab-title="$:/core/ui/SideBar/Recent" role="switch">Recientes</button><button class="" data-tab-title="$:/core/ui/SideBar/Tools" role="switch">Herramientas</button><button class="" data-tab-title="$:/core/ui/SideBar/More" role="switch">Más</button><button class="" data-tab-title="Información para traductores" role="switch">Información para traductores</button></div><div class="tc-tab-divider tc-sidebar-tabs-main"></div><div class="tc-tab-content tc-sidebar-tabs-main"><div class=" tc-reveal"><p><button aria-label="Cerrar" class="tc-btn-invisible tc-btn-mini" title="Cierra este tiddler">×</button> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/HelloThere.html">¡Hola! ¿Qué tal?</a></p><p><button aria-label="Cerrar" class="tc-btn-invisible tc-btn-mini" title="Cierra este tiddler">×</button> <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="static/GettingStarted.html">Puesta en marcha</a></p><p><button aria-label="Cerrar" class="tc-btn-invisible tc-btn-mini" title="Cierra este tiddler">×</button> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Community.html">Comunidad</a></p><p><button class="tc-btn-invisible tc-btn-mini">Cerrar todo</button>
 </p></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div></div></div></p></div></div></div></div></div></div><section class="tc-story-river" role="main"><section class="story-backdrop"></section><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-TableOfContents" data-tags="TableOfContents" data-tiddler-title="HelloThere" role="article"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
