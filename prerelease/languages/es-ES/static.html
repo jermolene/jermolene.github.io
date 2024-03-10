@@ -3239,6 +3239,7 @@ svg.railroad-diagram path.arrow {
 	color: #888888;
 	font-style: normal;
 	font-weight: bold;
+	padding: 0;
 }.doc-button,
 .doc-tab,
 .doc-tag,
@@ -3279,7 +3280,6 @@ a .doc-attr {
 }.doc-preamble {
 	border: 2px solid #e1e1e8;
 	color: #888888;
-	font-size: 90%;
 	margin-left: 0;
 	padding: 0.5em 0.7em;
 }.doc-note dt {
@@ -3300,7 +3300,7 @@ a .doc-attr {
 	padding-bottom: 0;
 	margin-top: 0.2em;
 }.doc-example input[type=search] { 
-  width: 95%;
+	width: 95%;
 }
 .doc-example pre:first-child {
 	margin-top: 0;
@@ -3322,7 +3322,7 @@ a .doc-attr {
 }.doc-examples-hard-breaks .doc-example-result li {
     white-space: pre-wrap;
 }.doc-bad-example code, .doc-bad-example pre, table.doc-bad-example {
-  background-color:#ffff80;
+	background-color:#ffff80;
 }.doc-table th, .doc-table tr {
 	vertical-align: top;
 }
@@ -3338,20 +3338,26 @@ a .doc-attr {
 	height: 1em;
     vertical-align: middle;
 }.doc-icon-block {
-	border-left: 2px solid #e1e1e8;
-	margin-left: 3em;
+	border-left: 4px solid #bbb;
+	margin: 15px 0 15px 3em;
 	padding-left: 0.6em;
 	position: relative;
-}
-.doc-block-icon {
+}.doc-block-icon {
 	position: absolute;
 	left: -3em;
 	top: 0.2em;
-}
-.doc-block-icon .tc-image-tip {
+}.doc-icon-block.doc-note {
+	border-left: 4px solid #bbb;
+	background: #bbb11;
+}.doc-icon-block.doc-tip {
+	border-left: 4px solid #5778d8;
+	background: #5778d811;
+}.doc-icon-block.doc-warning {
+	border-left: 4px solid #881122;
+	background: #88112211;
+}.doc-block-icon .tc-image-tip {
 	fill: #5778d8;
-}
-.doc-block-icon .tc-image-warning {
+}.doc-block-icon .tc-image-warning {
 	fill: #881122;
 }a.doc-from-version {
     background-color: #bbb;
@@ -3450,15 +3456,15 @@ ol.doc-github-contributors li {
 	color: #666;
 }
 .doc-tabs.tc-tab-buttons button {
-  font-size: 1rem;
-  padding: 0.5em;
+	font-size: 1rem;
+	padding: 0.5em;
 }
 .doc-tabs button .doc-attr {
-  background-color: unset;
-  color: #666;
+	background-color: unset;
+	color: #666;
 }
 .doc-tab-link .doc-attr {
-  color: unset;
+	color: unset;
 }
 .tc-thumbnail-tabs .tc-tab-buttons {
 	background: #ecf2ff;
