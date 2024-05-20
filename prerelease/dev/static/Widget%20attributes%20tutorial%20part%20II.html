@@ -31,11 +31,36 @@ Refresh if the attribute value changed since render
 	}
 };</code></pre><p>The full code can be seen at <a class="tc-tiddlylink tc-tiddlylink-resolves" href="hello-attribute-optimized.js.html">hello-attribute-optimized.js</a> and here is the result (<a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widget%2520attributes%2520demo%2520II.html">Widget attributes demo II</a>):</p><p>
 <div class=" tc-innerwiki-wrapper" style="overflow:hidden;position:relative;box-sizing:content-box;"><svg viewBox="0 0 600 400" style="width:100%;position:absolute;z-index:1;pointer-events:none;">
-	
-	
-	
+	[
+    {
+        "title": "$:/DefaultTiddlers",
+        "text": "[[hello world widget]]"
+    }
+]
+	[
+    {
+        "title": "hello-attribute-optimized.js",
+        "text": "/*\\\n\nHello, World widget\n\n\\*/\n(function() {\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\nvar Widget = require(\"$:/core/modules/widgets/widget.js\").widget;\n\nvar MyWidget = function(parseTreeNode, options) {\n\tthis.initialise(parseTreeNode, options);\n};\n\n/*\nInherit from the base widget class\n*/\nMyWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nMyWidget.prototype.render = function(parent, nextSibling) {\n\tthis.parentDomNode = parent;\n\tthis.computeAttributes();\n\tvar message = this.getAttribute(\"message\", \"World\");\n\tvar textNode = this.document.createTextNode(\"Hello, \" + message + \"!\");\n\tparent.insertBefore(textNode, nextSibling);\n\tthis.domNodes.push(textNode);\n};\n\n/*\nRefresh if the attribute value changed since render\n*/\nMyWidget.prototype.refresh = function(changedTiddlers) {\n\t// Find which attributes have changed\n\tvar changedAttributes = this.computeAttributes();\n\tif (changedAttributes.message) {\n\t\tthis.refreshSelf();\n\t\treturn true;\n\t} else {\n\t\treturn false;\n\t}\n};\n\nexports.hello = MyWidget;\n\n})();\n",
+        "created": "20190205024846183",
+        "modified": "20190205025110882",
+        "module-type": "widget",
+        "tags": "",
+        "type": "application/javascript"
+    }
+]
+	[
+    {
+        "title": "hello world widget",
+        "text": "\n```\n&lt;$hello/&gt;\n```\n\nRenders as:\n\n&lt;$hello/&gt;\n\n---\n\n```\n&lt;$hello message=\"pale blue dot\"/&gt;\n```\n\nRenders as:\n\n&lt;$hello message=\"pale blue dot\"/&gt;\n\n---\n\n&lt;$edit-text focus=yes tiddler=test tag=input/&gt;\n\n```\n&lt;$hello message={{test!!text}}/&gt;\n```\n\nRenders as:\n\n&lt;$hello message={{test!!text}}/&gt;\n\n"
+    }
+]
 
-	
+	[
+    {
+        "title": "test",
+        "text": "Alice"
+    }
+]
 
 </svg><img src="undefined" style="width:100%;"></div>
 
