@@ -346,10 +346,12 @@ Add the correct display in Chrome and Safari.
 summary {
 	display: list-item;
 }
-*, input[type="search"] {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
+input[type="search"] {
+	outline-offset: initial;
+}button, textarea, input, select {
+	outline-color: #5778d8;
+}:-moz-focusring {
+	outline: 2px solid #5778d8;
 }/*
 ** Button default styles. Makes them look consistent for all browsers
 */
