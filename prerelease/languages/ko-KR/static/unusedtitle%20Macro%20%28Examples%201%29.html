@@ -42,7 +42,7 @@ unusedtitle Macro (Examples 1)
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle tc-clearfix"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 2021년 11월 18일 오전 2:55</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle tc-clearfix"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 2024년 1월 19일 오후 3:16</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
@@ -60,6 +60,9 @@ New Tiddler
 </button></p><pre><code>&lt;&lt;unusedtitle baseName:"new" separator:"-" template:"$count:2$$separator$$basename$"&gt;&gt;</code></pre><p><button class="">
 
 Create Tiddler
+</button></p><pre><code>&lt;&lt;unusedtitle startCount:"10" baseName:"new" separator:"-" template:"$count:2$$separator$$basename$"&gt;&gt;</code></pre><p><button class="">
+
+Create Tiddler
 </button></p><hr><p><details>
     <summary>Show the code</summary>
     <pre><code>\define testCreate()
@@ -72,6 +75,10 @@ Create Tiddler
 
 \define testNew()
 &lt;$action-sendmessage $message="tm-new-tiddler" title=&lt;&lt;unusedtitle baseName:"new" template:"$count:2$-$basename$"&gt;&gt; /&gt;
+\end
+
+\define testStartCount()
+&lt;$action-createtiddler $basetitle=&lt;&lt;unusedtitle startCount:"10" baseName:"new" separator:"-" template:"$count:2$$separator$$basename$"&gt;&gt;/&gt;
 \end
 
 ```
@@ -97,6 +104,16 @@ New Tiddler
 ```
 
 &lt;$button actions=&lt;&lt;testCreate1&gt;&gt;&gt;
+&lt;$action-setfield $tiddler="$:/state/tab/sidebar--595412856" text="$:/core/ui/SideBar/Recent"/&gt;
+Create Tiddler
+&lt;/$button&gt;
+
+
+```
+&lt;&lt;unusedtitle startCount:"10" baseName:"new" separator:"-" template:"$count:2$$separator$$basename$"&gt;&gt;
+```
+
+&lt;$button actions=&lt;&lt;testStartCount&gt;&gt;&gt;
 &lt;$action-setfield $tiddler="$:/state/tab/sidebar--595412856" text="$:/core/ui/SideBar/Recent"/&gt;
 Create Tiddler
 &lt;/$button&gt;
