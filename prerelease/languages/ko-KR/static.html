@@ -379,15 +379,12 @@ input[type="search"] {
 html button {
 	line-height: 1.2;
 	color: ;
-	fill: ;
 	background: ;
 	border-color: ;
 	cursor: pointer;
 }button:disabled {
 	cursor: default;
 	color: #bbbbbb;
-}button:disabled svg {
-	fill: #bbbbbb;
 }/*
 ** Basic element styles
 */html, body {
@@ -406,7 +403,7 @@ html button {
 
 	color: #333333;
 	background-color: #f4f4f4;
-	fill: #333333;
+	fill: currentColor;
 }/**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
@@ -699,7 +696,7 @@ a.tc-tiddlylink:hover {
 	position: relative;
 }.tc-sidebar-tab-open .tc-btn-invisible.tc-btn-mini svg {
 	font-size: 0.7em;
-	fill: #bbbbbb;
+	color: #bbbbbb;
 }/*
 ** Plugin reload warning
 */.tc-plugin-reload-warning {
@@ -722,7 +719,6 @@ a.tc-tiddlylink:hover {
 	border: none;
 	cursor: pointer;
 	color: #333333;
-	fill: #333333;
 }button:disabled.tc-btn-invisible  {
 	cursor: default;
 	color: #bbbbbb;
@@ -738,8 +734,6 @@ a.tc-tiddlylink:hover {
 }.tc-btn-boxed:hover {
 	background: #bbbbbb;
 	color: #ffffff;
-}html body.tc-body .tc-btn-boxed:hover svg {
-	fill: #ffffff;
 }.tc-btn-rounded {
 	font-size: 0.5em;
 	line-height: 2;
@@ -751,17 +745,15 @@ a.tc-tiddlylink:hover {
 	border-radius: 2em;
 }html body.tc-body .tc-btn-rounded svg {
 	font-size: 1.6666em;
-	fill: #ffffff;
+	color: #ffffff;
 }.tc-btn-rounded:hover {
 	border: 1px solid #bbbbbb;
 	background: #ffffff;
 	color: #bbbbbb;
-}html body.tc-body .tc-btn-rounded:hover svg {
-	fill: #bbbbbb;
 }.tc-btn-icon svg {
 	height: 1em;
 	width: 1em;
-	fill: #bbbbbb;
+	color: #bbbbbb;
 }.tc-btn-text {
 	margin-left: 7px;
 }/* used for documentation "fake" buttons */
@@ -778,7 +770,6 @@ a.tc-tiddlylink:hover {
 	margin: 4px 8px 4px 8px;
 	background: #34c734;
 	color: #ffffff;
-	fill: #ffffff;
 	border: none;
 	border-radius: 2px;
 	font-size: 1.2em;
@@ -789,14 +780,12 @@ a.tc-tiddlylink:hover {
 	height: 2em;
 	width: 2em;
 	vertical-align: middle;
-	fill: #ffffff;
 }.tc-primary-btn {
 	background: #5778d8;
 }.tc-sidebar-lists input {
 	color: #333333;
 }.tc-sidebar-lists button {
 	color: #333333;
-	fill: #333333;
 }.tc-sidebar-lists button.tc-btn-mini {
 	color: #c0c0c0;
 }.tc-sidebar-lists button.tc-btn-mini:hover {
@@ -823,9 +812,9 @@ a.tc-tiddlylink:hover {
 	border-top: 2px solid #dddddd;
 }.tc-unfold-banner svg, .tc-fold-banner svg {
 	height: 0.75em;
-	fill: #cccccc;
+	color: #cccccc;
 }.tc-unfold-banner:hover svg, .tc-fold-banner:hover svg {
-	fill: #888888;
+	color: #888888;
 }.tc-fold-banner {
 	position: absolute;
 	padding: 0;
@@ -918,14 +907,13 @@ a.tc-tiddlylink:hover {
 	}}.tc-topbar button {
 	padding: 8px;
 }.tc-topbar svg {
-	fill: #bbbbbb;
+	color: #bbbbbb;
 }.tc-topbar button:hover svg {
-	fill: #333333;
+	color: #333333;
 }@media (max-width: 959px) {.tc-show-sidebar-btn svg.tc-image-chevron-left, .tc-hide-sidebar-btn svg.tc-image-chevron-right {
 		transform: rotate(-90deg);
 	}}.tc-sidebar-header {
 	color: #acacac;
-	fill: #acacac;
 }.tc-sidebar-header .tc-title a.tc-tiddlylink-resolves {
 	font-weight: normal;
 }.tc-sidebar-header .tc-sidebar-lists p,
@@ -953,9 +941,9 @@ a.tc-tiddlylink:hover {
 }.tc-page-controls img {
 	width: 1em;
 }.tc-page-controls svg {
-	fill: #aaaaaa;
+	color: #aaaaaa;
 }.tc-page-controls button:hover svg, .tc-page-controls a:hover svg {
-	fill: #000000;
+	color: #000000;
 }.tc-sidebar-lists .tc-menu-list-item {
 	white-space: nowrap;
 }.tc-menu-list-count {
@@ -1112,7 +1100,7 @@ a.tc-tiddlylink:hover {
 	margin-left:5px;
 }.tc-tiddler-controls button svg, .tc-tiddler-controls button img,
 .tc-search button svg, .tc-search a svg {
-	fill: #cccccc;
+	color: #cccccc;
 }.tc-tiddler-controls button svg, .tc-tiddler-controls button img {
 	height: 0.75em;
 }.tc-search button svg, .tc-search a svg {
@@ -1121,10 +1109,10 @@ a.tc-tiddlylink:hover {
 	margin: 0 0.25em;
 }.tc-tiddler-controls button.tc-selected svg,
 .tc-page-controls button.tc-selected svg  {
-	fill: #444444;
+	color: #444444;
 }.tc-tiddler-controls button.tc-btn-invisible:hover svg,
 .tc-search button:hover svg, .tc-search a:hover svg {
-	fill: #888888;
+	color: #888888;
 }@media print {
 	.tc-tiddler-controls {
 		display: none;
@@ -1208,7 +1196,6 @@ a.tc-tiddlylink:hover {
 	vertical-align: middle;
 	background-color: #cccccc;
 	color: #444444;
-	fill: #444444;
 	border-radius: 4px;
 	padding: 3px;
 	margin: 2px 0 2px 4px;
@@ -1227,7 +1214,6 @@ a.tc-tiddlylink:hover {
 	padding: 2px 4px;
 }.tc-editor-toolbar button:hover {
 	background-color: #444444;
-	fill: #ffffff;
 	color: #ffffff;
 }.tc-editor-toolbar .tc-text-editor-toolbar-more {
 	white-space: normal;
@@ -1264,25 +1250,25 @@ a.tc-tiddlylink:hover {
 	}}/*
 ** Toolbar buttons
 */.tc-page-controls svg.tc-image-new-button {
-	fill: ;
+	color: ;
 }.tc-page-controls svg.tc-image-options-button {
-	fill: ;
+	color: ;
 }.tc-page-controls svg.tc-image-save-button {
-	fill: ;
+	color: ;
 }.tc-tiddler-controls button svg.tc-image-info-button {
-	fill: ;
+	color: ;
 }.tc-tiddler-controls button svg.tc-image-edit-button {
-	fill: ;
+	color: ;
 }.tc-tiddler-controls button svg.tc-image-close-button {
-	fill: ;
+	color: ;
 }.tc-tiddler-controls button svg.tc-image-delete-button {
-	fill: ;
+	color: ;
 }.tc-tiddler-controls button svg.tc-image-cancel-button {
-	fill: ;
+	color: ;
 }.tc-tiddler-controls button svg.tc-image-done-button {
-	fill: ;
+	color: ;
 }.tc-page-controls svg.tc-image-layout-button {
-	fill: ;
+	color: ;
 }/*
 ** Tiddler edit mode
 */.tc-tiddler-edit-frame em.tc-edit {
@@ -1361,7 +1347,7 @@ a.tc-tiddlylink:hover {
 }.tc-edit-field-remove svg {
 	height: 1em;
 	width: 1em;
-	fill: #bbbbbb;
+	color: #bbbbbb;
 	vertical-align: middle;
 }.tc-edit-field-add-name-wrapper input.tc-edit-texteditor {
 	width: auto;
@@ -1430,7 +1416,7 @@ a.tc-tiddlylink:hover {
 }.tc-btn-dropdown svg, .tc-btn-dropdown img {
 	height: 1em;
 	width: 1em;
-	fill: #bbbbbb;
+	color: #bbbbbb;
 }.tc-drop-down-wrapper {
 	position: relative;
 }.tc-drop-down {
@@ -1445,11 +1431,11 @@ a.tc-tiddlylink:hover {
 }.tc-drop-down .tc-drop-down {
 	margin-left: 14px;
 }.tc-drop-down button svg, .tc-drop-down a svg  {
-	fill: #333333;
+	color: #333333;
 }.tc-drop-down button:disabled svg {
-	fill: #bbbbbb;
+	color: #bbbbbb;
 }.tc-drop-down button.tc-btn-invisible:hover svg {
-	fill: #ffffff;
+	color: #ffffff;
 }.tc-drop-down .tc-drop-down-info {
 	padding-left: 14px;
 }.tc-drop-down p {
@@ -1774,7 +1760,6 @@ a.tc-tiddlylink:hover {
 }.tc-manager-list-item-heading-selected {
 	font-weight: bold;
 	color: #ffffff;
-	fill: #ffffff;
 	background-color: #333333;
 }.tc-manager-list-item-heading:hover {
 	background: #5778d8;
@@ -1855,7 +1840,7 @@ a.tc-tiddlylink:hover {
 	right: 7px;
 	line-height: 0;
 }.tc-alert-toolbar svg {
-	fill: #b99e2f;
+	color: #b99e2f;
 }.tc-alert-subtitle {
 	color: #b99e2f;
 	font-weight: bold;
@@ -1890,12 +1875,10 @@ a.tc-tiddlylink:hover {
 	border-bottom: none;
 	background: #ff0000;
 	color: #ffffff;
-	fill: #ffffff;
 }.tc-drafts-list a:hover {
 	text-decoration: none;
 	background: #333333;
 	color: #ffffff;
-	fill: #ffffff;
 }.tc-drafts-list a svg {
 	width: 1em;
 	height: 1em;
@@ -1912,11 +1895,12 @@ a.tc-tiddlylink:hover {
 	display: flex;
 	text-shadow: none;
 	border: 1px solid #bbbbbb;
-	fill: #bbbbbb;
 	background-color: #ffffff;
 	margin: 0.5em 0 0.5em 0;
 	padding: 4px;
 	align-items: center;
+}.tc-plugin-info svg {
+	color: #bbbbbb;
 }.tc-sidebar-lists a.tc-tiddlylink.tc-plugin-info {
 	color: #5778d8;
 }.tc-plugin-info-sub-plugins .tc-plugin-info {
@@ -1943,9 +1927,10 @@ a.tc-tiddlylink:hover {
 	text-decoration: none;
 	background-color: #5778d8;
 	color: #ffffff;
-	fill: #333333;
+}a.tc-tiddlylink.tc-plugin-info:hover svg {
+	color: #333333;
 }a.tc-tiddlylink.tc-plugin-info:hover > .tc-plugin-info-chunk > svg {
-	fill: #ffffff;
+	color: #ffffff;
 }a.tc-tiddlylink.tc-plugin-info:hover > .tc-plugin-info-chunk .tc-plugin-info-stability {
 	border: 1px solid #ffffff;
 	color: #ffffff;
@@ -2027,7 +2012,6 @@ a.tc-tiddlylink:hover {
 	font-weight: bold;
 	background: green;
 	color: white;
-	fill: white;
 	border-radius: 4px;
 	padding: 3px;
 }.tc-install-plugin.tc-reinstall-downgrade {
@@ -2139,7 +2123,7 @@ a.tc-tiddlylink:hover {
 	width: 0.7em;
 	height: 0.7em;
 	vertical-align: middle;
-	fill: #acacac;
+	color: #acacac;
 }.tc-table-of-contents ol {
 	list-style-type: none;
 	padding-left: 0;
@@ -2218,7 +2202,6 @@ a.tc-tiddlylink:hover {
 }html body.tc-dirty svg.tc-image-save-button-dynamic .tc-image-save-button-dynamic-dirty {
 	visibility: visible;
 }html body.tc-dirty span.tc-dirty-indicator, html body.tc-dirty span.tc-dirty-indicator svg {
-	fill: #ff0000;
 	color: #ff0000;
 }/*
 ** File inputs
@@ -2283,7 +2266,7 @@ a.tc-tiddlylink:hover {
 
 }.tc-thumbnail-wrapper:hover .tc-thumbnail-icon svg,
 .tc-thumbnail-wrapper:hover .tc-thumbnail-icon img {
-	fill: #fff;
+	color: #fff;
 	
 -webkit-filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
 	-moz-filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
@@ -2358,7 +2341,7 @@ a.tc-tiddlylink:hover {
 }.tc-tree button {
 	color: #acacac;
 }.tc-tree svg {
-	fill: #acacac;
+	color: #acacac;
 }.tc-tree span svg {
 	width: 1em;
 	height: 1em;
@@ -2425,13 +2408,14 @@ a.tc-tiddlylink:hover {
 }.tc-test-case-divider {
 	x-background-color: #bbbbbb;
 }.tc-test-case-result-icon {
-	fill: #fff;
 	padding: 0.25em;
 	display: inline-block;
 	line-height: 0;
 	border-radius: 1em;
 	vertical-align: text-bottom;
 	margin-right: 0.25em;
+}.tc-test-case-result-icon svg {
+	color: #fff;
 }.tc-test-case-result-icon-pass {
 	background-color: green;
 }.tc-test-case-result-icon-fail {
@@ -2451,7 +2435,7 @@ a.tc-tiddlylink:hover {
 }.tc-test-case-toolbar {
 	float: right;
 }.tc-test-case-toolbar svg {
-	fill: #cccccc;
+	color: #cccccc;
 }.tc-test-case-toolbar .tc-drop-down {
 	font-size: 0.8em;
 }.tc-test-case-result-fail {
@@ -2627,8 +2611,6 @@ nav.tc-menubar li.tc-menubar-item > button {
 	font-weight: 700;
 	color: #333333;
 	color: #fff;
-	fill: #333333;
-	fill: #fff;
 	text-decoration: none;
 	padding: 0.5em;
 	margin: 0;
@@ -2643,21 +2625,19 @@ nav.tc-menubar li.tc-menubar-item > button.tc-selected {
 	background: #fff;
 	color: #ffffff;
 	color: #5778d8;
-	fill: #ffffff;
-	fill: #5778d8;
 }nav.tc-menubar li.tc-menubar-item svg {
 	transition: none;
 	width: 1em;
 	height: 1em;
-	fill: #333333;
-	fill: #fff;
+	color: #333333;
+	color: #fff;
 }nav.tc-menubar li.tc-menubar-item .tc-menubar-dropdown-arrow svg {
 	width: 0.5em;
 	height: 0.5em;
 }nav.tc-menubar li.tc-menubar-item > a.tc-selected svg,
 nav.tc-menubar li.tc-menubar-item > button.tc-selected svg {
-	fill: #ffffff;
-	fill: #5778d8;
+	color: #ffffff;
+	color: #5778d8;
 }nav.tc-menubar li.tc-menubar-item > a:hover,
 nav.tc-menubar li.tc-menubar-item > button:hover svg,
 nav.tc-menubar li.tc-menubar-item > button:hover {
@@ -2665,8 +2645,6 @@ nav.tc-menubar li.tc-menubar-item > button:hover {
 	background: #fff;
 	color: #ffffff;
 	color: #5778d8;
-	fill: #ffffff;
-	fill: #5778d8;
 	border-radius: 0;
 	text-decoration: none;
 }nav.tc-menubar li.tc-menubar-item > a:active,
@@ -2676,8 +2654,6 @@ nav.tc-menubar li.tc-menubar-item > button:active {
 	background: #fff;
 	color: #ffffff;
 	color: #5778d8;
-	fill: #ffffff;
-	fill: #5778d8;
 	border-radius: 0;
 	text-decoration: none;
 }nav.tc-menubar .tc-drop-down,
@@ -2797,7 +2773,6 @@ svg.railroad-diagram path.arrow {
 	text-align: left;
 }.tc-tour-panel-controls .tc-tour-panel-list-button.tc-selected {
 	color: #ffffff;
-	fill: #ffffff;
 	background: #5778d8;
 }.tc-tour-panel-controls .tc-tour-panel-list-button:hover {
 	background: #bbbbbb;
@@ -2827,7 +2802,6 @@ svg.railroad-diagram path.arrow {
 	border-radius: 1em;
 	background: #34c734;
 	color: #ffffff;
-	fill: #ffffff;
 	text-transform: uppercase;
 }.tc-tour-panel-chooser-wrapper button:hover {
 	background: #5778d8;
@@ -2870,7 +2844,7 @@ svg.railroad-diagram path.arrow {
 	padding: 0.5em;
 	border-radius: 1em;
 }.tc-tour-task svg {
-	fill: #ffffff;
+	color: #ffffff;
 	vertical-align: middle;
 	width: 1.2em;
 	height: 1.2em;
@@ -2917,7 +2891,6 @@ svg.railroad-diagram path.arrow {
 .tc-tour-settings-tour-step-launch-button:hover {
 	background: #333333;
 	color: #ffffff;
-	fill: #ffffff;
 }.tc-tour-settings-tour-step-heading-step-number {
 	font-weight: bold;
 	background: #333333;
