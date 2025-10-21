@@ -51,19 +51,6 @@ var assetList = [
         "requires-reload": "yes"
     },
     {
-        "title": "$:/plugins/tiddlywiki/blog",
-        "name": "Blog",
-        "description": "Blog publishing tools",
-        "list": "readme docs",
-        "stability": "STABILITY_0_DEPRECATED",
-        "version": "5.4.0-prerelease",
-        "plugin-type": "plugin",
-        "dependents": "",
-        "type": "application/json",
-        "readme": "This plugin contains tools to help publish blogs:\n\n* Templates and tools for building static HTML pages and posts\n",
-        "requires-reload": "no"
-    },
-    {
         "title": "$:/plugins/tiddlywiki/browser-sniff",
         "name": "Browser Sniff",
         "description": "Browser feature detection",
@@ -87,19 +74,6 @@ var assetList = [
         "dependents": "",
         "type": "application/json",
         "readme": "This plugin enables ~TiddlyWiki to save tiddlers in [[browser local storage|https://en.wikipedia.org/wiki/Web_storage#localStorage]]. This means that changes are stored within the browser, and automatically re-applied any time the base wiki is reloaded.\n\nAt startup, the plugin reads tiddlers from local storage. Any tiddlers that are identical to those built into the file are deleted from local storage. Once the wiki is up and running, any tiddler changes are written straight to local storage.\n\n!! Optional use with ~TiddlyWeb plugin\n\nFor wikis served from a ~TiddlyWeb compatible server, including the ~TiddlyWiki Node JS server, this plugin may be added to provide temporary local storage of tiddler changes when the [[tiddlyweb sync adapter|https://github.com/TiddlyWiki/TiddlyWiki5/tree/master/plugins/tiddlywiki/tiddlyweb]] is unable to successfully synchronise with the server, and to automatically synchronise tiddlers saved offline in browser storage once connection is re-established. The use of browser storage allows for tiddlers saved offline to be synchronised with the server even in the case where the browser is closed or the user (purposely, accidentally, or automatically in the case of a mobile browser periodically refreshing) navigates away from the wiki.\n\nChanges will be synchronised with the server the next time the wiki is loaded in the browser. Tiddlers are removed from browser-storage once synchronised to the server.\n\nBy default only state tiddlers are saved by this plugin. On the settings tab, you can update the Save Filter to save all content and system tiddlers. The third example provided is a good choice. \n\n!!! Limitations\n\n* ''Deleted tiddlers:'' Tiddler deletions while offline are not synchronised with the server due to technical limitations. The intent of using this plugin with a ~TiddlyWeb server is to prevent the loss of new or modified content while temporarily offline. \n* ''Title changes:'' Tiddlers are saved by title, so a change to a tiddler title will be saved and synchronised to the server, but it will not overwrite the tiddler with the original title. \n* ''Browser storage:'' While useful as a safety measure for //temporary// offline usage, as noted below, browser storage itself has limitations that could still result in losing data in some cases.   \n\n!!Browser local storage is not a panacea for TiddlyWiki:\n\n* Browsers limit the amount of local storage available to a page, typically to 5 or 10MB\n* Keeping personal data in browser local storage can lead to unexpected privacy violations\n* Browsers reserve the right to without warning delete data stored in local storage at any time\n* Browsers tie local storage to a URL which can lead to problems if you move a wiki to a URL previously occupied by a different wiki\n\nPlease use this plugin with caution. There are a number of unresolved issues and open questions:\n\n* Innerwikis read the local storage of their parent wikis\n* This plugin does not interfere with the existing saver mechanism, so you'll still get warnings when refreshing the page, even if your changes are safely committed to local storage\n* There is a possibility that tiddlers might be transferred between different wikis if they are accessed via the same URL. This is particularly likely when running in local client server configuration under Node.js\n",
-        "requires-reload": "yes"
-    },
-    {
-        "title": "$:/plugins/tiddlywiki/cecily",
-        "name": "Cecily",
-        "description": "Zoomable storyview (Cecily)",
-        "list": "readme",
-        "stability": "STABILITY_0_DEPRECATED",
-        "version": "5.4.0-prerelease",
-        "plugin-type": "plugin",
-        "dependents": "",
-        "type": "application/json",
-        "readme": "This experimental plugin provides a new story visualisation that displays individual tiddlers as resizable tiles on an infinite canvas.\n\nCecily is based on an earlier plugin for TiddlyWiki Classic: http://jermolene.com/cecily\n\nCecily is currently in the early stages of development with little functionality yet implemented.\n\n[[Source code|https://github.com/TiddlyWiki/TiddlyWiki5/blob/master/plugins/tiddlywiki/cecily]]\n",
         "requires-reload": "yes"
     },
     {
@@ -392,19 +366,6 @@ var assetList = [
         "requires-reload": "yes"
     },
     {
-        "title": "$:/plugins/tiddlywiki/d3",
-        "name": "D3",
-        "description": "D3 data visualisation demo",
-        "list": "readme",
-        "stability": "STABILITY_0_DEPRECATED",
-        "version": "5.4.0-prerelease",
-        "plugin-type": "plugin",
-        "dependents": "",
-        "type": "application/json",
-        "readme": "The D3 plugin is a proof-of-concept demo of integration with the D3.js data visualisation framework (http://d3js.org).\n\nIt is not currently in a state where it can be used for anything useful.\n\n[[Source code|https://github.com/TiddlyWiki/TiddlyWiki5/blob/master/plugins/tiddlywiki/d3]]\n",
-        "requires-reload": "yes"
-    },
-    {
         "title": "$:/plugins/tiddlywiki/dynannotate",
         "name": "Dynannotate",
         "description": "Dynamic content annotation",
@@ -527,20 +488,6 @@ var assetList = [
         "requires-reload": "yes"
     },
     {
-        "title": "$:/plugins/tiddlywiki/hammerjs",
-        "name": "HammerJS",
-        "description": "HammerJS touch gesture library",
-        "author": "Jorik Tangelder (Eight Media)",
-        "list": "readme license",
-        "stability": "STABILITY_0_DEPRECATED",
-        "version": "5.4.0-prerelease",
-        "plugin-type": "plugin",
-        "dependents": "",
-        "type": "application/json",
-        "readme": "This plugin packages [[HammerJS|https://hammerjs.github.io]] for use by other plugins. It does not provide any end-user visible features.\n",
-        "requires-reload": "yes"
-    },
-    {
         "title": "$:/plugins/tiddlywiki/help",
         "name": "Help",
         "description": "Floating help panel",
@@ -565,20 +512,6 @@ var assetList = [
         "dependents": "",
         "type": "application/json",
         "readme": "\\define highlightVersion() 11.4.0\n\nThis plugin provides syntax highlighting of code blocks using version <<highlightVersion>> of [[highlight.js|https://github.com/isagalaev/highlight.js]] from Ivan Sagalaev. This plugin does not work on browsers that do not fully support ~JavaScript ES6 (2015). If you need highlight.js running on those legacy browsers, you would need to install the \"Highlight (Legacy)\" plugin instead. Here's a [[ES6 compatibility table|https://caniuse.com/?search=es6]].\n\n! Built-in Language Brushes\n\nThe plugin includes support for the following common languages (referred to as \"brushes\" by highlight.js):\n\n* bash\n* c\n* cpp\n* csharp\n* css\n* diff\n* go\n* html, xml\n* java\n* javascript\n* json\n* kotlin\n* less\n* lua\n* makefile\n* markdown\n* objectivec\n* perl\n* php\n* plaintext\n* python\n* R\n* ruby\n* rust\n* scss\n* sql\n* shell session\n* swift\n* toml, ini\n* typescript\n* visual basic .net\n* yaml\n\nAnd these additional ones:\n\n* apache config\n* dockerfile\n* fortran\n* latex\n* nginx config\n\nThe mapping between a MIME type and a highlight.js language specifier is accomplished via mapping tiddlers whose titles start with `$:/config/HighlightPlugin/TypeMappings/`.\n",
-        "requires-reload": "yes"
-    },
-    {
-        "title": "$:/plugins/tiddlywiki/highlight-legacy",
-        "name": "Highlight (Legacy)",
-        "description": "Highlight.js syntax highlighting for legacy browsers",
-        "author": "Joao Bolila",
-        "list": "readme usage license",
-        "stability": "STABILITY_3_LEGACY",
-        "version": "5.4.0-prerelease",
-        "plugin-type": "plugin",
-        "dependents": "",
-        "type": "application/json",
-        "readme": "This plugin provides syntax highlighting of code blocks using v9.18.1 of [[highlight.js|https://github.com/isagalaev/highlight.js]] from Ivan Sagalaev. This legacy version should be installed in place of the regular Highlight plugin when you require your wiki to be opened in browsers that do not fully support <$text text=\"JavaScript\"/> ES6 (2015). Here's a [[ES6 compatibility table|https://caniuse.com/?search=es6]].\n\n! Built-in Language Brushes\n\nThe plugin includes support for the following languages (referred to as \"brushes\" by highlight.js):\n\n* apache\n* arduino\n* arm assembly\n* asciidoc\n* autohotkey\n* awk\n* bash\n* cmake\n* coffeescript\n* cpp\n* cs\n* css\n* diff\n* dockerfile\n* erlang\n* elixir\n* fortran\n* go\n* gradle\n* haskell\n* html\n* http\n* ini\n* intel x86 assembly\n* java\n* javascript\n* json\n* kotlin\n* less\n* lua\n* makefile\n* markdown\n* mathematica\n* matlab\n* nginx\n* objectivec\n* perl\n* php\n* plaintext\n* powershell\n* properties\n* python\n* R\n* ruby\n* rust\n* scss\n* shell session\n* sql\n* swift\n* toml\n* typescript\n* vala\n* vim script\n* xml\n* yaml\n\nThe mapping between a MIME type and a highlight.js language specifier is accomplished via mapping tiddlers whose titles start with `$:/config/HighlightPlugin/TypeMappings/`.\n",
         "requires-reload": "yes"
     },
     {
@@ -675,33 +608,6 @@ var assetList = [
         "requires-reload": "no"
     },
     {
-        "title": "$:/plugins/tiddlywiki/mobiledragdrop",
-        "name": "Mobile Drag Drop",
-        "description": "Mobile drag and drop shim",
-        "author": "Tim Ruffles",
-        "list": "readme license",
-        "stability": "STABILITY_0_DEPRECATED",
-        "version": "5.4.0-prerelease",
-        "plugin-type": "plugin",
-        "dependents": "",
-        "type": "application/json",
-        "readme": "This plugin provides a \"shim\" that enables HTML 5 compatible drag and drop operations on mobile browsers, including iOS and Android. The shim was created by Tim Ruffles and is published at https://github.com/timruffles/ios-html5-drag-drop-shim.\n\nAfter installing the plugin it is necessary to save the HTML file a second time before it will be fully enabled.\n",
-        "requires-reload": "yes"
-    },
-    {
-        "title": "$:/plugins/tiddlywiki/nodewebkitsaver",
-        "name": "nw.js Saver",
-        "description": "Saver for nw.js",
-        "list": "readme",
-        "stability": "STABILITY_0_DEPRECATED",
-        "version": "5.4.0-prerelease",
-        "plugin-type": "plugin",
-        "dependents": "",
-        "type": "application/json",
-        "readme": "This plugin provides a ''saver'' module for saving changes when using TiddlyWiki directly under NW.js (previously known as node-webkit).\n\n[[Source code|https://github.com/TiddlyWiki/TiddlyWiki5/blob/master/plugins/tiddlywiki/nodewebkitsaver]]\n",
-        "requires-reload": "yes"
-    },
-    {
         "title": "$:/plugins/tiddlywiki/powered-by-tiddlywiki",
         "name": "Powered By TiddlyWiki",
         "description": "Powered by TiddlyWiki banner",
@@ -793,19 +699,6 @@ var assetList = [
         "dependents": "",
         "type": "application/json",
         "readme": "This plugin provides a new story visualisation that displays individual tiddlers as a stack of cards. It is currently experimental and incomplete.\n\n[[Source code|https://github.com/TiddlyWiki/TiddlyWiki5/blob/master/plugins/tiddlywiki/stacked-view]]\n",
-        "requires-reload": "yes"
-    },
-    {
-        "title": "$:/plugins/tiddlywiki/tahoelafs",
-        "name": "TahoeLAFS",
-        "description": "Tahoe-LAFS saver",
-        "list": "readme",
-        "stability": "STABILITY_0_DEPRECATED",
-        "version": "5.4.0-prerelease",
-        "plugin-type": "plugin",
-        "dependents": "",
-        "type": "application/json",
-        "readme": "This plugin provides a ''saver'' module for saving changes under the [[Tahoe Least Authority File System|https://tahoe-lafs.org/]].\n\nAt this point it is largely for experimentation by @zooko.\n\n[[Source code|https://github.com/TiddlyWiki/TiddlyWiki5/blob/master/plugins/tiddlywiki/tahoelafs]]\n",
         "requires-reload": "yes"
     },
     {
