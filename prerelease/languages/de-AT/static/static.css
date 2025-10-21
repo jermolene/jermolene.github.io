@@ -592,6 +592,7 @@ Tiddler frame in story river
 	height: 600px;
 }:root {
 	color-scheme: light;
+	text-autospace: normal;
 }/*
 ** Links
 */button.tc-tiddlylink,
