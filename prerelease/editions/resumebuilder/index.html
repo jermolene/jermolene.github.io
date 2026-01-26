@@ -309,7 +309,7 @@ Error message and password prompt
 </noscript>
 <!--~~ Ordinary tiddlers ~~-->
 <script class="tiddlywiki-tiddler-store" type="application/json">[
-{"title":"$:/build","commit":"cde9c931c8491588c548ba55a855f374335a774d","text":"Prerelease built from branch 'master' at commit cde9c931c8491588c548ba55a855f374335a774d of https://github.com/TiddlyWiki/TiddlyWiki5 at 2026-01-25 19:02:11 UTC\n"},
+{"title":"$:/build","commit":"75edd9b4886ada68650f2b8bd70ded44ba9d6ae1","text":"Prerelease built from branch 'master' at commit 75edd9b4886ada68650f2b8bd70ded44ba9d6ae1 of https://github.com/TiddlyWiki/TiddlyWiki5 at 2026-01-26 15:07:08 UTC\n"},
 {"title":"$:/config/DefaultSidebarTab","created":"20150719185223155","modified":"20150719185226532","text":"Preview"},
 {"title":"$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home","modified":"20150719172915740","text":"show"},
 {"title":"$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/new-tiddler","modified":"20150719172917795","text":"hide"},
@@ -904,8 +904,25 @@ $tw.utils.htmlDecode = function(s) {
 	return s.toString().replace(/&lt;/mg,"<").replace(/&nbsp;/mg,"\xA0").replace(/&gt;/mg,">").replace(/&quot;/mg,"\"").replace(/&amp;/mg,"&");
 };
 
-/** @deprecated Use window.location.hash instead.  */
-$tw.utils.getLocationHash = () => window.location.hash;
+/*
+Get the browser location.hash. We don't use location.hash because of the way that Firefox auto-urldecodes it (see http://stackoverflow.com/questions/1703552/encoding-of-window-location-hash)
+*/
+$tw.utils.getLocationHash = function() {
+	const href = window.location.href,
+		idx = href.indexOf("#");
+
+	if(idx === -1) {
+		return "#";
+	}
+
+	const afterHash = href.substring(idx + 1);
+	if(afterHash.startsWith("#") || afterHash.startsWith("%23")) {
+		// Special case: ignore location hash if it itself starts with a #
+		return "#";
+	}
+	return href.substring(idx);
+};
+
 
 /** @deprecated Pad a string to a given length with "0"s. Length defaults to 2 */
 $tw.utils.pad = function(value,length = 2) {
