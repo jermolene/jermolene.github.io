@@ -53,7 +53,7 @@ Refresh if the attribute value changed since render
 <span class="hljs-title class_">MyWidget</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">refresh</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">changedTiddlers</span>) {
 	<span class="hljs-comment">// Find which attributes have changed</span>
 	<span class="hljs-keyword">var</span> changedAttributes = <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">computeAttributes</span>();
-	<span class="hljs-keyword">if</span> (changedAttributes.<span class="hljs-property">message</span>) {
+	<span class="hljs-keyword">if</span>(changedAttributes.<span class="hljs-property">message</span>) {
 		<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">refreshSelf</span>();
 		<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
 	} <span class="hljs-keyword">else</span> {
