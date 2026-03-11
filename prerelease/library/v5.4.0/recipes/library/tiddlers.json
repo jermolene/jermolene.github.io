@@ -768,6 +768,7 @@
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
+        "readme": "This is an experimental packaging of the documentation from tiddlywiki.com into a plugin.\n\nIt is currently not fully functional:\n\n* Listings of tiddlers don't always work because the docs tiddlers are now shadow tiddlers\n",
         "requires-reload": "yes"
     },
     {
