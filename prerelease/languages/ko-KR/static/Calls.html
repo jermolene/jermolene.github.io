@@ -127,7 +127,7 @@ foo 5 -
 foo 6
 </p></div></div></div></p></div></div></p><h2 class="">Calls with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TranscludeWidget.html"><code class="doc-widget">$transclude</code></a> Widget</h2><p>The shortcut syntax expands to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TranscludeWidget.html"><code class="doc-widget">$transclude</code></a> widget with the <code>$variable</code> attribute specifying the name of the procedure to transclude.</p><pre><code>&lt;$transclude $variable="my-procedure" param="This is the parameter value"/&gt;</code></pre><p>The widget itself offers greater flexibility than the shortcut syntax, including the ability to override it with a custom widget.</p><h2 class="">Assigning Results of Calls to Attribute Values</h2><p>The text returned from a call can be directly assigned to an attribute of a widget or HTML element. The result of the call is not wikified, which means that <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Procedure%2520Parameter%2520Handling.html">parameter handling</a> does not take place.</p><pre><code>&lt;div class=&lt;&lt;myclasses&gt;&gt;&gt;
 ...
-&lt;/div&gt;</code></pre><h2 class="">Using Calls in Filters</h2><p>Calls can be used in filters. The text is not wikified which again means that the parameters will be ignored.</p><pre><code>&lt;$list filter="[&lt;my-procedure&gt;]"&gt;
+&lt;/div&gt;</code></pre><h2 class="">Using Calls in Filters</h2><p>Calls can be used in filters. The text is not wikified which again means that the parameters will be ignored.</p><p><em>Note that currently only literal string parameters are supported</em></p><pre><code>&lt;$list filter="[&lt;my-procedure&gt;]"&gt;
 ...
 &lt;/$list&gt;</code></pre></div>
 
