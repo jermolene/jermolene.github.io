@@ -42,7 +42,7 @@ Description Lists in WikiText
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle tc-clearfix">29 diciembre 2025 a las 11:09</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle tc-clearfix">5 abril 2026 a las 8:20</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
@@ -51,11 +51,27 @@ Description Lists in WikiText
 <span class=" tc-reveal" hidden="true"></span>
 
 
-</span></div></div><div class="tc-tiddler-body tc-clearfix tc-reveal"><p>HTML description lists (<abbr title="also known as">AKA</abbr> definition lists) are created with this syntax:</p><div class="doc-example"><pre><code>; Term being described
+</span></div></div><div class="tc-tiddler-body tc-clearfix tc-reveal"><h2 class="">Basic syntax</h2><p>HTML description lists (<abbr title="also known as">AKA</abbr> definition lists) are created with this syntax: </p><div class="doc-example"><pre><code>; Term being described
 : Description / Definition of that term
 ; Another term
 : Another description / definition
-</code></pre><p>Tiene este aspecto:</p><dl><dt>Term being described</dt><dd>Description / Definition of that term</dd><dt>Another term</dt><dd>Another description / definition</dd></dl><p>... y su código HTML es:</p><pre>&lt;dl&gt;&lt;dt&gt;Term being described&lt;/dt&gt;&lt;dd&gt;Description / Definition of that term&lt;/dd&gt;&lt;dt&gt;Another term&lt;/dt&gt;&lt;dd&gt;Another description / definition&lt;/dd&gt;&lt;/dl&gt;</pre></div></div>
+</code></pre><p>Tiene este aspecto:</p><dl><dt>Term being described</dt><dd>Description / Definition of that term</dd><dt>Another term</dt><dd>Another description / definition</dd></dl><p>... y su código HTML es:</p><pre>&lt;dl&gt;&lt;dt&gt;Term being described&lt;/dt&gt;&lt;dd&gt;Description / Definition of that term&lt;/dd&gt;&lt;dt&gt;Another term&lt;/dt&gt;&lt;dd&gt;Another description / definition&lt;/dd&gt;&lt;/dl&gt;</pre></div><h2 class="">Multiple terms and descriptions</h2><p>You can create multiple descriptions for a term, or multiple terms for a single description:</p><div class="doc-example"><pre><code>; Mouse
+: A rodent with a small body and a long tail
+: A pointing device used to interact with a computer
+; Apple
+; Pear
+: A type of fruit belonging to the Rosaceae family
+</code></pre><p>Tiene este aspecto:</p><dl><dt>Mouse</dt><dd>A rodent with a small body and a long tail</dd><dd>A pointing device used to interact with a computer</dd><dt>Apple</dt><dt>Pear</dt><dd>A type of fruit belonging to the Rosaceae family</dd></dl><p>... y su código HTML es:</p><pre>&lt;dl&gt;&lt;dt&gt;Mouse&lt;/dt&gt;&lt;dd&gt;A rodent with a small body and a long tail&lt;/dd&gt;&lt;dd&gt;A pointing device used to interact with a computer&lt;/dd&gt;&lt;dt&gt;Apple&lt;/dt&gt;&lt;dt&gt;Pear&lt;/dt&gt;&lt;dd&gt;A type of fruit belonging to the Rosaceae family&lt;/dd&gt;&lt;/dl&gt;</pre></div><h2 class="">Nested description lists</h2><p>Description lists may also be nested to create lists within lists:</p><div class="doc-example"><pre><code>; Coffee
+: A beverage prepared from roasted coffee beans
+:; Black coffee
+:: Coffee served without any additives
+:; Milk coffee
+:: Coffee combined with steamed or frothed milk
+::; Latte
+::: A coffee made with espresso and steamed milk
+; Tea
+: A beverage typically made from tea leaves
+</code></pre><p>Tiene este aspecto:</p><dl><dt>Coffee</dt><dd>A beverage prepared from roasted coffee beans<dl><dt>Black coffee</dt><dd>Coffee served without any additives</dd><dt>Milk coffee</dt><dd>Coffee combined with steamed or frothed milk<dl><dt>Latte</dt><dd>A coffee made with espresso and steamed milk</dd></dl></dd></dl></dd><dt>Tea</dt><dd>A beverage typically made from tea leaves</dd></dl><p>... y su código HTML es:</p><pre>&lt;dl&gt;&lt;dt&gt;Coffee&lt;/dt&gt;&lt;dd&gt;A beverage prepared from roasted coffee beans&lt;dl&gt;&lt;dt&gt;Black coffee&lt;/dt&gt;&lt;dd&gt;Coffee served without any additives&lt;/dd&gt;&lt;dt&gt;Milk coffee&lt;/dt&gt;&lt;dd&gt;Coffee combined with steamed or frothed milk&lt;dl&gt;&lt;dt&gt;Latte&lt;/dt&gt;&lt;dd&gt;A coffee made with espresso and steamed milk&lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;dt&gt;Tea&lt;/dt&gt;&lt;dd&gt;A beverage typically made from tea leaves&lt;/dd&gt;&lt;/dl&gt;</pre></div></div>
 
 
 </div></p>
