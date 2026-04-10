@@ -2660,16 +2660,16 @@ a.tc-tiddlylink:hover {
 }/*
 ** Tree macro
 */.tc-tree div {
-		-webkit-padding-start: :;
-	padding-inline-start: :;
+		-webkit-padding-start: 14px;
+	padding-inline-start: 14px;
 }.tc-tree ol {
 	list-style-type: none;
-		-webkit-padding-start: :;
-	padding-inline-start: :;
+		-webkit-padding-start: 0;
+	padding-inline-start: 0;
 	margin-top: 0;
 }.tc-tree ol ol {
-		-webkit-padding-start: :;
-	padding-inline-start: :;
+		-webkit-padding-start: 1em;
+	padding-inline-start: 1em;
 }.tc-tree button {
 	color: #acacac;
 }.tc-tree svg {
